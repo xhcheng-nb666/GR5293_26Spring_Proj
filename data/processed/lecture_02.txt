@@ -1,0 +1,883 @@
+=== Page 1 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Generative AI using Large
+Language Models (LLMs)
+Lecture 2 | 01/31/25
+Instructor: Chen Wang
+Fri 4:10 pm - 6:40 pm | 517 Hamilton Hall
+
+=== Page 2 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+2
+Agenda
+●Word embeddings
+●Attention mechanism
+●Transformer architecture
+●Mixture of Experts (MoE)
+●Encoder only vs Decoder only Models
+○BERT, GPT, LLAMA
+
+=== Page 3 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+3
+
+=== Page 4 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Word2Vec
+The Illustrated Word2vec
+4
+
+=== Page 5 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Operations using word embeddings
+5
+
+=== Page 6 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+STAT GR 5293 Sec002 | Spring 2026
+6
+
+=== Page 7 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Contextual Embeddings
+Intuition: a representation of meaning of a word should
+be different in different contexts!
+Contextual Embedding: each word has a different vector
+that expresses different meanings depending on the
+surrounding words
+7
+
+=== Page 8 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Contextual Embeddings
+The chicken didn't cross the road because it
+What should be the properties of "it"?
+The chicken didn't cross the road because it was too tired
+The chicken didn't cross the road because it was too wide
+At this point in the sentence, it's probably referring to either the chicken or the
+street
+But the static meaning of "it" can't represent that, it just means "I am a non-
+human pronoun"
+8
+
+=== Page 9 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+ELMo: Context Matters
+• A word can have different meanings
+depending on the context
+• Give me the stick
+• Let’s stick to improving our work
+• ELMo generates contextualized embeddings
+for a word
+• Contextualized word-embeddings can give
+words different embeddings based on the
+meaning they carry in the context of the
+sentence
+• LSTM based architecture
+9
+
+=== Page 10 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+ELMo Training
+●Predict next word in a sequence of
+words
+●Self-supervised learning, without
+any need for labels
+10
+
+=== Page 11 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Embedding generation in ELMo: Step 1
+Training objective: Jointly
+maximizes the log likelihood of
+the forward and backward
+directions
+11
+
+=== Page 12 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Embedding generation in ELMo: Step 2
+• Contextualized embedding through grouping together the hidden states
+(and initial embedding)
+Task specific ELMo embedding
+12
+
+=== Page 13 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Sequence-to-Sequence (Seq2Seq) model
+●
+Developed by Google in 2018 for use in machine translation.
+●
+Seq2seq turns one sequence into another sequence. It does so by use of a recurrent neural network
+(RNN) or more often LSTM or GRU to avoid the problem of vanishing gradient.
+●
+The primary components are one Encoder and one Decoder network. The encoder turns each item into a
+corresponding hidden vector containing the item and its context. The decoder reverses the process,
+turning the vector into an output item, using the previous output as the input context.
+13
+●Encoder RNN: extract and compress the semantics
+from the input sequence
+●Decoder RNN: generate a sequence based on the
+input semantics
+●Apply to tasks such as machine translation
+○
+Similar underlying semantics
+○
+E.g., “I love you.” to “Je t’aime.”
+
+=== Page 14 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Context in Seq2Seq model
+Visualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention)
+14
+
+=== Page 15 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Hidden states as context
+The last hidden state of the
+encoder forms the context we
+pass along to the decoder.
+Visualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention)
+15
+
+=== Page 16 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Hidden states as context
+16
+The decoder also
+maintains a hidden
+state that it passes from
+one time step to the next.
+Visualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention)
+
+=== Page 17 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Attention
+17
+
+=== Page 18 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Motivating Attention
+• Capture long-range dependence in context
+• Example:
+1.
+The cat drank the milk because it was hungry.
+2.
+The cat drank the milk because it was sweet.
+18
+
+=== Page 19 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Attention
+• The context vector turned out to be a bottleneck for Seq2Seq models
+• “Attention” mechanism was first proposed in Bahdanau et al.,
+2014 and Luong et al., 2015
+• Attention allows a Seq2Seq model to focus on the relevant parts of the
+input sequence when decoding
+• Attention model differs from a classic Seq2Seq model:
+1.
+The encoder passes all the hidden states to the decoder
+2.
+The decoder gives different scores to different hidden states from the encoder
+19
+
+=== Page 20 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Attention Mechanism Steps
+Visualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention)
+20
+
+=== Page 21 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Attention example
+21
+
+=== Page 22 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Attention example
+22
+●
+Attention Weights: Brightness indicates the model's
+focus (white = high focus, black = low focus).
+●
+Linear Translation: A crisp diagonal line shows word-
+for-word translation in the same order.
+●
+Handling Word Order: The model breaks the diagonal
+pattern for language differences, such as noun-
+adjective order.
+●
+Dynamic Reordering: The model "jumps forward" to
+translate the noun first, then "looks back" to retrieve
+adjectives.
+●
+Learning Grammar: This proves the model learns
+grammatical rules and reorders information
+dynamically, not just blindly replacing words.
+
+=== Page 23 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Attention Definition
+●A mechanism
+○for helping compute the embedding for a token by
+selectively attending to and integrating information
+from surrounding tokens (at the previous layer).
+●More formally:
+○a method for doing a weighted sum of vectors.
+23
+
+=== Page 24 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Left-to-right Attention
+24
+
+=== Page 25 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Simplified Version of Attention
+25
+A sum of prior words weighted by their similarity with the current word
+Given a sequence of token embeddings:
+x1 x2 x3 x4 x5 x6 x7 xi
+Produce: ai = a weighted sum of x1 through x7 (and xi)
+Weighted by their similarity to xi
+
+=== Page 26 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Intuition of attention
+26
+x1 x2 x3 x4 x5 x6 x7 … … xi
+
+=== Page 27 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+An Actual Attention Head
+27
+slightly more complicated
+High-level idea: instead of using vectors (like xi and x4) directly,
+we'll represent 3 separate roles each vector xi plays:
+●query: As the current element being compared to the preceding inputs.
+●key: as a preceding input that is being compared to the current element to
+determine a similarity
+●value: a value of a preceding element that gets weighted and summed
+
+=== Page 28 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Attention Intuition
+28
+x1 x2 x3 x4 x5 x6 x7 … … xi
+k
+v
+k
+v
+k
+v
+k
+v
+k
+v
+k
+v
+k
+v
+k
+v
+keys
+values
+
+=== Page 29 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+An Actual Attention Head
+29
+slightly more complicated
+We'll use matrices to project each vector xi into a representation of its role as
+query, key, value:
+●query: WQ
+●key: WK
+●value: WV
+
+=== Page 30 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+An Actual Attention Head
+●Given these 3 representation of xi
+●To compute similarity of current element xi with some prior element xj
+●We’ll use dot product between qi and kj.
+●And instead of summing up xj, we'll sum up vj
+30
+slightly more complicated
+
+=== Page 31 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Final equations for one attention head
+31
+
+=== Page 32 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Calculating the value of a3
+32
+
+=== Page 33 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Actual Attention
+33
+slightly more complicated
+●Instead of one attention head, we'll have lots of them!
+●Intuition: each head might be attending to the context for different purposes
+○
+Different linguistic relationships or patterns in the context
+
+=== Page 34 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Multi-head Attention
+34
+
+=== Page 35 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Transformer
+• Attention is all you need
+• Encoder—Decoder architecture
+• The Illustrated Transformer
+
+=== Page 36 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Multi-Head Attention
+
+=== Page 37 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Attention in Transformer models
+The Transformer uses multi-head attention in three different ways:
+•
+In "encoder-decoder attention" layers,
+•
+the queries come from the previous decoder layer, and the memory keys and values come from
+the output of the encoder.
+•
+This allows every position in the decoder to attend over all positions in the input sequence. This
+mimics the typical encoder-decoder attention mechanisms in sequence-to-sequence models.
+•
+The encoder contains self-attention layers.
+•
+In a self-attention layer all of the keys, values and queries come from the same place, in this
+case, the output of the previous layer in the encoder.
+•
+Each position in the encoder can attend to all positions in the previous layer of the encoder.
+•
+Similarly, self-attention layers in the decoder
+•
+allow each position in the decoder to attend to all positions in the decoder up to and including
+that position.
+•
+We need to prevent leftward information flow in the decoder to preserve the auto-regressive
+property. We implement this inside of scaled dot-product attention by masking out (setting to −∞)
+all values in the input of the softmax which correspond to illegal connections.
+
+=== Page 38 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Transformer
+– a parallelizable encoder-decoder architecture
+The Illustrated Transformer – Part2
+
+=== Page 39 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Flow of Tensors in Transformers
+
+=== Page 40 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Self-Attention Steps
+1. create three vectors (query, key, value) from each of
+the encoder’s input vectors
+2. create a score for each input vector and pass
+normalized score through a softmax
+
+=== Page 41 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Self-Attention Steps
+3. multiply each value vector by the softmax
+score and sum the weighted value vectors
+
+=== Page 42 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Matrix calculation of self-attention
+
+=== Page 43 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Multi-head Attention
+
+=== Page 44 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Self attention summary
+
+=== Page 45 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Transformers
+Parallelizing Attention Computation
+45
+
+=== Page 46 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Parallelizing computation using X
+• For attention/transformer block we've been computing a
+single output at a single time step i in a single residual
+stream.
+• But we can pack the N tokens of the input sequence into a
+single matrix X of size [N × d].
+• Each row of X is the embedding of one token of the input.
+• X can have 1K-128K rows, each of the dimensionality of the
+embedding d (the model dimension)
+
+=== Page 47 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+QKT
+Now can do a single matrix multiply to combine Q and KT
+
+=== Page 48 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Parallelizing attention
+• Scale the scores, take the softmax, and then
+multiply the result by V resulting in a matrix of
+shape N × d
+• An attention vector for each input token
+
+=== Page 49 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Masking out the future
+• What is this mask function?
+QKT has a score for each query dot every key,
+including those that follow the query.
+• Guessing the next word is pretty simple if you
+already know it!
+
+=== Page 50 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Masking out the future
+Add –∞ to cells in upper triangle
+The softmax will turn it to 0
+
+=== Page 51 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Another point:
+Attention is quadratic in length
+
+=== Page 52 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Attention again
+
+=== Page 53 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Parallelizing Multi-head Attention
+
+=== Page 54 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Parallelizing Multi-head Attention
+or
+
+=== Page 55 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Transformers
+Input and output:
+Position embeddings and the
+Language Model Head
+55
+
+=== Page 56 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Token and Position Embeddings
+The matrix X (of shape [N × d]) has an embedding for
+each word in the context.
+This embedding is created by adding two distinct
+embedding for each input
+•
+token embedding
+•
+positional embedding
+
+=== Page 57 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Token Embeddings
+Embedding matrix E has shape [|V | × d ].
+•
+One row for each of the |V | tokens in the vocabulary.
+•
+Each word is a row vector of d dimensions
+Given: string "Thanks for all the"
+1. Tokenize with BPE and convert into vocab indices
+w = [5,4000,10532,2224]
+2. Select the corresponding rows from E, each row an embedding
+•
+(row 5, row 4000, row 10532, row 2224).
+
+=== Page 58 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+BPE example
+58
+
+=== Page 59 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Position Embeddings
+There are many methods, but we'll just describe the simplest: absolute position.
+Goal: learn a position embedding matrix Epos of shape [1 × N ].
+Start with randomly initialized embeddings
+• one for each integer up to some maximum length.
+• i.e., just as we have an embedding for token fish, we’ll have an embedding for
+position 3 and position 17.
+• Position embedding can be fixed or learned/trainable
+• As with word embeddings, these position embeddings can be learned along with
+other parameters during training.
+
+=== Page 60 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Position embedding
+•
+Self-attention is permutation invariant
+•
+Self-attention is a set operation not
+sequence
+•
+Without position information in the input
+embedding
+•
+Transformer block embedding for "cat sat on mat"
+will be same as "mat on sat cat”
+•
+Position encoding breaks this symmetry
+•
+Sinusodial embedding (original Transformer
+paper)
+•
+Write the equation:
+
+=== Page 61 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Each x is just the sum of word and
+position embeddings
+
+=== Page 62 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Language modeling head
+
+=== Page 63 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Language modeling head
+Unembedding layer: linear layer projects from hLN (shape [1 × d]) to logit vector
+Why "unembedding"? Tied to ET
+Weight tying, we use the same weights for
+two different matrices
+Unembedding layer maps from an embedding to a
+1x|V| vector of logits
+
+=== Page 64 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Why weight tying?
+•
+Standard LLM pipeline: Input tokens → Embedding Layer →
+Transformer Layers → Unembedding Layer → Logits → Softmax
+•
+Embedding Layer: Maps token IDs to dense vectors
+E ∈ ℝ^(V×d): vocabulary size V, embedding dimension d
+Input: token ID → Output: embedding vector
+•
+Unembedding Layer: Maps hidden states to vocabulary logits
+U ∈ ℝ^(d×V): projects d-dimensional hidden states to V logits
+Input: hidden vector → Output: vocabulary logits
+•
+Parameter reduction: 50%
+•
+Improved generalization due to regularization
+
+=== Page 65 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Language modeling head
+Logits, the score vector u
+One score for each of the |V |
+possible words in the vocabulary V .
+Shape 1 × |V |.
+Softmax turns the logits into
+probabilities over vocabulary.
+Shape 1 × |V |.
+
+=== Page 66 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+The final transformer model
+
+=== Page 67 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Residual connection
+
+=== Page 68 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Layer Norm
+• Layer norm is a variation of the z-score from statistics, applied to a single vec- tor in a hidden layer
+
+=== Page 69 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Where to put normalization layer?
+Post norm
+Pre-norm
+Pre-norm results in
+•
+Superior gradient flow via
+direct residual paths
+•
+Training stability from
+initialization to convergence
+
+=== Page 70 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+FFNN in Decoder
+An FFNN allows the model to use the contextual
+information created by the attention mechanism,
+transforming it further to capture more complex
+relationships in the data
+
+=== Page 71 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Dense vs Sparse Models
+All parameters are activated for any input
+Only a subset of parameters are activated for any input
+
+=== Page 72 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Architecture of Experts
+• each expert learns different
+information during training
+• during inference, only specific
+experts are used as they are
+most relevant for a given task
+• each expert is often whole
+FFNNs themselves
+
+=== Page 73 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Choice of Experts
+A given text passes through multiple experts before next text is
+generated
+Chosen experts likely differ between inputs which results in
+different “paths” being taken
+
+=== Page 74 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Decoder block with experts
+
+=== Page 75 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Router to select experts
+
+=== Page 76 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+MoE Layer
+
+=== Page 77 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Sparse vs Dense MoE
+
+=== Page 78 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Encoder only LLMs
+• Sequence of text 🡪 fixed length vector representation for text
+• Or sequence of vectors for each text
+
+=== Page 79 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Encoder-Decoder LLMs (seq2seq)
+
+=== Page 80 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Decoder only LLMs: Generative models
+
+=== Page 81 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Transfer Learning in NLP
+• Used in standard NLP tasks
+• Question answering
+• Text generation
+• Text summarization
+• Named Entity Recognition
+• Key value pair identification
+• …
+• Transfer learning in NLP through
+• Finetuning language models for down stream tasks
+• Generating contextualized word embeddings
+
+=== Page 82 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Pre-Training Model Architectures in
+NLP
+
+=== Page 83 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Using Transformer for Transfer
+Learning in NLP
+• Transformers handle long-term dependencies better than LSTMs
+• Encoder-Decoder structure of the transformer made it perfect for machine
+translation
+• How to pre-train a language model using transformer-based architecture
+(with attention mechanisms and faster training due to parallelization) that
+can be finetuned for downstream supervised learning tasks?
+
+=== Page 84 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+BERT (Bidirectional Encoder
+Representations from Transformers)
+• OpenAI Transformer only trains a forward language model while ELMo’s
+model was bidirectional
+• BERT is a transformer-based model whose language model is
+conditioned on both left and right contexts
+• BERT is basically a trained Transformer Encoder stack
+
+=== Page 85 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+BERT Features
+• Training corpus was comprised of two entries
+• Toronto Book Corpus (800M words), and
+• English Wikipedia (2,500M words)
+• Two versions of BERT (L stands for the number of layers, H stands for the
+hidden size, A stands for the number of self-attention heads)
+• BERT-Base: L = 12, H = 768, A = 12, Total parameters = 110M
+• BERT-Large: L = 24, H = 1024, A = 16, Total parameters = 340M
+
+=== Page 86 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Input Representation of BERT
+
+=== Page 87 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+BERT Training – Predicting word at a
+position
+• Masked language model
+(Masked LM)
+• Randomly masks 15% of
+tokens in the input and model
+is trained to predict the
+masked word
+
+=== Page 88 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+BERT Training – Two sentence tasks
+• Next sentence prediction (NSP)
+• Task: Given two sentences (A
+and B), is B likely to be the
+sentence that follows A, or not?
+(binary classification)
+
+=== Page 89 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+BERT for Feature Extraction
+• Using BERT to create contextualized word embeddings
+•
+12 embedding vectors for
+each word from the
+output of 12 encoder
+layers
+•
+Which embedding(s) to
+use for a given task?
+
+=== Page 90 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Different ways to create contextualized
+embeddings for a word using BERT
+
+=== Page 91 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Using BERT for different Downstream
+Tasks
+
+=== Page 92 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Fine-tuning
+
+=== Page 93 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+OpenAI Transformer
+• Pre-training a transformer decoder
+for language modeling
+• Decoder masks future tokens so can
+be trained on next word prediction
+task
+• Model has 12 decoder layers
+stacked
+• Only masked self attention layers
+
+=== Page 94 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Transfer Learning to Downstream
+Tasks
+
+=== Page 95 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+In-context learning (ICL)
+• Learning from few-examples in the context (input to
+the LLM)
+• Does not require weight updates as in fine-tuning
+• Learning from analogy
+
+=== Page 96 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Few Shot (FS) Learning
+• The model is given description of the task and a few demonstrations of the
+task at inference time as conditioning but no weight updates are allowed
+• Gives K examples of context and completion, and then one final example
+of context, with the model expected to provide the completion
+
+=== Page 97 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+One Shot (1S) Learning
+• Only one demonstration is allowed, in addition to a natural language
+description of the task.
+• Most closely matches the way in which some tasks are communicated to
+humans.
+• With one example sometimes it is easier to communicate the content or
+format of a task vs if no examples are given.
+
+=== Page 98 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Zero Shot (ZS) Learning
+• No demonstrations are allowed, and the model is only given a natural
+language instruction describing the task
+• Some settings zero-shot is closest to how humans perform tasks
+• Can be “unfairly hard” in some cases
+
+=== Page 99 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+GPT-3
+•
+From OpenAI
+•
+Decode only architecture
+GPT-3 family of
+models
+GPT-3 training
+dataset
+
+=== Page 100 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+GPT-3 performance with ICL
+Larger models make increasingly efficient use of in-context information.
+•
+Task: remove random
+symbols from a word, both
+with and without a natural
+language task description
+•
+Steeper “in-context learning
+curves” for large models
+demonstrate improved
+ability to learn a task from
+contextual information
+
+=== Page 101 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+LLaMa
+• From MetaAI
+• Decode only architecture
+LLaMa family of models
+LLaMa training dataset
+
+=== Page 102 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+LLaMa Training
+LLaMA-33B and LLaMA- 65B
+were trained on 1.4T tokens. The
+smaller models were trained on
+1.0T tokens. All models are
+trained with a batch size of 4M
+tokens.
+

@@ -1,0 +1,1561 @@
+=== Page 1 | method=ocr ===
+STAT GR5293 Sec 002
+Spring 2026
+Generative Al using Large
+Language Models (LLMs)
+Lecture 1 01/23/26
+Fr 4:10pm - 6:40pm
+517 HAMILTON HALL
+5
+Ie
+
+=== Page 2 | method=ocr ===
+GR5293 Spring 2026 | Generative Al using Large Language Models (LLMs)
+Instructor
+Chen Wang Senior Research Scientist at
+Db <cw3687@columbia.edu> IBM Research, NY
+: e Kubernetes, Container Cloud
+im Adjunct Associate Professor, Platform,
+Computer Science Department ¢ Data-driven/QoE based resource
+e Machine learning, deep learning, management,
+GenAl Inference & Serving e Al4Sys & Sys4Al, LLM Serving &
+e LLM Model Finetuning Finetuning
+e Sustainable Cloud & Al systems
+a)
+
+=== Page 3 | method=ocr ===
+da
+Class Introduction
+2, Knowledge of Machine
+> Learning and Deep Learning
+) Programming in Python
+Course Resources &
+Information
+All information about the class will be
+available here including syllabus,
+announcements and assignments.
+Access Class on CourseWork
+https://courseworks2.columbia.edu/courses/239608
+
+=== Page 4 | method=ocr ===
+gd? Today's Agenda
+~
+Q
+Course Overview
+Syllabus
+roe
+oe
+v=
+Assignments
+and Grading
+Logistics
++ Hyperparameters
+&
+Deep Learning
+fundamentals
+ML & DL
+Hardware &
+Fundamentals
+Distributed
+Training
++ Basic Concepts + Hardware
++ Training Dynamics Connection
++ Parallelism
++ Synchronization
+
+=== Page 5 | method=ocr ===
+Course Information
+What this course will cover ?
+v
+v
+v
+SZ AKZCK VV YS
+ML concepts, DL overview, Transformers, LLMs
+LLM pre-training and fine-tuning
+Prompt engineering, fine-tuning, and LLM
+application development
+Retrieval Augmented Generation (RAG)
+LLM benchmarking and performance evaluation
+Tool-assisted LLMs, LLM based agents
+Generative Al on cloud platforms
+RLHF
+LLM Serving
+Multi-modality
+Research paper readings
+What this course will not cover ?
+x Details about specific ML and DL algorithms
+ii
+[ay
+
+=== Page 6 | method=ocr ===
+Class 1: Deep Learning (DL) Fundamentals
+ML Performance Concepts/Techniques
+* Overfitting, generalization, bias, variance tradeoff, regularization
+¢ Performance metrics: algorithmic and system Level
+DL Training Fundamentals
+* Backpropagation, activation functions
+¢ Data preprocessing, batch normalization
+¢ SGD and its variants
+¢ Exploding and vanishing gradients
+¢ Weight initialization
+DL Training Hyperparameters & Regularization
+* Batch size, learning rate, momentum, weight decay
+¢ Regularization techniques in Deep Learning
+System & Hardware
+¢ Single Node vs Distributed Training
+* Model, Data, and Hybrid Parallelism
+¢ Convergence & Runtime
+¢ Hardware Accelerators
+[ay
+
+=== Page 7 | method=ocr ===
+Class 2: Attention, Transformer, and Popular Large
+Language Models (LLMs)
+Core Architectures & Mechanisms
+ume Seq2Seq models
+fart Encoder and decoder
+-{Q- Attention mechanism
+@él Transformer architecture
+"~ « self-attention
+* multi-head attention
+* encoder-decoder attention
+Popular LLMs
+BERT
+G OpendAl GPT
+OO LLAMA
+Gemini
+%€ Claude
+[ay
+
+=== Page 8 | method=ocr ===
+Class 3: Prompt Engineering and LLM Apps
+Exploring Techniques, Tools, and Applications
+a
+Prompting Techniques & Tools ) ( Basics, Use Cases & Development
+slide
+Basics of Prompting
+e Prompt Elements
+e General Tips
+» Zero-shot Prompting
+» Few-shot Prompting ¢ Examples
+» Chain-of-Thought, Automatic CoT LLM Use Cases
+e Translation e Math Calculation
+. ¢ Code Generation e Entity Extraction
+> LangChain e Summarization ¢ Call Functions
+¢ Proofread and Correct
+» Llamalndex
+Prompt Engineering & App Development
+e Prompt Engineering Techniques
+e LLM App Development
+|
+ue
+
+=== Page 9 | method=native ===
+Class 4: RAG, Functions, and Tools
+9
+Capabilities & Limitations of LLM
+•Knowledge Cutoffs
+•Hallucinations
+•Structured Data Challenge
+•Biases
+Retrieval Augmented Generation
+•Use Cases
+•Semantic Search
+•Summarization
+•Keyword Search and Embeddings
+•Retrieval and Rerank
+•Answer Generation
+Vector Databases
+Graph RAG and Agentic RAG
+
+=== Page 10 | method=native ===
+Class 5: Generative AI using Cloud
+10
+Key Topics
+• Google AI
+Studio
+• AWS
+Generative AI
+• LiteLLM for
+unified LLM
+access
+Core Concepts
+• Generative AI
+application
+lifecycle
+Foundation
+model
+selection and
+customization
+Prompt design
+and model
+tuning
+Retrieval
+Augmented
+Generation
+(RAG)
+Practical Skills
+• Prototyping
+with Vertex AI
+Studio
+Implementing
+multimodal
+applications
+Evaluating
+model
+performance
+Deploying AI
+solutions
+Hands-on
+Experience
+• Local
+installation of
+LiteLLM
+Accessing
+various LLM
+APIs (e.g.,
+AWS Bedrock,
+Anthropic,
+Cohere,
+Hugging Face)
+Writing code
+for model
+interaction
+Learning
+Outcomes
+• Understand
+cloud-based AI
+tools and their
+applications in
+statistics
+Gain practical
+experience
+with
+industry-standa
+rd GenAI
+platforms
+Develop skills
+to leverage
+diverse LLMs
+for statistical
+problems
+
+=== Page 11 | method=native ===
+Class 6: LLM Benchmarking
+11
+LLM Benchmarks
+Purpose &
+Motivation:
+Purpose
+Evaluate
+performance,
+Efficiency &
+Limitations.
+Motivations
+Accuracy,
+speed,
+reliability.
+Types of
+Benchmarking
+Model
+Performance,
+accuracy
+metrics.
+System
+Efficiency
+Scalability
+Resources
+.
+Evaluatio
+n Metrics
+ROUGE
+BLEU
+N-grams
+Precision/Re
+call/F1
+Advanced
+Techniques
+Comprehensive
+Benchmarks:
+GLUE
+SuperGLUE
+MMLU
+BIG-benc
+h
+HELM
+Unseen Data
+Evaluation
+Generaliz
+ation
+Risks
+Tools
+MLPerf
+LLMPerf
+HuggingFace
+Leaderboard
+Fmperf
+
+=== Page 12 | method=native ===
+Class 7: Pre-Training for LLM
+12
+Pre-training
+Concepts
+1.Training from
+existing
+foundation
+models
+2.Training from
+scratch
+3.Model selection
+from
+HuggingFace and
+PyTorch hubs
+Training Process
+for Different
+Architectures
+1.Encoder-only
+models
+2.Decoder-only
+models
+3.Sequence-to-seq
+uence
+(seq-to-seq)
+models
+Managing High
+Memory
+Requirements
+1.Quantization
+techniques
+2.Challenges with
+consumer-grade
+hardware
+Scaling Model
+Training
+1.Distributed Data
+Parallel (DDP)
+2.Fully Sharded
+Data Parallel
+(FSDP)
+3.Zero Redundancy
+Optimizer (ZeRO)
+Optimizing
+Training
+Resources
+1.Balancing model
+size, training data
+volume, and
+compute budget
+2.Insights from the
+Chinchilla study
+Use Cases for
+Custom LLM
+Pre-training
+1.Domain
+adaptation (e.g.,
+law, medicine)
+2.Introduction to
+BloombergGPT
+as an example
+
+=== Page 13 | method=native ===
+Class 8: Fine Tuning Techniques
+13
+Instruction
+Fine-Tuning,
+Prompt Tuning
+and PEFT
+Instruction Fine-Tuning Process
+• Training Data Preparation
+• Dataset Splitting
+• Prompt-Completion Pairs
+• Performance Evaluation
+Multi-task
+Fine-Tuning
+• Benefits
+• FLAN Models
+PEFT
+• Introduction of PEFT
+• Benefits
+• PEFT Methods
+LoRA
+• Introduction of LoRA
+• Benefits
+• Performance
+Prompt Tuning
+• Explanation
+• Benefits
+Comparison and Practical
+Application
+• LoRA vs Prompt Tuning
+• QLoRA
+• Benefits
+
+=== Page 14 | method=native ===
+Class 9: Tool-assisted LLMs and Agentic AI
+14
+
+=== Page 15 | method=native ===
+Multi-agent Systems
+A pool of specialized agents collaborating to solve complex tasks
+Beneﬁts: modularity, specialization, and control in agentic AI systems
+We'll study connection patterns between agents
+Frameworks: LangGraph and CrewAI
+Multi-Context Protocol (MCP)
+Framework enabling LLMs to eﬃciently manage multiple
+conversations
+Improves performance and reduces computational costs
+We'll explore MCP clients and servers development
+Practical implementations for optimizing LLM interactions
+Advanced AI Frameworks for Collaborative Intelligence
+Class 10: Multi-agent systems and MCP
+
+=== Page 16 | method=native ===
+Class 11: Efficient Serving of LLMs
+16
+LLM Serving
+Resource
+Optimization
+Batching:
+Static Batching
+Dynamic Batching
+Continuous
+Batching
+Memory
+Optimization
+Flash Attention
+Paged Attention
+Kernel
+Unified Paging
+LLM Serving
+Frameworks
+vLLM
+Deepspeed-MII
+TensorRT
+HuggingFace TGI
+Server
+Fine-Tuned Model
+Serving
+vLLM
+S-LoRA
+LoRAX
+Performance &
+Trade-offs
+Performance vs.
+Throughput
+Fairness in
+Scheduling/Routing
+GPU Techniques
+GPU Sharing
+GPU Optimization
+Multiplexing
+
+=== Page 17 | method=native ===
+Class 12: RLHF
+17
+RLHF
+Introduction
+Concept: Human feedback guides reinforcement learning.
+Purpose: Align LLMs with human values/preferences.
+Fine-Tuning Methods
+Instruction Fine-Tuning: Tailor LLMs to follow specific instructions.
+Path Methods: Guide learning based on human feedback.
+Challenges in RLHF
+Toxicity/Misinformation: Mitigate harmful content.
+Human Alignment: Ensure helpful, honest, harmless models.
+RLHF Process
+Reward Model Training: Evaluate outputs, assign rewards.
+Automated Labelers: Replace human labelers, select completions.
+LLM Updating: Align models with human feedback.
+Proximal Policy Optimization
+(PPO)
+PPO Overview: Fine-tuning via reinforcement learning.
+RLHF Application: Iterative updates, maximize rewards.
+Constitutional AI
+Concept: Ethical AI alignment with human values.
+Role in RLHF: Ensure adherence to societal norms, trust, safety.
+
+=== Page 18 | method=ocr ===
+Class 13 Voice Al Agent
+1. Core Concepts & Architectures 2. The Voice Agent Stack
+¢ Define Al Voice Agents: Systems combining foundation ¢ Breakdown of essential components:
+model reasoning with speech abilities for human-like, real- o VAD & EOU: Detecting speech presence and determining
+time interactions. speaker turn completion.
+e Compare Architectural Approaches: o STT (ASR): Transcribing audio signals into text for the
+© Pipeline Approach: Multi-step process (VAD > STT > LLM.
+LLM > TTS). o LLM Reasoning: Generating responses and managing
+© §2S (Speech-to-Speech) Approach: "Real-Time" model conversation context.
+approach (e.g., Gemini Multimodal Live), simpler o TTS: Synthesizing natural-sounding speech from text.
+implementation but less granular control.
+3. Solving the Latency Challenge 4. Advanced Interaction Handling
+¢ Focus on "human-like" response times (~236 ms), while e Moving beyond basic turn-taking for complex scenarios:
+current Al stacks range from 540 ms to 1.6 s. o Turn Detection: Using transformer models and binary
+¢ Optimization Strategies: classifiers to manage speaker transitions.
+© Streaming APIs: Processing audio and text "token-by- o Interruption Handling: Implementing logic to stop
+token”. speaking immediately upon user interruption.
+° Networking Protocols: WebRTC (UDP-based) preferred for
+low-latency streaming, congestion control, and data
+compression. cb
+
+=== Page 19 | method=ocr ===
+Class 14: Vision Language Models
+Part 1: CLIP (Contrastive
+Language-Image Pre-training)
+Revolutionized visual
+concept learning
+from natural language 2 ee
+supervision. a
+Trained on 400 million"=" =~
+ima ge-text pairs Zero-Shot Transfer: Can recngnize unseen
+using contrastive categories (e.g, "zebra’) without explicit
+lea ri ng training data for that class.
+Achieves robust zero-shot
+transfer capabilities,
+often matching fully
+supervised baselines.
+—
+Part 2: Diffusion Models
+A new class of
+generative The Ferward and Reverse Process
+models that emanate
+have recently papays 7.
+outperformed %
+GANs in creating = © "anccrccn toni oo
+“slochasbe differenttel equation (SOE) or probability Row
+‘ODEs to reconstruct the image from noise,
+They generate data
+by reversing process,
+moving from pure
+noise back to a
+structured image.
+Part 3: Imagen
+(Text-to-Image Architecture)
+Combines concepts from
+CLIP and Diffusion Ses ecenacbars Wie Cel ie
+Models. Leverages |
+frozen text oes “-
+encoders (e.g., T5) c &
+to understand tT sat
+f ses Cc an =. achieves state-of-the-art resolts. :
+ree guidance to
+maximize photor-
+ealism and text
+alignment.
+da
+
+=== Page 20 | method=ocr ===
+Assignments and Grading
+Distribution of Marks:
+Assignments: 40% | Quizzes:20% | Final Project: 40%
+Assignments (40%) Quizzes (20%) Final Project (40%)
+¢ 5 assignments ¢ 5 quizzes ¢ Team assignment
+* Posted at the end of * Conducted on Canvas ° Team of 2
+lectures 2, 4, 6, 8, 10 * Any project involving
+¢ Due in 2 weeks performance of LLM
+* All programming systems
+assignments as
+Jupyter notebooks
+(unless specified
+otherwise)
+
+=== Page 21 | method=ocr ===
+Class Logistics
+Communication & Support Access to Compute resources
+2D a co Google Colab (Free or Education Pro
+~) Class communications: Ed Subscription $9.9/month)
+® TA Office hours: TBD © tee er, CAetlie
+G Free Gemini API access
+Free OpenAl API access
+& Grog Free API key
+
+=== Page 22 | method=native ===
+The Genesis of the Data Age: 1997-2006
+Cloud computing was coined
+2006: Amazon elastic cloud and S3 was launched
+Inﬂection point in AI adoption are closely tied to innovations in computing and
+availability of big data
+22
+
+=== Page 23 | method=ocr ===
+The Artificial Intelligence Revolution: The aavereeaesiaattn
+Drivers and Catalysts Massive $2.4 Billion
+The Al revolution is a convergence of critical drivers, catalyzed by a 2012 ate hi Total Al
+breakthrough leading to a “Cambrian Explosion” of diverse applications. : Investment
+Scaling via Over $2.4 billion
+al sine = flowed into Al In
+“Cambrian Explosion” Catalyst — Distributed Training 2015 alone. $1.5+ Billion
+“Modern algorithms scale across
+- hundreds of GPUs using es 200+
+“exponential social media data. Startups
+Funded
+a
+Full Year First Half
+2015 2016
+ie
+ANG = EB Specialized
+aie) Hardware
+Evolution
+Custom chips like TPUs
+and NPUs enabie
+faster, more powerful
+machine learning.
+The 2012
+AlexNet Spark
+A GPU-based model
+beat competitors by
+11%,
+triggering a deep
+learning surge.
+Human-Machine
+Symbiosis
+Modern Al focuses on
+augmenting human skille
+through trust and
+responsibility. i
+23
+“Thousands of
+Species of Al"
+Neural networks are evolving
+at a lightning rate compared
+to five years ago.
+
+=== Page 24 | method=native ===
+Evolution of Large Language Models (LLMs)
+24
+Figure from Mohamadi et al, ChatGPT in the Age of Generative AI and Large Language Models: A Concise
+Survey
+
+=== Page 25 | method=ocr ===
+Al Blogs of Major Companies
+OO Meta Al
+https://ai.meta.com/blog/ 7
+IBM Research
+https://www.ibm.com/blogs/research/category/ai/ (7
+aWws AWS Machine Learning Blog
+https://aws.amazon.com/blogs/machine-learning/ (7
+4
+3533 Google Al
+own tee ry
+BE Microsoft
+https://news.microsoft.com/source/topics/ai/
+xAl News
+https://x.ai/news 7
+[sy
+
+=== Page 26 | method=ocr ===
+Constituents of a Deployed ML Solution
+Deployed ML Solution
+Fea] ‘om
+{0} =
+, Software Hardware/
+Algorithm(s) Platform Infrastructure
+[ay
+
+=== Page 27 | method=ocr ===
+Infrastructure
+Core Components
+Compute units & accelerators,
+memory, storage, network
+i} Design Strategies
+e Design better hardware
+e Adapt existing architectures to ML tasks
+e Develop brand-new architectures for ML
+Performance Impact
+Hardware can help improve
+w performance pretty much
+everywhere in the pipeline
+Precision Tradeoff
+Hardware compute precision
+affects performance: tradeoff
+between accuracy and
+runtime
+Accuracy § Runtime
+~—y wy
+
+=== Page 28 | method=ocr ===
+(Learning) Algorithm
+Key Considerations
+e General and domain specific
+architectures
+e Hyperparameter tuning to
+extract the best performance
+performance
+e Effects the resource
+requirements: compute
+throughput (FLOPS), memory
+Performance & Scalability
+Dependencies
+Performance (runtime) and
+scalability of an algorithm
+depends on:
+fo 2:2]
+Hardware/Infrastructure
+Software platform
+(frameworks, libraries,
+drivers)
+
+=== Page 29 | method=ocr ===
+Data
+The Critical Element Modalities & Sources
+Data is the king in ML; “e Audio, video, images, text
+determines choice of . from diverse sources,
+learning algorithm. collection, labeling, and
+quality.
+Preparation Bottleneck DataOps Solution
+Making data business ready Tools & processes to cope
+is challenging; 80% of time with volume, velocity, and
+spent on preparation. variety of data.
+
+=== Page 30 | method=ocr ===
+Creating an ML System
+What problem Solution Identifying data Business ready Identification & Model Performance as
+to solve? components? sources data? training optimization expected?
+infrastructure
+Target Collecting the Ingesting & Model evaluation ( ) Model drift
+deneairient data storage seiection Packaging & detection
+scenario? deployment
+Hyperparameter ploy! Retraining
+Performance Tuning required?
+objectives?
+
+=== Page 31 | method=ocr ===
+Inhibitors to Successful ML Implementation
+©00¢
+Deployment & Automation:
+Challenges in seamless integration
+and automated pipelines.
+Reproducibility: Difficulty in
+replicating model results and
+predictions consistently.
+Diagnostics: Lack of tools for deep
+model performance and failure
+analysis.
+Governance & Compliance: Meeting
+regulatory standards, ethics, and
+policy requirements.
+Scalability:
+Issues with handling increased data
+volumes and user load.
+Collaboration: Siloed teams (data
+science, engineering, business)
+hindering progress.
+Monitoring & Management:
+Inadequate tracking of model drift,
+performance, and health over time.
+[ay
+
+=== Page 32 | method=ocr ===
+Cloud Computing
+FLY Access to computing resources
+= and storage on demand
+Pay-as-you go model
+Heterogeneous resources:
+GPUs, CPUs, storage type
+Different deployment models:
+Public, private, hybrid cloud
+Different deployment models: Oy Provisioning, maintenance,
+GPUs, CPUs, storage, (Fx monitoring, life-cycle-
+hybrid cloud QA management
+Sa)
+
+=== Page 33 | method=ocr ===
+4
+4 Harness power of Big
+SY Data and compute
+Cloud and Al
+Platform to quickly
+i4A; develop, deploy, and
+cos test Al solutions
+Ease in Al reachability
+[ay
+
+=== Page 34 | method=ocr ===
+Evolution of Cloud Al: From Core ML to GenAl Services
+Cooney om sie New GenAl/LLM Service Key Models/Features
+tose IBM watsonx.ai ¢ Granite, Llama 2,
+Se Watson Studio (https://www.ibm.com/products/wa Hugging Face
+tsonx) integration.
+w
+=
+Amazon Amazon Bedrock ¢ Claude 3, Amazon Titan,
+SageMaker (https://aws.amazon.com/bedrock/) Stable Diffusion.
+Microsoft | Azure Machine Azure Al Foundry : F -
+MB Azure Learning (https://ai.azure.com/) ° GPT-4o, DALL-E 3, Phi-3.
+Vertex Al ¢ Gemini 1.5 Pro/Flash,
+2) Google Google Cloud A! (https://cloud.google.com/vertex-ai) Imagen.
+I
+
+=== Page 35 | method=ocr ===
+Al Model Training Lifecycle
+=~, Data
+( # de-noising, de-biasing,
+{ & \ train/test set creation
+—— al Preprocessing » -
+Continuous Learning / RF \ — [ \ Feature Engineering
+model adaptability, | 7. Continuous © 2.Feature search efficient
+retraining \ Learning / \ Engineering / data transformations
+\ Fa ‘ f
+_— o
+3
+ya
+y
+/
+6. Monitoring f lo
+response time,
+drift detection
+, 3. Model Training
+{ » model identification/synthesis,
+\ 6. Monitoring ] 3.Model hyperparameter tuning,
+ee / 5 u
+Training / regularization
+/ 2=\ ( @ \
+— 5. Moriel Senving | Scie. lebel 4 thecal 4. Model Hardening
+ardware, model pruning | Saas <A 3 x _ efficient adversarial trainin
+and compression N Serving ] 3 Handendag' g
+da
+
+=== Page 36 | method=ocr ===
+Class 1: Deep Learning (DL) Fundamentals
+[ay
+
+=== Page 37 | method=ocr ===
+From Machine Learning to Deep Learning
+Traditional Machine Learning
+¢ ML Core: Learning from data without
+explicit programming (e.g., minimized Error).
+Linear Regression Metrics:
+¢ RSS (Residual Sum of Squares): Amount of variability
+not explained by the model. RSS = }\(y; — F,)?
+¢ TSS (Total Sum of Squares): Total variability inherent in
+the model. TSS = ¥(y; - y)?
+* R? (R-squared): Proportion of variability in Y that can
+be explained using X. R* = 1 — (RSS / TSS)
+Deep Learning
+ONG NG
+Oo Onhows
+ORY IVY, (
+5S Ou Xs fe Ss
+D WY VA SOX
+Input a
+Hidden Layers
+¢ DL Core: Stacking “hidden layers” to
+capture non-linear, complex patterns.
+¢ The Learning Loop:
+© Forward Phase: Calculate activations &
+output.
+© Backward Phase: Update weights to
+decrease loss (Backpropagation). ch
+
+=== Page 38 | method=ocr ===
+The “Cambrian Explosion’ of Al
+Artificial Intelligence Revolution:
+¢ The Spark (201 2): AlexNet (G PU-based Drivers and Catalysts (Tree Diagram)
+model) proved DL works at scale. ret “a asomes <a
+¢ The 3 Drivers: a *..| (Ao
+1. Big Data (The fuel). —_ apie le
+2. Specialized Hardware (GPUs/TPUs). —.
+3. Algorithms (Distributed Training / ce NE E>
+Transformers). O71 100
+¢ The Result: A rapid evolution from simple
+classifiers to Large Language Models (LLMs).
+2012 Catslyst:
+AlexNet & GPUs
+Timeline of LLMs
+e On 22?
+2017: Transformer 2018: GPT-1 (OpenAl) 2023: GPT-4 (OpenAl), Future: 77?
+(Google, ‘Attention Is All You Need’) Llama (Meta) (Next-Gen Models)
+
+=== Page 39 | method=ocr ===
+Core Concepts of Traditional Machine Learning
+Model Fitting & Error
+(Regression)
+‘O Linear Regression dynamics
+(Y=f(X)+e).
+nl Quantifying Error: RSS
+(Residual Sum of Squares)
+vs. TSS (Total Sum of
+Squares).
+© Goodness of Fit: R* and MSE
+(Mean Squared Error).
+NGenardlinatin & Tradésctio-|
+Total Error
+’ Variance
+Bias
+Ertor
+Model Complexity
+© Overfitting vs. Underfitting
+(The Generalization Gap).
+nn! The Bias-Variance Trade-off:
+Balancing approximation
+error vs. estimation error.
+© Regularization: Using
+Lambda (A), L1 (Lasso), and L2
+(Ridge) to control complexity.
+Performance Evaluation
+(Classification)
+True False
+Positive | Positive
+(TP) (FP)
+False True
+Negative | Negative
+(FN) (TN)
+& Confusion Matrix: TP, TN, FP,
+FN.
+-/ Metrics: Accuracy, Precision,
+Recall (Sensitivity), and
+Specificity.
+Balancing: The F1-Score and
+the trade-off between
+Precision and Recall.
+
+=== Page 40 | method=ocr ===
+Linear Regression
+Miles per gallon
+j= Bo + Bix} + Bote +--+ + Bptp.
+Hore al Plot for Linear Fit Residual Plot for Quadratic Fit
+So 4
+8 — Linear Nn
+— Degree 2 323 334
+— Degree 5 wo 330 24 323
+~ 334
+¢ °
+g o e 4
+2 wo a o7
+3 Bio
+go 4 3
+iva iva
+o wo
+& » 4 i
+o
+Se 4 7
+o i)
+~ wo
+2 J a 158
+i)
+50 100 180 200 T T T T T T T T T T T
+Horsepower 5 10 15 20 25 30 15 20 25 30 35
+Fitted values Fitted values
+R TSS—RSS _ RSS
+7 TSS 7
+— TSS
+40
+[ay
+
+=== Page 41 | method=native ===
+Mean Square Error (MSE)
+CASE 1
+CASE 2
+CASE 3
+true value
+predicted
+41
+
+=== Page 42 | method=ocr ===
+Overfitting and Underfitting
+UNDERFITTING OVERFITTING
+¥
+)
+@
+X
+* Model is not complex enough to * Model performs extremely well on
+capture pattern in the training data. training data.
+* Suffers from low performance on both * Does not generalize well to unseen
+training and unseen data. data (test data).
+a)
+
+=== Page 43 | method=native ===
+CASE 1
+CASE 2
+CASE 3
+Model Complexity Tradeofffs
+
+=== Page 44 | method=ocr ===
+The Bias-Variance Trade-Off
+€ OPTIMAL
+COMPLEXITY
+OVERALL ERROR
+SQUARED ERROR
+MODEL COMPLEXITY
+@ Optimal point of model complexity is somewhere in the middle. G2
+
+=== Page 45 | method=native ===
+Model Complexity Tradeoffs
+• Simple model
+• Fail to completely capture the relationship
+between features
+• Introduces bias: Consistent test error across
+different choices of training data
+• Low variance
+• Increasing training data does not help in
+reducing bias
+• Complex model captures nuances in
+training data causing Overfitting
+• Low bias
+• Train error << Test error
+• With different training instances, the model
+prediction for same test instance will be very
+different – High Variance
+Generalization
+Gap
+45
+
+=== Page 46 | method=native ===
+Bias-Variance Tradeoff
+High Bias
+Low Bias
+Increase model complexity
+High Variance
+Increase training data
+Low Variance
+46
+
+=== Page 47 | method=ocr ===
+Regularization
+e Techniques used to improve
+generalization of a model by reducing
+its complexity
+¢ Techniques to make a model perform
+well on test data often at expense of its
+performance on training data
+i itti i Add Penalty T
+e Avoid overfitting, reduce variance one) ie
+¢ Simpler models are preferable: low ° r —s
+memory, increase interpretability Loss + A * Penalty
+¢ However simpler models may reduce
+the ee wer of models Complex Model Regularized Model
+e Sample techniques: (Overfitting) (Better Generalization)
+¢ Parameter norm penalties
+¢ L,andL, norm weight decay
+¢ Noise injection
+¢ Dropout
+
+=== Page 48 | method=native ===
+Regularization in Regression
+What value of lambda to choose ?
+48
+
+=== Page 49 | method=native ===
+Bias-variance tradeoff with Lambda
+49
+
+=== Page 50 | method=ocr ===
+Performance Metrics
+Algorithmic Sls System
+performance — J, performance
+Accuracy G Training time
+Precision -(\) Inference latency
+€@ Training cost
+Recall .
+88 Memory requirement
+Fi-score =) Training throughput
+
+=== Page 51 | method=native ===
+Accuracy, Precision, Recall, Specificity
+false negative (fn)
+Predicted value
+Positive
+Negative
+Negative
+Positive
+true positive (tp)
+true negative (tn)
+false positive (fp)
+True value
+Sensitivity, True positive rate
+Specificity
+Considers all entries in the confusion matrix
+Value lies between 0 (worst classifier) and 1 (best classifier)
+False positive rate = 1-Specificity
+51
+False discovery rate = 1-Precision
+
+=== Page 52 | method=native ===
+Balancing Precision and Recall
+52
+•
+
+=== Page 53 | method=native ===
+DL Training Time
+• DL performance is closely tied to the hardware
+• compute power, memory, network
+• Tesla V100: 640 tensor cores (> 100 TFLOPS), 16 GB
+• NVIDIA NVLink: 300 GB/s
+• Volta optimized CUDA libraries
+53
+
+=== Page 54 | method=ocr ===
+DL Inference Throughput
+47X Higher Throughput Than CPU Server on Deep
+Learning Inference
+Tesla V100
+Tesla P100
+1XCPU |]
+0 10X 20X 30X 40x 50x
+Performance Normalized to CPU
+Workload: ResNet-50 | CPU: 1X Xeon E5-2690v4 @ 2.6 GHz | GPU: Add 1X Tesla P100 or V100
+54
+
+=== Page 55 | method=ocr ===
+DEEP LEARNING TRAINING STEPS
+FORWARD PHASE BACKWARD PHASE
+* Compute activations of the
+hidden units based on current
+weights
+* Calculate output
+* Calculate loss function
+* Compute partial derivative of
+loss function w.r.t. all weights
++ Use backpropagation algorithm
++ Update weights (and biases)
+to decrease loss
+oL
+ow
+<a FT 6 |
+OL —
+ow
+Calculation Compute Weight Update
+Input Data Loss Function (Gradient Descent)
+Hidden Layers
+(Activations)
+Backpropagation
+(Partial Derivatives)
+Iterative Process to Decrease Loss
+Data & Model
+
+=== Page 56 | method=native ===
+Gradient Descent
+• Loss is calculated over all the training points at each weight update
+• Memory requirements may be prohibitive
+56
+
+=== Page 57 | method=native ===
+Stochastic Gradient Descent (SGD)
+• Loss is calculated using one training data at each weight update
+• Stochastic gradient descent is only a randomized approximation of
+the true loss function.
+57
+
+=== Page 58 | method=native ===
+Mini-batch Gradient Descent
+•
+58
+
+=== Page 59 | method=native ===
+Hyperparameters in Deep Learning
+• Network architecture: number of hidden layers, number of hidden
+units per later
+• Activation functions
+• Weight initializer
+• Learning rate
+• Batch size
+• Momentum
+• Optimizer
+59
+
+=== Page 60 | method=native ===
+Popular Activation Functions
+60
+
+=== Page 61 | method=native ===
+Activation Functions Derivatives
+• Sigmoid and tanh derivatives vs ReLU
+• Sigmoid and tanh gradients saturate at large values of argument; very susceptible
+to vanishing gradient problem
+• ReLU is faster to train; most commonly used activation function in deep learning
+sigmoid
+tanh
+ReLU
+61
+
+=== Page 62 | method=native ===
+Weight Initialization
+• Initializing all weights to same value will cause neurons to evolve
+symmetrically
+• Generally, biases are initialized with 0 values and weights with
+random numbers; Initializing weights to random values breaks
+symmetry and enables different neurons to learn different features
+• Initial value of weights is important.
+– Poor initializations can lead to bad convergence or no learning.
+– Instability across different layers (vanishing and exploding gradients).
+62
+
+=== Page 63 | method=native ===
+Vanishing and Exploding Gradients
+63
+
+=== Page 64 | method=native ===
+Learning rate: large value vs small value
+
+=== Page 65 | method=native ===
+Learning rate schedule
+• Start with a higher learning rate to explore the loss space => find a good starting
+values for the weights
+• Use smaller learning rates in later steps to converge to a minima =>tune the
+weights slowly
+• Different choices of decay functions:
+•
+exponential, inverse, multi-step, polynomial
+•
+babysitting the learning rate
+• Training with different learning rate decay
+• Keras learning rate schedules and decay
+• Other new forms: cosine decay
+65
+
+=== Page 66 | method=native ===
+Batch size
+• Effect of batch size on learning
+• Batch size is restricted by the GPU memory and the model size
+• Model and batch of data needs to remain in GPU memory for one iteration
+• Are you restricted to work with small size mini-batches for large models
+and/or GPUs with limited memory
+• No, you can simulate large batch size by delaying gradient/weight updates to
+happen every n iterations (instead of n=1) ; supported by frameworks
+66
+
+=== Page 67 | method=native ===
+Gradient Descent Convergence
+•
+GD convergence is poor due to difference in gradient values along different
+dimensions
+•
+Effective descent direction gets away from the minima if we use finite
+learning rate
+•
+Gradient descent might also get trapped at saddle points and/or local minima
+C. Aggarwal. Neural Networks and Deep Learning
+We need to :
+– Move quickly in directions with small but consistent (pointing in one direction, +ve
+or -ve) gradients.
+– Move slowly in directions with big but inconsistent (oscillating between –ve and
++ve) gradients.
+
+=== Page 68 | method=native ===
+Gradient Descent with Momentum
+• Add momentum to GD updates:
+• Learning is accelerated as oscillations are damped and updates progress in the
+consistent directions of loss decrease
+• Enables working with large learning rate values and hence faster convergence
+C. Aggarwal. Neural Networks and Deep Learning
+
+=== Page 69 | method=native ===
+Parameter-specific learning rates
+• Apply a different learning rate to each parameter at each step
+• Encourage faster relative movement in gently sloping direction
+• Penalize dimension with large fluctuations in gradient
+• Several optimizers: AdaGrad, RMSProp, RMSProp+Nestrov
+Momentum, AdaDelta, Adam
+• Differ in the manner parameter specific learning rates are calculated
+
+=== Page 70 | method=ocr ===
+Normalizing Input Data
+Min-max normalization (for feature Jof input datapoint ) !
+Xij —minj
+max; —mMin j;
+¢ Data with smaller standard deviation; scaled to be in the range [0,1]
+¢ Lessen the effect of outliers
+Standardization
+xij — mean;
+xii =
+of std_dev;
+Normalization helps in the convergence of optimization algorithm
+Should apply same normalization parameters to both train and test set
+Normalization parameters are calculated using train data
+Training converges faster when the inputs are normalized
+70
+
+=== Page 71 | method=native ===
+Batch normalization
+• Internal covariance shift – change in the distribution of network
+activations due to change in network parameters during training
+• Idea is to reduce internal covariance shift by applying normalization
+to inputs of each layer
+• Achieve fix distribution of inputs at each layer
+• Normalization for each training mini-batch.
+• Batch normalization enables training with larger learning rates
+• Reduces the dependence of gradients on the scale of the parameters
+• Faster convergence and better generalization
+71
+
+=== Page 72 | method=native ===
+Batch normalization
+72
+Why this step ?
+
+=== Page 73 | method=ocr ===
+Single Node, Single GPU Training
+Throughput Dependencies
+es) ¢ Neural network model (activations,
+parameters, compute operations)
+as ¢ Batch size
+FA * Floating point precision (FP32 vs
+FP16)
+>» Using FP16 can reduce training times
+and enable larger batch sizes/models
+without significantly impacting the
+accuracy of the trained model
+Key Considerations & Dynamics
+Increasing Increases
+Batch Size Throughput
+Batch size is restricted by GPU memory
+® Training Time: Very Large
+Example: 6 days with Places dataset (2.5M
+images) using Alexnet on a single K40.
+mA > 1 @&
+Small noisier lower slower
+batch size approximation learning convergence
+of the gradient rate
+
+=== Page 74 | method=ocr ===
+Multi-GPU Execution Scaling
+Vertical scaling-up in a
+single node
+NVIDIA servers (e.g., DGX-1 with 8
+GPUs, DGX-2 with 16 GPUs) utilize
+high-speed interconnects (like
+NVLink) between GPUs within a
+single node.
+Horizontal scaling-out across
+multiple nodes
+Scales across multiple nodes,
+requiring high-speed network
+interconnects (like InfiniBand)
+between servers, common in
+supercomputers like Summit and Sierra.
+
+=== Page 75 | method=native ===
+High Performance Networking
+75
+Network
+technology
+Bandwidth
+[Gb/s]
+Latency
+[us]
+10GigE
+10
+4
+40GigE
+40
+4
+IB EDR
+100
+1
+NVLink
+> 400
+0.1-0.2
+• Large Scale Parallel and Deep
+Learning applications needs:
+• High Bandwidth
+• Low Latency
+• Ethernet is not enough
+• Infiniband (IB) is widely adopted
+• Custom Networks are the best
+
+=== Page 76 | method=ocr ===
+Distributed Training
+36: Types of Parallelism
+Model, Data, Hybrid
+d\.
+: fl Hybrid Parallelism
+RV B
+Pa Types of Aggregation
+( Worker | [ Worker } f Worker }
+Parameter
+Server
+( Worker } ( Worker } ( Worker }
+Centralized (Parameter Server)
+Decentralized (P2P, All-reduce)
+Centralized aggregation: parameter server;
+Decentralized aggregation: P2P, all reduce
+| Performance Metric:
+Scaling Efficiency
+Efficiency Runtime on n GPUs
+Defined as the ratio between the run
+time of one iteration on a single GPU
+and the run time of one iteration when
+distributed over n GPUs.
+
+=== Page 77 | method=native ===
+Parallelism
+• Parallel execution of a training job on different compute units through
+scale-up (single node, multiple and faster GPUs) or scale-out (multiple
+nodes distributed training)
+• Enables working with large models by partitioning model across
+learners
+• Enables efficient training with large datasets using large “effective”
+batch sizes (batch split across learners)
+• Speeds up computation
+• Model, Data, Hybrid Parallelism
+
+=== Page 78 | method=native ===
+Model Parallelism
+• Splitting the model across multiple learners
+• 5 layered neural network
+• Partitioned across 4 learners
+• Bold edges cross learn boundaries and involve
+inter-learner communication
+• Performance benefits depend on
+• Connectivity structure
+• Compute demand of operations
+• Heavy compute and local connectivity –benefit
+most
+• Each machine handles a subset of
+computation
+• Low network traffic
+Learner 1
+Learner 2
+Learner 3
+Learner 4
+
+=== Page 79 | method=native ===
+Data Parallelism
+• Model is replicated on different learners
+• Data is sharded and each learner work on a different partition
+• Helps in efficient training with large amount of data
+• Parameters (weights, biases, gradients) from different replicas need to be
+synchronized
+Learner 1
+Learner 2
+Learner 3
+
+=== Page 80 | method=native ===
+Parameter server (PS) based Synchronization
+• Each learner executes the entire model
+• After each mini-batch processing a learner calculates the gradient and
+sends it to the parameter server
+• The parameter server calculates new value of weights and sends them to
+the model replicas
+Parameter Server
+
+=== Page 81 | method=native ===
+Synchronous SGD and the Straggler problem
+• PS needs to wait for updated gradients from all the learners before
+calculating the model parameters
+• Even though size of mini-batch processed by each learner is same,
+updates from different learners may be available at different times
+at the PS
+• Randomness in compute time at learners
+• Randomness in communication time between learners and PS
+• Waiting for slow and straggling learners diminishes the speed-up
+offered by parallelizing the training
+
+=== Page 82 | method=native ===
+Asynchronous SGD and Stale Gradients
+• PS updates happen without waiting for all learners
+• Weights that a learner uses to evaluate gradients may be old values
+of the parameters at PS
+• Parameter server asynchronously updates weights
+• By the time learner gets back to the PS to submit gradient, the weights may
+have already been updated at the PS (by other learners)
+• Gradients returned by this learner are stale (i.e., were evaluated at an older
+version of the model)
+• Stale gradients can make SGD unstable, slowdown convergence,
+cause sub-optimal convergence (compared to Sync-SGD)
+
+=== Page 83 | method=native ===
+Stale Gradient Problem in Async-SGD
+
+=== Page 84 | method=native ===
+Convergence-Runtime Tradeoff in SGD
+Variants
+• Error-runtime trade-off for Sync and Async-SGD with same learning rate.
+• Async-SGD has faster decay with time but a higher error floor.
+
+=== Page 85 | method=native ===
+Reduction over Gradients
+• To synchronize gradients of N learners, a reduction operation needs
+to be performed
+85
+
+=== Page 86 | method=native ===
+Reduction Topologies
+Parameter server: single reducer
+GPUs arranged in a logical Ring (aka bucket) :
+all are reducers
+SUM (Reduce operation) performed at PS
+SUM (Reduce operation) performed at all nodes
+•
+Each node has a left neighbor and a right neighbor
+•
+Node only sends data to its right neighbor, and only receives data
+from its left neighbor
+86
+
+=== Page 87 | method=ocr ===
+All-Reduce
+Arrays Being Summed
+Final state after all allgather transfers
+Partitioning of an array into N chunks
+87
+
+=== Page 88 | method=native ===
+Ring All-Reduce
+• Two step algorithm:
+• Scatter-reduce
+•
+GPUs exchange data such
+that every GPU ends up
+with a chunk of the final
+result
+• Allgather
+•
+GPUs exchange chunks
+from scatter-reduce such
+that all GPUs end up with
+the complete final result.
+88
+
+=== Page 89 | method=native ===
+Ring All-Reduce: Scatter-Reduce Step
+89
+
+=== Page 90 | method=native ===
+Ring All-Reduce: End of Scatter-Reduce Step
+90
+How many iterations in
+scatter-reduce step with N GPUs ?
+
+=== Page 91 | method=native ===
+Ring All-Reduce: AllGather Step
+91
+
+=== Page 92 | method=native ===
+Ring All-Reduce: End of AllGather Step
+92
+How many iterations in
+allgather step with N GPUs ?
+
+=== Page 93 | method=native ===
+Parameter Server (PS) vs Ring All-Reduce:
+Communication Cost
+•
+P: number of processes N: total number of model parameters
+•
+PS (centralized reduce)
+•
+Amount of data sent to PS by (P-1) learner processes: N(P-1)
+•
+After reduce, PS sends back updated parameters to each learner
+•
+Amount of data sent by PS to learners: N(P-1)
+•
+Total communication cost at PS process is proportional to 2N(P-1)
+•
+Ring All-Reduce (decentralized reduce)
+•
+Scatter-reduce: Each process sends N/P amount of data to (P-1) learners
+•
+Total amount sent (per process): N(P-1)/P
+•
+AllGather: Each process again sends N/P amount of data to (P-1) learners
+•
+Total communication cost per process is 2N(P-1)/P
+•
+PS communication cost is proportional to P whereas ring all-reduce cost is practically
+independent of P for large P (ratio (P-1)/P tends to 1 for large P)
+•
+Which scheme is more bandwidth efficient ?
+•
+Note that both PS and Ring all-reduce involve synchronous parameter updates
+93
+

@@ -1,0 +1,716 @@
+[
+  {
+    "source": "lecture_02.pdf",
+    "page": 1,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGenerative AI using Large\nLanguage Models (LLMs)\nLecture 2 | 01/31/25\nInstructor: Chen Wang\nFri 4:10 pm - 6:40 pm | 517 Hamilton Hall",
+    "method": "native",
+    "native_text_length": 167
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 2,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n2\nAgenda\n●Word embeddings\n●Attention mechanism\n●Transformer architecture\n●Mixture of Experts (MoE)\n●Encoder only vs Decoder only Models\n○BERT, GPT, LLAMA",
+    "method": "native",
+    "native_text_length": 187
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 3,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n3",
+    "method": "native",
+    "native_text_length": 35
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 4,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nWord2Vec\nThe Illustrated Word2vec\n4",
+    "method": "native",
+    "native_text_length": 69
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 5,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nOperations using word embeddings\n5",
+    "method": "native",
+    "native_text_length": 68
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 6,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSTAT GR 5293 Sec002 | Spring 2026\n6",
+    "method": "native",
+    "native_text_length": 69
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 7,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nContextual Embeddings\nIntuition: a representation of meaning of a word should\nbe different in different contexts!\nContextual Embedding: each word has a different vector\nthat expresses different meanings depending on the\nsurrounding words\n7",
+    "method": "native",
+    "native_text_length": 273
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 8,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nContextual Embeddings\nThe chicken didn't cross the road because it\nWhat should be the properties of \"it\"?\nThe chicken didn't cross the road because it was too tired\nThe chicken didn't cross the road because it was too wide\nAt this point in the sentence, it's probably referring to either the chicken or the\nstreet\nBut the static meaning of \"it\" can't represent that, it just means \"I am a non-\nhuman pronoun\"\n8",
+    "method": "native",
+    "native_text_length": 444
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 9,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nELMo: Context Matters\n• A word can have different meanings\ndepending on the context\n• Give me the stick\n• Let’s stick to improving our work\n• ELMo generates contextualized embeddings\nfor a word\n• Contextualized word-embeddings can give\nwords different embeddings based on the\nmeaning they carry in the context of the\nsentence\n• LSTM based architecture\n9",
+    "method": "native",
+    "native_text_length": 387
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 10,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nELMo Training\n●Predict next word in a sequence of\nwords\n●Self-supervised learning, without\nany need for labels\n10",
+    "method": "native",
+    "native_text_length": 147
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 11,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nEmbedding generation in ELMo: Step 1\nTraining objective: Jointly\nmaximizes the log likelihood of\nthe forward and backward\ndirections\n11",
+    "method": "native",
+    "native_text_length": 169
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 12,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nEmbedding generation in ELMo: Step 2\n• Contextualized embedding through grouping together the hidden states\n(and initial embedding)\nTask specific ELMo embedding\n12",
+    "method": "native",
+    "native_text_length": 197
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 13,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSequence-to-Sequence (Seq2Seq) model\n●\nDeveloped by Google in 2018 for use in machine translation.\n●\nSeq2seq turns one sequence into another sequence. It does so by use of a recurrent neural network\n(RNN) or more often LSTM or GRU to avoid the problem of vanishing gradient.\n●\nThe primary components are one Encoder and one Decoder network. The encoder turns each item into a\ncorresponding hidden vector containing the item and its context. The decoder reverses the process,\nturning the vector into an output item, using the previous output as the input context.\n13\n●Encoder RNN: extract and compress the semantics\nfrom the input sequence\n●Decoder RNN: generate a sequence based on the\ninput semantics\n●Apply to tasks such as machine translation\n○\nSimilar underlying semantics\n○\nE.g., “I love you.” to “Je t’aime.”",
+    "method": "native",
+    "native_text_length": 848
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 14,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nContext in Seq2Seq model\nVisualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention)\n14",
+    "method": "native",
+    "native_text_length": 153
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 15,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nHidden states as context\nThe last hidden state of the\nencoder forms the context we\npass along to the decoder.\nVisualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention)\n15",
+    "method": "native",
+    "native_text_length": 238
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 16,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nHidden states as context\n16\nThe decoder also\nmaintains a hidden\nstate that it passes from\none time step to the next.\nVisualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention)",
+    "method": "native",
+    "native_text_length": 242
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 17,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAttention\n17",
+    "method": "native",
+    "native_text_length": 46
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 18,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMotivating Attention\n• Capture long-range dependence in context\n• Example:\n1.\nThe cat drank the milk because it was hungry.\n2.\nThe cat drank the milk because it was sweet.\n18",
+    "method": "native",
+    "native_text_length": 208
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 19,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAttention\n• The context vector turned out to be a bottleneck for Seq2Seq models\n• “Attention” mechanism was first proposed in Bahdanau et al.,\n2014 and Luong et al., 2015\n• Attention allows a Seq2Seq model to focus on the relevant parts of the\ninput sequence when decoding\n• Attention model differs from a classic Seq2Seq model:\n1.\nThe encoder passes all the hidden states to the decoder\n2.\nThe decoder gives different scores to different hidden states from the encoder\n19",
+    "method": "native",
+    "native_text_length": 506
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 20,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAttention Mechanism Steps\nVisualizing A Neural Machine Translation Model (Mechanics of Seq2seq Models With Attention)\n20",
+    "method": "native",
+    "native_text_length": 154
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 21,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAttention example\n21",
+    "method": "native",
+    "native_text_length": 54
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 22,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAttention example\n22\n●\nAttention Weights: Brightness indicates the model's\nfocus (white = high focus, black = low focus).\n●\nLinear Translation: A crisp diagonal line shows word-\nfor-word translation in the same order.\n●\nHandling Word Order: The model breaks the diagonal\npattern for language differences, such as noun-\nadjective order.\n●\nDynamic Reordering: The model \"jumps forward\" to\ntranslate the noun first, then \"looks back\" to retrieve\nadjectives.\n●\nLearning Grammar: This proves the model learns\ngrammatical rules and reorders information\ndynamically, not just blindly replacing words.",
+    "method": "native",
+    "native_text_length": 627
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 23,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAttention Definition\n●A mechanism\n○for helping compute the embedding for a token by\nselectively attending to and integrating information\nfrom surrounding tokens (at the previous layer).\n●More formally:\n○a method for doing a weighted sum of vectors.\n23",
+    "method": "native",
+    "native_text_length": 285
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 24,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLeft-to-right Attention\n24",
+    "method": "native",
+    "native_text_length": 60
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 25,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSimplified Version of Attention\n25\nA sum of prior words weighted by their similarity with the current word\nGiven a sequence of token embeddings:\nx1 x2 x3 x4 x5 x6 x7 xi\nProduce: ai = a weighted sum of x1 through x7 (and xi)\nWeighted by their similarity to xi",
+    "method": "native",
+    "native_text_length": 292
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 26,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nIntuition of attention\n26\nx1 x2 x3 x4 x5 x6 x7 … … xi",
+    "method": "native",
+    "native_text_length": 87
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 27,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAn Actual Attention Head\n27\nslightly more complicated\nHigh-level idea: instead of using vectors (like xi and x4) directly,\nwe'll represent 3 separate roles each vector xi plays:\n●query: As the current element being compared to the preceding inputs.\n●key: as a preceding input that is being compared to the current element to\ndetermine a similarity\n●value: a value of a preceding element that gets weighted and summed",
+    "method": "native",
+    "native_text_length": 450
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 28,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAttention Intuition\n28\nx1 x2 x3 x4 x5 x6 x7 … … xi\nk\nv\nk\nv\nk\nv\nk\nv\nk\nv\nk\nv\nk\nv\nk\nv\nkeys\nvalues",
+    "method": "native",
+    "native_text_length": 128
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 29,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAn Actual Attention Head\n29\nslightly more complicated\nWe'll use matrices to project each vector xi into a representation of its role as\nquery, key, value:\n●query: WQ\n●key: WK\n●value: WV",
+    "method": "native",
+    "native_text_length": 219
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 30,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAn Actual Attention Head\n●Given these 3 representation of xi\n●To compute similarity of current element xi with some prior element xj\n●We’ll use dot product between qi and kj.\n●And instead of summing up xj, we'll sum up vj\n30\nslightly more complicated",
+    "method": "native",
+    "native_text_length": 284
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 31,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFinal equations for one attention head\n31",
+    "method": "native",
+    "native_text_length": 75
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 32,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nCalculating the value of a3\n32",
+    "method": "native",
+    "native_text_length": 64
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 33,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nActual Attention\n33\nslightly more complicated\n●Instead of one attention head, we'll have lots of them!\n●Intuition: each head might be attending to the context for different purposes\n○\nDifferent linguistic relationships or patterns in the context",
+    "method": "native",
+    "native_text_length": 279
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 34,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMulti-head Attention\n34",
+    "method": "native",
+    "native_text_length": 57
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 35,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTransformer\n• Attention is all you need\n• Encoder—Decoder architecture\n• The Illustrated Transformer",
+    "method": "native",
+    "native_text_length": 134
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 36,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMulti-Head Attention",
+    "method": "native",
+    "native_text_length": 54
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 37,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAttention in Transformer models\nThe Transformer uses multi-head attention in three different ways:\n•\nIn \"encoder-decoder attention\" layers,\n•\nthe queries come from the previous decoder layer, and the memory keys and values come from\nthe output of the encoder.\n•\nThis allows every position in the decoder to attend over all positions in the input sequence. This\nmimics the typical encoder-decoder attention mechanisms in sequence-to-sequence models.\n•\nThe encoder contains self-attention layers.\n•\nIn a self-attention layer all of the keys, values and queries come from the same place, in this\ncase, the output of the previous layer in the encoder.\n•\nEach position in the encoder can attend to all positions in the previous layer of the encoder.\n•\nSimilarly, self-attention layers in the decoder\n•\nallow each position in the decoder to attend to all positions in the decoder up to and including\nthat position.\n•\nWe need to prevent leftward information flow in the decoder to preserve the auto-regressive\nproperty. We implement this inside of scaled dot-product attention by masking out (setting to −∞)\nall values in the input of the softmax which correspond to illegal connections.",
+    "method": "native",
+    "native_text_length": 1214
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 38,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTransformer\n– a parallelizable encoder-decoder architecture\nThe Illustrated Transformer – Part2",
+    "method": "native",
+    "native_text_length": 129
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 39,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFlow of Tensors in Transformers",
+    "method": "native",
+    "native_text_length": 65
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 40,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSelf-Attention Steps\n1. create three vectors (query, key, value) from each of\nthe encoder’s input vectors\n2. create a score for each input vector and pass\nnormalized score through a softmax",
+    "method": "native",
+    "native_text_length": 223
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 41,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSelf-Attention Steps\n3. multiply each value vector by the softmax\nscore and sum the weighted value vectors",
+    "method": "native",
+    "native_text_length": 140
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 42,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMatrix calculation of self-attention",
+    "method": "native",
+    "native_text_length": 70
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 43,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMulti-head Attention",
+    "method": "native",
+    "native_text_length": 54
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 44,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSelf attention summary",
+    "method": "native",
+    "native_text_length": 56
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 45,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTransformers\nParallelizing Attention Computation\n45",
+    "method": "native",
+    "native_text_length": 85
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 46,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nParallelizing computation using X\n• For attention/transformer block we've been computing a\nsingle output at a single time step i in a single residual\nstream.\n• But we can pack the N tokens of the input sequence into a\nsingle matrix X of size [N × d].\n• Each row of X is the embedding of one token of the input.\n• X can have 1K-128K rows, each of the dimensionality of the\nembedding d (the model dimension)",
+    "method": "native",
+    "native_text_length": 439
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 47,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nQKT\nNow can do a single matrix multiply to combine Q and KT",
+    "method": "native",
+    "native_text_length": 93
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 48,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nParallelizing attention\n• Scale the scores, take the softmax, and then\nmultiply the result by V resulting in a matrix of\nshape N × d\n• An attention vector for each input token",
+    "method": "native",
+    "native_text_length": 209
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 49,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMasking out the future\n• What is this mask function?\nQKT has a score for each query dot every key,\nincluding those that follow the query.\n• Guessing the next word is pretty simple if you\nalready know it!",
+    "method": "native",
+    "native_text_length": 237
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 50,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMasking out the future\nAdd –∞ to cells in upper triangle\nThe softmax will turn it to 0",
+    "method": "native",
+    "native_text_length": 120
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 51,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAnother point:\nAttention is quadratic in length",
+    "method": "native",
+    "native_text_length": 81
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 52,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAttention again",
+    "method": "native",
+    "native_text_length": 49
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 53,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nParallelizing Multi-head Attention",
+    "method": "native",
+    "native_text_length": 68
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 54,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nParallelizing Multi-head Attention\nor",
+    "method": "native",
+    "native_text_length": 71
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 55,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTransformers\nInput and output:\nPosition embeddings and the\nLanguage Model Head\n55",
+    "method": "native",
+    "native_text_length": 115
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 56,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nToken and Position Embeddings\nThe matrix X (of shape [N × d]) has an embedding for\neach word in the context.\nThis embedding is created by adding two distinct\nembedding for each input\n•\ntoken embedding\n•\npositional embedding",
+    "method": "native",
+    "native_text_length": 257
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 57,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nToken Embeddings\nEmbedding matrix E has shape [|V | × d ].\n•\nOne row for each of the |V | tokens in the vocabulary.\n•\nEach word is a row vector of d dimensions\nGiven: string \"Thanks for all the\"\n1. Tokenize with BPE and convert into vocab indices\nw = [5,4000,10532,2224]\n2. Select the corresponding rows from E, each row an embedding\n•\n(row 5, row 4000, row 10532, row 2224).",
+    "method": "native",
+    "native_text_length": 409
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 58,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nBPE example\n58",
+    "method": "native",
+    "native_text_length": 48
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 59,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPosition Embeddings\nThere are many methods, but we'll just describe the simplest: absolute position.\nGoal: learn a position embedding matrix Epos of shape [1 × N ].\nStart with randomly initialized embeddings\n• one for each integer up to some maximum length.\n• i.e., just as we have an embedding for token fish, we’ll have an embedding for\nposition 3 and position 17.\n• Position embedding can be fixed or learned/trainable\n• As with word embeddings, these position embeddings can be learned along with\nother parameters during training.",
+    "method": "native",
+    "native_text_length": 568
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 60,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPosition embedding\n•\nSelf-attention is permutation invariant\n•\nSelf-attention is a set operation not\nsequence\n•\nWithout position information in the input\nembedding\n•\nTransformer block embedding for \"cat sat on mat\"\nwill be same as \"mat on sat cat”\n•\nPosition encoding breaks this symmetry\n•\nSinusodial embedding (original Transformer\npaper)\n•\nWrite the equation:",
+    "method": "native",
+    "native_text_length": 396
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 61,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nEach x is just the sum of word and\nposition embeddings",
+    "method": "native",
+    "native_text_length": 88
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 62,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLanguage modeling head",
+    "method": "native",
+    "native_text_length": 56
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 63,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLanguage modeling head\nUnembedding layer: linear layer projects from hLN (shape [1 × d]) to logit vector\nWhy \"unembedding\"? Tied to ET\nWeight tying, we use the same weights for\ntwo different matrices\nUnembedding layer maps from an embedding to a\n1x|V| vector of logits",
+    "method": "native",
+    "native_text_length": 302
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 64,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nWhy weight tying?\n•\nStandard LLM pipeline: Input tokens → Embedding Layer →\nTransformer Layers → Unembedding Layer → Logits → Softmax\n•\nEmbedding Layer: Maps token IDs to dense vectors\nE ∈ ℝ^(V×d): vocabulary size V, embedding dimension d\nInput: token ID → Output: embedding vector\n•\nUnembedding Layer: Maps hidden states to vocabulary logits\nU ∈ ℝ^(d×V): projects d-dimensional hidden states to V logits\nInput: hidden vector → Output: vocabulary logits\n•\nParameter reduction: 50%\n•\nImproved generalization due to regularization",
+    "method": "native",
+    "native_text_length": 562
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 65,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLanguage modeling head\nLogits, the score vector u\nOne score for each of the |V |\npossible words in the vocabulary V .\nShape 1 × |V |.\nSoftmax turns the logits into\nprobabilities over vocabulary.\nShape 1 × |V |.",
+    "method": "native",
+    "native_text_length": 244
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 66,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nThe final transformer model",
+    "method": "native",
+    "native_text_length": 61
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 67,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nResidual connection",
+    "method": "native",
+    "native_text_length": 53
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 68,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLayer Norm\n• Layer norm is a variation of the z-score from statistics, applied to a single vec- tor in a hidden layer",
+    "method": "native",
+    "native_text_length": 151
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 69,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nWhere to put normalization layer?\nPost norm\nPre-norm\nPre-norm results in\n•\nSuperior gradient flow via\ndirect residual paths\n•\nTraining stability from\ninitialization to convergence",
+    "method": "native",
+    "native_text_length": 213
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 70,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFFNN in Decoder\nAn FFNN allows the model to use the contextual\ninformation created by the attention mechanism,\ntransforming it further to capture more complex\nrelationships in the data",
+    "method": "native",
+    "native_text_length": 218
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 71,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDense vs Sparse Models\nAll parameters are activated for any input\nOnly a subset of parameters are activated for any input",
+    "method": "native",
+    "native_text_length": 155
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 72,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nArchitecture of Experts\n• each expert learns different\ninformation during training\n• during inference, only specific\nexperts are used as they are\nmost relevant for a given task\n• each expert is often whole\nFFNNs themselves",
+    "method": "native",
+    "native_text_length": 256
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 73,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nChoice of Experts\nA given text passes through multiple experts before next text is\ngenerated\nChosen experts likely differ between inputs which results in\ndifferent “paths” being taken",
+    "method": "native",
+    "native_text_length": 217
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 74,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDecoder block with experts",
+    "method": "native",
+    "native_text_length": 60
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 75,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nRouter to select experts",
+    "method": "native",
+    "native_text_length": 58
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 76,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMoE Layer",
+    "method": "native",
+    "native_text_length": 43
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 77,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSparse vs Dense MoE",
+    "method": "native",
+    "native_text_length": 53
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 78,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nEncoder only LLMs\n• Sequence of text 🡪 fixed length vector representation for text\n• Or sequence of vectors for each text",
+    "method": "native",
+    "native_text_length": 155
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 79,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nEncoder-Decoder LLMs (seq2seq)",
+    "method": "native",
+    "native_text_length": 64
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 80,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDecoder only LLMs: Generative models",
+    "method": "native",
+    "native_text_length": 70
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 81,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTransfer Learning in NLP\n• Used in standard NLP tasks\n• Question answering\n• Text generation\n• Text summarization\n• Named Entity Recognition\n• Key value pair identification\n• …\n• Transfer learning in NLP through\n• Finetuning language models for down stream tasks\n• Generating contextualized word embeddings",
+    "method": "native",
+    "native_text_length": 340
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 82,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPre-Training Model Architectures in\nNLP",
+    "method": "native",
+    "native_text_length": 73
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 83,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nUsing Transformer for Transfer\nLearning in NLP\n• Transformers handle long-term dependencies better than LSTMs\n• Encoder-Decoder structure of the transformer made it perfect for machine\ntranslation\n• How to pre-train a language model using transformer-based architecture\n(with attention mechanisms and faster training due to parallelization) that\ncan be finetuned for downstream supervised learning tasks?",
+    "method": "native",
+    "native_text_length": 438
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 84,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nBERT (Bidirectional Encoder\nRepresentations from Transformers)\n• OpenAI Transformer only trains a forward language model while ELMo’s\nmodel was bidirectional\n• BERT is a transformer-based model whose language model is\nconditioned on both left and right contexts\n• BERT is basically a trained Transformer Encoder stack",
+    "method": "native",
+    "native_text_length": 351
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 85,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nBERT Features\n• Training corpus was comprised of two entries\n• Toronto Book Corpus (800M words), and\n• English Wikipedia (2,500M words)\n• Two versions of BERT (L stands for the number of layers, H stands for the\nhidden size, A stands for the number of self-attention heads)\n• BERT-Base: L = 12, H = 768, A = 12, Total parameters = 110M\n• BERT-Large: L = 24, H = 1024, A = 16, Total parameters = 340M",
+    "method": "native",
+    "native_text_length": 433
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 86,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nInput Representation of BERT",
+    "method": "native",
+    "native_text_length": 62
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 87,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nBERT Training – Predicting word at a\nposition\n• Masked language model\n(Masked LM)\n• Randomly masks 15% of\ntokens in the input and model\nis trained to predict the\nmasked word",
+    "method": "native",
+    "native_text_length": 207
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 88,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nBERT Training – Two sentence tasks\n• Next sentence prediction (NSP)\n• Task: Given two sentences (A\nand B), is B likely to be the\nsentence that follows A, or not?\n(binary classification)",
+    "method": "native",
+    "native_text_length": 219
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 89,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nBERT for Feature Extraction\n• Using BERT to create contextualized word embeddings\n•\n12 embedding vectors for\neach word from the\noutput of 12 encoder\nlayers\n•\nWhich embedding(s) to\nuse for a given task?",
+    "method": "native",
+    "native_text_length": 235
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 90,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDifferent ways to create contextualized\nembeddings for a word using BERT",
+    "method": "native",
+    "native_text_length": 106
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 91,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nUsing BERT for different Downstream\nTasks",
+    "method": "native",
+    "native_text_length": 75
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 92,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFine-tuning",
+    "method": "native",
+    "native_text_length": 45
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 93,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nOpenAI Transformer\n• Pre-training a transformer decoder\nfor language modeling\n• Decoder masks future tokens so can\nbe trained on next word prediction\ntask\n• Model has 12 decoder layers\nstacked\n• Only masked self attention layers",
+    "method": "native",
+    "native_text_length": 262
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 94,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTransfer Learning to Downstream\nTasks",
+    "method": "native",
+    "native_text_length": 71
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 95,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nIn-context learning (ICL)\n• Learning from few-examples in the context (input to\nthe LLM)\n• Does not require weight updates as in fine-tuning\n• Learning from analogy",
+    "method": "native",
+    "native_text_length": 198
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 96,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFew Shot (FS) Learning\n• The model is given description of the task and a few demonstrations of the\ntask at inference time as conditioning but no weight updates are allowed\n• Gives K examples of context and completion, and then one final example\nof context, with the model expected to provide the completion",
+    "method": "native",
+    "native_text_length": 341
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 97,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nOne Shot (1S) Learning\n• Only one demonstration is allowed, in addition to a natural language\ndescription of the task.\n• Most closely matches the way in which some tasks are communicated to\nhumans.\n• With one example sometimes it is easier to communicate the content or\nformat of a task vs if no examples are given.",
+    "method": "native",
+    "native_text_length": 349
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 98,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nZero Shot (ZS) Learning\n• No demonstrations are allowed, and the model is only given a natural\nlanguage instruction describing the task\n• Some settings zero-shot is closest to how humans perform tasks\n• Can be “unfairly hard” in some cases",
+    "method": "native",
+    "native_text_length": 273
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 99,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGPT-3\n•\nFrom OpenAI\n•\nDecode only architecture\nGPT-3 family of\nmodels\nGPT-3 training\ndataset",
+    "method": "native",
+    "native_text_length": 126
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 100,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGPT-3 performance with ICL\nLarger models make increasingly efficient use of in-context information.\n•\nTask: remove random\nsymbols from a word, both\nwith and without a natural\nlanguage task description\n•\nSteeper “in-context learning\ncurves” for large models\ndemonstrate improved\nability to learn a task from\ncontextual information",
+    "method": "native",
+    "native_text_length": 363
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 101,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLLaMa\n• From MetaAI\n• Decode only architecture\nLLaMa family of models\nLLaMa training dataset",
+    "method": "native",
+    "native_text_length": 126
+  },
+  {
+    "source": "lecture_02.pdf",
+    "page": 102,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLLaMa Training\nLLaMA-33B and LLaMA- 65B\nwere trained on 1.4T tokens. The\nsmaller models were trained on\n1.0T tokens. All models are\ntrained with a batch size of 4M\ntokens.",
+    "method": "native",
+    "native_text_length": 205
+  }
+]

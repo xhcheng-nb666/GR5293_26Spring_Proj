@@ -1,0 +1,46 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# macOS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Environment variables / secrets
+.env
+.env.*
+*.env
+
+# Large / generated data artifacts
+data/raw/
+data/processed/
+data/index/
+ocr_debug_images/
+
+# Evaluation outputs
+eval/results_first_pass.json
+eval/*.tmp
+eval/*.log
+
+# Streamlit cache
+.streamlit/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs
+*.log
+
+# OS / misc
+Thumbs.db

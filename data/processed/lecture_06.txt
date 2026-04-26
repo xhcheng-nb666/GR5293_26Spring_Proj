@@ -1,0 +1,613 @@
+=== Page 1 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Generative AI using Large
+Language Models (LLMs)
+Lecture 6 | 02/27/25
+Instructor: Chen Wang
+Fri 4:10 pm - 6:40 pm | 517 Hamilton Hall
+
+=== Page 2 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Important Updates & Notices
+●Proposal Relevance Requirement
+○
+If your final project is not relevant to your proposal topic, or it is completely different, your entire team
+will lose all proposal credits (10%).
+○
+Make sure your final deliverables align with what you proposed!
+●Team Size Policy
+○
+We encourage 3 persons per team (strongly recommended).
+○
+If you insist on 4 persons, 2 persons, or even 1 person:
+■
+Your collaboration score will be penalized.
+■
+For 4-person teams: you must meet higher bars compared to your peers.
+■
+Exception: If only 1-2 teams have 2 persons (due to class size modulo not being 3), it is acceptable.
+
+=== Page 3 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+TA Feedback & Updated Grading
+●TA Discussion Feedback
+○
+When you have team discussions with TA, the TA will give you suggestions and feedback.
+○
+If those feedback items are taken into account in your final report or demo, they will count
+toward your score.
+○
+Tip: Document the TA's suggestions and show how you addressed them!
+●Updated Grading Breakdown
+○
+Github Repo percentage lowered to 10%
+○
+Demo percentage increased to 20%
+○
+Presentation remains at 30%
+●
+Five Components: Proposal (10%) | Presentation (30%) | Final Report (30%) | Demo (20%) | Github
+Repo (10%)
+
+=== Page 4 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Overview
+●This project will be evaluated across five main components:
+○
+Project Proposal (10%)
+○
+Final Project Presentation (30%)
+○
+Final Report (30%)
+○
+Project Demo (20%)
+○
+Github Repo (10%)
+
+=== Page 5 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Project Timeline
+•
+March 10, 2026
+•
+Project Proposal deadline
+•
+March 10 – March 30
+•
+Team discussions with TA, Christopher Ng (cn2673@columbia.edu)
+•
+May 3, 2026
+•
+Final Project Presentation and Report
+
+=== Page 6 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Project Proposal (10%)
+• Clear definition of research questions or development goals
+• Specific problems to be addressed
+• Expected outcomes and deliverables
+• Alignment with course objectives
+Clarity of
+Objectives (4%)
+• Realistic timeline and milestones
+• Assessment of required resources and their availability
+• Identification of potential challenges and mitigation strategies
+• Clear scope definition
+Feasibility (3%)
+• Originality of the proposed approach
+• Connection to current GenAI research trends
+• Potential impact on the field
+• Novel application or methodology
+Innovation and
+Relevance (3%)
+
+=== Page 7 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Final Project Presentation (30%)
+Problem
+Statement
+(10%)
+Context and
+Background
+Clear description of the problem domain
+Current state of the art and its limitations
+Significance of the problem in GenAI context
+Target audience and use cases
+Research
+Questions
+Clearly articulated research questions
+Hypotheses and assumptions
+Scope and boundaries of the investigation
+
+=== Page 8 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Final Project Presentation (cont.)
+Major
+Contributions
+(10%)
+Technical
+Innovations
+Novel algorithms or methodologies
+Architectural improvements
+Performance enhancements
+Integration strategies
+Practical
+Impact
+Real-world applications
+Scalability considerations
+Resource efficiency
+User experience improvements
+
+=== Page 9 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Final Project Presentation (cont.)
+Evaluation
+(10%)
+Quantitative
+Metrics
+Performance measurements
+Comparative analysis with baselines
+Statistical significance of results
+Ablation studies
+Qualitative
+Analysis
+Case studies
+User studies (if applicable)
+Error analysis
+Limitations and future work
+
+=== Page 10 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Final Report (30%)
+Structure
+and
+Format
+(5%)
+Professional layout and formatting
+Logical flow of sections
+Proper citations and references
+Clear figures and tables
+Depth of
+Research
+(8%)
+Comprehensive literature review
+Critical analysis of related work
+Understanding of fundamental concepts
+Integration of multiple perspectives
+
+=== Page 11 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Final Report (cont.)
+Methodology
+(8%)
+Detailed experimental setup
+Data collection and preprocessing
+Model architecture and implementation
+Training and optimization procedures
+Results and
+Analysis
+(6%)
+Clear presentation of findings
+Appropriate visualizations
+Thorough analysis of results
+Discussion of implications
+Grammar
+and Writing
+Quality (3%)
+Professional academic tone
+Clear and concise writing
+Proper technical terminology
+Consistent formatting
+
+=== Page 12 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Project Demo (20%)
+Code Quality
+(10%)
+Clean and organized code structure
+Comprehensive documentation
+Unit tests and error handling
+Code optimization
+Functionality
+(10%)
+Successful implementation of proposed features
+Robust error handling
+Performance optimization
+Integration testing
+
+=== Page 13 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Github Repo (10%)
+Experiment
+Results
+(8%)
+Reproducible experiments
+Well-documented experimental setup
+Clear presentation of results
+Analysis scripts and notebooks
+Step-by-
+Step
+Tutorial
+(2%)
+Clear installation instructions
+Environment setup guide
+Usage examples and demonstrations
+Troubleshooting guide
+
+=== Page 14 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Grading
+Summary
+Component
+Percentage
+Project Proposal
+10%
+Final Project Presentation
+30%
+Final Report
+30%
+Demo
+20%
+Github Repo
+10%
+
+=== Page 15 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 16 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+16
+Compute Trends across Three Eras of Machine Learning, https://arxiv.org/pdf/2202.05924
+
+=== Page 17 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 18 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 19 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 20 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 21 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 22 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 23 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 24 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 25 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 26 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 27 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 28 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 29 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 30 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 31 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 32 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 33 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 34 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 35 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 36 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 37 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 38 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 39 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 40 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 41 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 42 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 43 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Introduction to Generative AI in the Cloud
+Transformative Impact
+Generative AI is revolutionizing industries by enabling content
+creation, data synthesis, and decision support at
+unprecedented scale and quality.
+Cloud Provider Role
+Major cloud providers are democratizing access to GenAI
+through managed services, reducing the technical barriers and
+infrastructure costs.
+Enterprise Adoption
+By 2025, over 80% of enterprises are integrating GenAI into
+their workflows, with cloud platforms serving as the primary
+deployment vehicle.
+
+=== Page 44 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Landscape of Major Cloud GenAI Platforms
+Platform
+Key Strengths
+Flagship GenAI Services
+AWS
+Extensive service portfolio, global reach
+SageMaker, Bedrock, Titan
+Microsoft Azure
+OpenAI partnership, ecosystem integration
+Azure OpenAI Service, ML Studio
+Google Cloud
+AI research leadership, Gemini models
+Vertex AI, Model Garden
+IBM
+Enterprise governance, hybrid cloud
+Watsonx.ai, Watsonx.governance
+
+=== Page 45 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+AWS Generative AI Offerings
+Amazon Bedrock
+Serverless, fully-managed service providing access to foundation
+models through a single API.
+Amazon SageMaker
+End-to-end ML platform for building, training, and deploying machine
+learning models at scale.
+Amazon Titan
+AWS-built foundation models for text and multimodal applications with
+customization options.
+
+=== Page 46 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Microsoft Azure AI Platform
+Azure Machine Learning
+End-to-end platform for building, training, and deploying
+machine learning models with robust MLOps capabilities.
+Azure OpenAI Service
+Enterprise-ready access to OpenAI's models with added
+security, compliance, and regional availability.
+Microsoft Ecosystem Integration
+Seamless integration with Microsoft 365, Dynamics, Power
+Platform, and other enterprise applications.
+
+=== Page 47 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+IBM Watsonx
+watsonx.ai
+An AI studio for building, training, and deploying machine learning
+models with a comprehensive developer toolkit and lifecycle
+management.
+watsonx.data
+Data management platform that unifies and integrates data from any
+source to improve AI application relevance and precision.
+watsonx.governance
+Automates governance processes to manage AI risks, simplify
+regulatory compliance, and create responsible AI workflows.
+Enterprise-grade security and compliance controls
+Hybrid cloud architecture with flexible deployment options
+Strong focus on AI governance and explainability
+
+=== Page 48 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Deep Dive: Google Cloud Vertex AI - Introduction
+Vertex AI is a comprehensive, unified machine learning platform
+that combines data engineering, data science, and ML engineering
+workflows, enabling teams to collaborate using a common toolset.
+Unified Platform
+Seamlessly integrates all ML workflows from data preparation
+to model deployment
+Foundation Models
+Access to 200+ models including Google's Gemini, third-party,
+and open-source options
+Enterprise-Ready
+Robust governance, security controls, and MLOps capabilities
+for production deployments
+
+=== Page 49 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Vertex AI - Model Garden and Gemini Integration
+Model Garden
+First-Party Models
+Gemini (Pro, Ultra, Flash)
+Imagen for image generation
+Chirp for speech processing
+Third-Party Models
+Anthropic Claude Model Family
+Open-Source Models
+Gemma, Llama 3.2
+Gemini Multimodal Capabilities
+Process and understand text, images, video, and code inputs
+simultaneously
+Advanced reasoning for complex tasks like extracting text from
+images and converting to structured formats
+Customizable through tuning options for specific use cases and
+domains
+
+=== Page 50 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Vertex AI - Training, Deployment, and MLOps
+Flexible Training Options
+Choose between AutoML for code-free model development or Custom
+Training for complete control over frameworks, code, and
+hyperparameters.
+Vertex AI Pipelines
+Orchestrate ML workflows with a serverless execution service based
+on Kubeflow Pipelines, enabling repeatable and automated ML
+processes.
+Model Registry
+Centralized repository for managing model versions, metadata, and
+lineage, facilitating collaboration and governance.
+Model Monitoring
+Detect training-serving skew and inference drift with automated
+alerts, ensuring model performance and reliability in production.
+
+=== Page 51 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Vertex AI - Enterprise Features and Agent Builder
+Enterprise Security
+Robust security controls, encryption, and compliance certifications
+for regulated industries.
+Vertex Explainable AI
+Understand feature attribution and model decisions with
+transparency tools for responsible AI deployment.
+Model Monitoring
+Proactive monitoring for training-serving skew and inference drift
+with automated alerts.
+Vertex AI Agent Builder
+Create enterprise-ready generative AI experiences with no-code and
+customization capabilities.
+Build conversational AI agents grounded in organizational data
+Integrate with existing business processes and systems
+Deploy multi-agent experiences with orchestration capabilities
+
+=== Page 52 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 53 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 54 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 55 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 56 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 57 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 58 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 59 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 60 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 61 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 62 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 63 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 64 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 65 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 66 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 67 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 68 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 69 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 70 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 71 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 72 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 73 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 74 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 75 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 76 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 77 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 78 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 79 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 80 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 81 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 82 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 83 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 84 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 85 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 86 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 87 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 88 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 89 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 90 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 91 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 92 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+

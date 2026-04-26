@@ -1,0 +1,624 @@
+=== Page 1 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Generative AI using Large
+Language Models (LLMs)
+Lecture 5 | 02/20/25
+Instructor: Chen Wang
+Fri 4:10 pm - 6:40 pm | 517 Hamilton Hall
+
+=== Page 2 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Agenda
+LLM Evaluation Benchmarks
+• GLUE, SuperGLUE, MMLU, Big-
+Bench, HELM, LLMPerf
+LLM Evaluation Metrics
+2
+
+=== Page 3 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 4 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 5 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 6 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 7 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 8 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 9 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 10 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 11 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 12 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 13 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 14 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 15 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 16 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 17 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 18 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 19 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 20 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 21 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 22 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 23 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 24 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 25 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 26 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 27 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 28 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 29 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 30 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Benchmarks for LLMs
+
+=== Page 31 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 32 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 33 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 34 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 35 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 36 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 37 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 38 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 39 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 40 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 41 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 42 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 43 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 44 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 45 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 46 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 47 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 48 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 49 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 50 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 51 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 52 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 53 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 54 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 55 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 56 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 57 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 58 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 59 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 60 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 61 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 62 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 63 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 64 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 65 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 66 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 67 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+HELM,
+
+=== Page 68 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 69 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 70 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 71 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 72 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 73 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 74 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 75 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 76 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 77 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 78 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 79 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 80 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 81 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 82 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 83 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 84 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 85 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 86 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 87 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 88 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 89 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 90 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 91 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 92 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 93 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 94 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 95 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 96 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 97 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 98 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 99 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 100 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 101 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 102 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 103 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 104 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 105 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 106 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 107 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 108 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 109 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 110 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 111 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 112 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 113 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 114 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 115 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+LLM Evaluation Metrics
+
+=== Page 116 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 117 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 118 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 119 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+•
+ROUGE is a collection of ROUGE-1, ROUGE-2, ROUGE-L metrics
+•
+ROUGE scores are only comparable for the same task
+
+=== Page 120 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Problems with ROUGE
+
+=== Page 121 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 122 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Quantitative performance metrics for
+LLM Inference
+•
+Performance metrics for LLM inference
+•
+Completed requests per minute
+•
+Time to first token (TTFT): how long before the LLM returns the first token
+•
+Inter-token latency (ITL): average time between consecutive tokens
+•
+End-to-end Latency: approximately the same as the average output length of tokens multiplied
+by the inter-token latency
+•
+Cost per typical request: API providers can usually trade off one of the other metrics for cost.
+For example, you can reduce latency by running the same model on more GPUs or using higher-
+end GPUs.
+https://www.anyscale.com/blog/reproducible-performance-metrics-for-llm-inference
+
+=== Page 123 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Metrics for LLM Reasoning
+•
+Large language models show improved downstream task performance
+when prompted to generate step-by-step reasoning to justify their final
+answers (Chain of Thought, Tree of Thought, ReAct)
+•
+Reasoning steps greatly improve model interpretability and verification,
+•
+Objectively studying the correctness of reasoning is difficult
+•
+How often the stated reasoning steps actually support the final end task
+predictions?
+
+=== Page 124 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Example of 2-shot reasoning
+2-shot examples
+Step-by-step reasoning for logical inference
+task generated from 2-shot GPT-3
+
+=== Page 125 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Taxonomy of
+Step-by-Step
+Reasoning Errors
+ROSCOE: A SUITE OF METRICS FOR SCORING STEP-BYSTEP REASONING
+
+=== Page 126 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Taxonomy of Step-by-Step Reasoning
+Errors
+ROSCOE: A SUITE OF METRICS FOR SCORING STEP-BYSTEP REASONING
+
+=== Page 127 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Reasoning Scorer: ROSCOE
+•
+Suite of metrics for scoring Step-by-Step reasoning
+•
+Source context of T sentences indicating a problem statement followed by a
+question and is prompted to generate step-by-step reasoning
+•
+Hypothesis of N-steps, including a final answer as the last step
+•
+Gold step-by-step reasoning of K steps (may or may not be available)
+ROSCOE: A SUITE OF METRICS FOR SCORING STEP-BYSTEP REASONING
+
+=== Page 128 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Reasoning Scorer: ROSCOE
+•
+Fine-grained metrics under 4 categories
+1.
+Semantic-Alignment Metrics
+2.
+Semantic-Similarity Metrics
+3.
+Local Inference Metrics
+4.
+Language Coherence Metrics
+ROSCOE: A SUITE OF METRICS FOR SCORING STEP-BYSTEP REASONING
+
+=== Page 129 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Reasoning Alignment Vector
+•
+Reasoning alignment vector from the N-step hypothesis h to the source
+s of length T
+normalized cosine similarity between hypothesis step and most similar sentence in a context
+•
+Measures the grounding of the step-wise reasoning with respect to the
+source text
+
+=== Page 130 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Semantic Alignment Metrics
+
+=== Page 131 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Semantic Similarity Metrics
+•
+Quantify the degree of semantic equivalence between pieces of text
+•
+Considers text as a whole, rather than relying on text units comparisons
+
+=== Page 132 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Logical Inference Metrics
+•
+Measure logical errors between pieces of text
+•
+Use a Natural Language Inference (NLI) model trained to classify
+hypothesis-context pairs into entailment, neutral, and contradiction
+classes to infer the contradiction probability
+
+=== Page 133 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Language Coherence Metrics
+•
+Use perplexity PPL as scored by the GPT2-Large model and English
+grammatical acceptability p_gram scores
+
+=== Page 134 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+TravelPlanner
+Are language agents capable of planning in more complex yet realistic settings,
+closer to those in which humans operate?
+•
+Travel planning is a challenging, time-consuming task
+•
+1,225 user queries along with their reference plans
+Findings
+•
+State-of-the-art LLMs cannot handle complex planning tasks like those in
+TravelPlanner. GPT-4 successfully produces a plan that meets all the constraints
+for a few tasks (0.6%)
+•
+Planning strategies such as ReAct and Reflexion are insufficient for the multi-
+constraint tasks
+•
+Common failure modes of existing language agents, such as argument errors in
+tool use, being trapped in dead loops, and hallucinations
+TravelPlanner: A Benchmark for Real-World Planning with Language Agents
+
+=== Page 135 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Overview of TravelPlanner
+
+=== Page 136 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Tools used in TravelPlanner
+
+=== Page 137 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Constraints in TravelPlanner
+
+=== Page 138 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Query difficulty levels in TravelPlanner
+
+=== Page 139 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Evaluation metrics
+
+=== Page 140 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Micro and Macro evaluation for
+constraints pass rate
+•
+Micro Pass Rate
+ratio of passed constraints to the total number
+of constraints
+• Macro Pass Rate
+ratio of plans that pass all (commonsense or
+hard) constraints among all tested plans.
+
+=== Page 141 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Performance of different LLMs on
+TravelPlanner
+
+=== Page 142 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Failure modes in TravelPlanner
+
+=== Page 143 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+LLMPerf
+•
+Tool for evaluating performance of LLM APIs
+•
+Two tests for evaluating LLMs:
+1.
+Load test – check for performance
+2.
+Correctness test – check for correctness
+https://github.com/ray-project/LLMPerf
+
+=== Page 144 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+LLMPerf Load Test
+•
+Spawns a number of concurrent requests to the LLM API and measures the
+inter-token latency and generation throughput per request and across
+concurrent requests
+•
+Prompt send with each request
+•
+The lines are randomly sampled from a collection of lines from Shakespeare sonnets.
+•
+Tokens are counted using the LlamaTokenizer regardless of which LLM API is being tested.
+This is to ensure that the prompts are consistent across different LLM APIs.
+
+=== Page 145 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+LLMPerf Correctness Test
+•
+Spawns a number of concurrent requests to the LLM API with the following
+format:
+•
+random_number_in_word_format could be for example "one hundred and twenty
+three". The test then checks that the response contains that number in digit format
+which in this case would be 123.
+•
+The test does this for a number of randomly generated numbers and reports the
+number of responses that contain a mismatch.
+
+=== Page 146 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+LLMPerf Leaderboard
+Output tokens throughput (tokens/s)
+https://github.com/ray-project/llmperf-leaderboard
+
+=== Page 147 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+LLMPerf Leaderboard
+Time to first token (seconds)
+https://github.com/ray-project/llmperf-leaderboard
+

@@ -1,0 +1,744 @@
+[
+  {
+    "source": "lecture_08.pdf",
+    "page": 1,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGenerative AI using Large\nLanguage Models (LLMs)\nLecture 8 | 03/11/25\nInstructor: Chen Wang\nFri 4:10 pm - 6:40 pm | 517 Hamilton Hall",
+    "method": "native",
+    "native_text_length": 167
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 2,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAgenda\nInstruction Finetuning\nSingle Task Fine Tuning\nMulti-task, Instruction Finetuning\nParameter Efficient Finetuning (PEFT)\nLow-Rank Adaptation of Large Language Models (LoRA)\nSoft Prompt Tuning",
+    "method": "native",
+    "native_text_length": 231
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 3,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFinetuning an LLM with\ninstruction prompts",
+    "method": "native",
+    "native_text_length": 76
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 4,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 5,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nOne-shot or Few-shot Inference",
+    "method": "native",
+    "native_text_length": 64
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 6,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 7,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 8,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 9,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 10,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 11,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 12,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 13,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 14,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 15,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 16,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSource: https://github.com/bigscience-workshop/promptsource/blob/main/promptsource/templates/amazon_polarity/templates.yaml",
+    "method": "native",
+    "native_text_length": 157
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 17,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 18,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 19,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 20,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 21,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 22,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 23,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 24,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 25,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 26,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 27,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nHow to avoid Catastrophic forgetting?\n●First note that you may not have to!\n●Fine tune on multiple-tasks at the same time.\n●Consider Parameter Efficient Fine Tuning (PEFT)",
+    "method": "native",
+    "native_text_length": 205
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 28,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMulti-task, Instruction\nFinetuning",
+    "method": "native",
+    "native_text_length": 68
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 29,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 30,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 31,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 32,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 33,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 34,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 35,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 36,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 37,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 38,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 39,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 40,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 41,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 42,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 43,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 44,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 45,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 46,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 47,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 48,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 49,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 50,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 51,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 52,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 53,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 54,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 55,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 56,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 57,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 58,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 59,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 60,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 61,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 62,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 63,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 64,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 65,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 66,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 67,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 68,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 69,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLoRA",
+    "method": "native",
+    "native_text_length": 38
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 70,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 71,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 72,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 73,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 74,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLow-Rank Adaptation\nof Large Language\nModels (LoRA)",
+    "method": "native",
+    "native_text_length": 85
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 75,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 76,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 77,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 78,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 79,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 80,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 81,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 82,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 83,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 84,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 85,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 86,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 87,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nConcrete example using base Transformer as reference\n●Use the base Transformer model presented by Vaswani et al. 2017:\n○Transformer weights have dimensions 𝑑× 𝑘= 512 × 64\n○So 512 × 64 = 32,768 trainable parameters\nIn LoRA with rank 𝑟= 8:\n●𝐴 has dimensions 𝑟× 𝑘= 8 × 64 = 512 parameters\n●𝐵 has dimensions 𝑑× 𝑟= 512 × 8 = 4,096 parameters\n●86% reduction in parameters to train!\n512\n64\n512\n64\n8",
+    "method": "native",
+    "native_text_length": 425
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 88,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n*",
+    "method": "native",
+    "native_text_length": 35
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 89,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 90,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 91,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSample ROUGE metrics for full vs. LoRA fine-tuning\n+80.63%\n-3.20%",
+    "method": "native",
+    "native_text_length": 99
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 92,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nChoosing the LoRA rank",
+    "method": "native",
+    "native_text_length": 56
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 93,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPrompt tuning with soft\nprompts",
+    "method": "native",
+    "native_text_length": 65
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 94,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 95,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTypically 20-100\ntokens",
+    "method": "native",
+    "native_text_length": 57
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 96,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 97,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 98,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 99,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 100,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n10K – 100K of parameters\nupdated\nMillions to Billions of\nparameter updated",
+    "method": "native",
+    "native_text_length": 108
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 101,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPrompt tuning for multiple tasks",
+    "method": "native",
+    "native_text_length": 66
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 102,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPrompt tuning\ncan be as\neffective as full\nFine-tuning for\nlarger models!",
+    "method": "native",
+    "native_text_length": 106
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 103,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 104,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 105,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLoRA\nPrompt Tuning",
+    "method": "native",
+    "native_text_length": 52
+  },
+  {
+    "source": "lecture_08.pdf",
+    "page": 106,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nKey takeaways\n●Instruction fine-tuning\n○\nPrompt templates and data sets for\nFLAN-T5\n●PEFT\n○\nLoRA\n○\nPrompt Tuning\n●Quantization + LoRA = QLoRA",
+    "method": "native",
+    "native_text_length": 175
+  }
+]

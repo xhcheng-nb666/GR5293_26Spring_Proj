@@ -1,0 +1,9 @@
+id,baseline_correctness,rag_correctness,rag_groundedness,retrieval_relevance,notes
+q1,2,2,2,2,Strong retrieval and grounded answer for RAG definition.
+q2,2,2,2,2,Strong RLHF case; retrieved lecture overview and human-feedback details.
+q3,2,2,2,2,Strong bias-variance case; retrieval hit the correct lecture pages.
+q4,2,0,1,0,Failure case: retrieval missed a true LoRA definition chunk.
+q5,2,2,2,2,Strong semantic search vs. RAG comparison case.
+q6,2,2,2,2,Good coverage of both model-level and system-level benchmarking metrics.
+q7,2,1,2,1,Grounded but weaker than baseline; explanation of hallucination reduction was limited.
+q8,2,0,2,0,Failure case: retrieval pulled serving-related chunks instead of training-on-consumer-hardware content.

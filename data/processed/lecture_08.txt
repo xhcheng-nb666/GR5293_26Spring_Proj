@@ -1,0 +1,389 @@
+=== Page 1 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Generative AI using Large
+Language Models (LLMs)
+Lecture 8 | 03/11/25
+Instructor: Chen Wang
+Fri 4:10 pm - 6:40 pm | 517 Hamilton Hall
+
+=== Page 2 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Agenda
+Instruction Finetuning
+Single Task Fine Tuning
+Multi-task, Instruction Finetuning
+Parameter Efficient Finetuning (PEFT)
+Low-Rank Adaptation of Large Language Models (LoRA)
+Soft Prompt Tuning
+
+=== Page 3 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Finetuning an LLM with
+instruction prompts
+
+=== Page 4 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 5 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+One-shot or Few-shot Inference
+
+=== Page 6 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 7 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 8 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 9 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 10 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 11 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 12 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 13 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 14 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 15 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 16 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Source: https://github.com/bigscience-workshop/promptsource/blob/main/promptsource/templates/amazon_polarity/templates.yaml
+
+=== Page 17 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 18 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 19 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 20 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 21 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 22 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 23 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 24 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 25 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 26 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 27 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+How to avoid Catastrophic forgetting?
+●First note that you may not have to!
+●Fine tune on multiple-tasks at the same time.
+●Consider Parameter Efficient Fine Tuning (PEFT)
+
+=== Page 28 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Multi-task, Instruction
+Finetuning
+
+=== Page 29 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 30 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 31 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 32 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 33 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 34 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 35 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 36 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 37 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 38 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 39 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 40 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 41 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 42 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 43 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 44 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 45 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 46 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 47 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 48 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 49 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 50 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 51 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 52 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 53 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 54 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 55 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 56 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 57 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 58 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 59 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 60 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 61 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 62 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 63 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 64 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 65 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 66 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 67 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 68 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 69 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+LoRA
+
+=== Page 70 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 71 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 72 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 73 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 74 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Low-Rank Adaptation
+of Large Language
+Models (LoRA)
+
+=== Page 75 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 76 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 77 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 78 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 79 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 80 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 81 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 82 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 83 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 84 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 85 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 86 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 87 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Concrete example using base Transformer as reference
+●Use the base Transformer model presented by Vaswani et al. 2017:
+○Transformer weights have dimensions 𝑑× 𝑘= 512 × 64
+○So 512 × 64 = 32,768 trainable parameters
+In LoRA with rank 𝑟= 8:
+●𝐴 has dimensions 𝑟× 𝑘= 8 × 64 = 512 parameters
+●𝐵 has dimensions 𝑑× 𝑟= 512 × 8 = 4,096 parameters
+●86% reduction in parameters to train!
+512
+64
+512
+64
+8
+
+=== Page 88 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+*
+
+=== Page 89 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 90 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 91 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Sample ROUGE metrics for full vs. LoRA fine-tuning
++80.63%
+-3.20%
+
+=== Page 92 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Choosing the LoRA rank
+
+=== Page 93 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Prompt tuning with soft
+prompts
+
+=== Page 94 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 95 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Typically 20-100
+tokens
+
+=== Page 96 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 97 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 98 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 99 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 100 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+10K – 100K of parameters
+updated
+Millions to Billions of
+parameter updated
+
+=== Page 101 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Prompt tuning for multiple tasks
+
+=== Page 102 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Prompt tuning
+can be as
+effective as full
+Fine-tuning for
+larger models!
+
+=== Page 103 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 104 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 105 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+LoRA
+Prompt Tuning
+
+=== Page 106 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Key takeaways
+●Instruction fine-tuning
+○
+Prompt templates and data sets for
+FLAN-T5
+●PEFT
+○
+LoRA
+○
+Prompt Tuning
+●Quantization + LoRA = QLoRA
+

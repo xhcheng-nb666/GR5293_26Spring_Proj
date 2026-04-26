@@ -1,0 +1,728 @@
+=== Page 1 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Generative AI using Large
+Language Models (LLMs)
+Lecture 4 | 02/13/25
+Instructor: Chen Wang
+Fri 4:10 pm - 6:40 pm | 517 Hamilton Hall
+
+=== Page 2 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Agenda
+RAG & Tool Calling
+•
+RAG
+•
+Semantic Search
+•
+Keyword Search
+•
+Embeddings
+•
+Hybrid Search
+•
+ReRank
+•
+Generating Answers
+•
+VectorDB
+•
+KNN, ANN, HNSW
+•
+GraphRAG
+•
+AgenticRAG
+•
+Functions, Tools and Agents
+•
+LangChain Notebooks
+2
+
+=== Page 3 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Retrieval Augmented Generation
+•
+What is RAG?
+•
+“Retrieval Augmented Generation (RAG) is a sophisticated approach that enhances the
+capabilities of large language models (LLMs) by integrating retrieval mechanisms with
+generative models. This synergy allows the model to access a wealth of external knowledge,
+significantly improving the relevance and accuracy of generated responses [1]”.
+•
+Why we need RAG?
+•
+Improves accuracy and relevance of LLM outputs
+•
+Allows access to current information beyond LLM training data
+•
+Cost-effective alternative to fine-tuning or retraining LLMs
+[1] https://www.restack.io/p/retrieval-augmented-generation-answer-rag-vs-semantic-cat-ai
+3
+
+=== Page 4 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Semantic Search
+• Semantic Search: Retrieves relevant documents based on meaning
+and intent
+• RAG: Retrieves relevant information AND uses it to generate new,
+contextual responses
+Traditional Semantic Search vs. RAG
+• Semantic Search focuses on retrieval;
+• RAG combines retrieval with generation; RAG provides more dynamic
+and tailored responses
+Key Differences
+4
+
+=== Page 5 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Semantic
+Search
+Search is crucial to how we
+navigate the world
+5
+
+=== Page 6 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Keyword
+Search
+6
+
+=== Page 7 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Search at a
+high level
+7
+
+=== Page 8 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Keyword Search (Internals)
+BM25 Algorithm, https://www.geeksforgeeks.org/keyword-searching-
+algorithms-for-search-engines/
+8
+
+=== Page 9 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+9
+
+=== Page 10 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+10
+
+=== Page 11 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+11
+
+=== Page 12 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+12
+
+=== Page 13 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+13
+
+=== Page 14 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+14
+
+=== Page 15 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+15
+
+=== Page 16 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+16
+
+=== Page 17 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+17
+
+=== Page 18 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+18
+
+=== Page 19 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+19
+
+=== Page 20 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+20
+
+=== Page 21 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Limitation
+of keyword
+matching
+21
+
+=== Page 22 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Language
+Models Can
+Improve Both
+Search Stages
+22
+
+=== Page 23 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Embeddings
+•
+Embeddings
+•
+are dense numerical representations of various types of data such as text,
+images, or audio, transforming them into a low-dimensional space suitable
+for machine learning.
+•
+Key Points:
+•
+Dimensionality Reduction: They map high-dimensional data to a lower-
+dimensional space, capturing important features.
+•
+Semantic Similarity: Similar items have embeddings close together, allowing
+tasks like nearest neighbor search.
+•
+Applications: Used in NLP, computer vision, recommendation systems.
+•
+Learning from Data: Generated through algorithms like neural networks that
+learn from input data.
+23
+
+=== Page 24 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Embeddin
+gs
+24
+
+=== Page 25 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Word
+Embedding
+s
+25
+
+=== Page 26 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Text Embeddings
+26
+
+=== Page 27 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Dense Retrieval
+27
+
+=== Page 28 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Chunking
+28
+
+=== Page 29 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Search for
+Similar
+Vectors
+29
+
+=== Page 30 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+‘brute force’
+search
+algorithm
+30
+
+=== Page 31 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Runtime
+Complexity
+of KNN
+31
+
+=== Page 32 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Not a big
+problem at
+small scale
+32
+
+=== Page 33 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Big
+problem at
+scale
+33
+
+=== Page 34 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Small
+World
+34
+
+=== Page 35 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Navigate Small
+World
+(Constructing)
+35
+
+=== Page 36 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Navigate Small
+World
+(Constructing)
+36
+
+=== Page 37 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Navigate Small
+World
+(Constructing)
+37
+
+=== Page 38 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Navigate Small
+World
+(Constructing)
+38
+
+=== Page 39 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Navigate Small
+World
+(Constructing)
+39
+
+=== Page 40 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Navigate Small
+World
+(Constructing)
+40
+
+=== Page 41 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Navigate Small
+World
+(Constructing)
+41
+
+=== Page 42 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Navigate Small
+World
+(Constructing)
+42
+
+=== Page 43 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Navigate Small
+World
+(Constructing)
+43
+
+=== Page 44 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+NSW - Search
+1: Nearest
+Neighbor
+44
+
+=== Page 45 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+NSW -
+Search
+45
+
+=== Page 46 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+NSW -
+Search
+46
+
+=== Page 47 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+NSW -
+Search
+47
+
+=== Page 48 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+NSW -
+Search
+48
+
+=== Page 49 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+NSW -
+Search
+49
+
+=== Page 50 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+NSW – Search 2
+Approximate
+Nearest
+Neighbor
+50
+
+=== Page 51 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+NSW – Search 2
+Approximate
+Nearest
+Neighbor
+51
+
+=== Page 52 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+NSW – Search 2
+Approximate
+Nearest
+Neighbor
+52
+
+=== Page 53 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Hierarchical
+Navigable Small
+World (HNSW) -
+Search
+53
+
+=== Page 54 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Hierarchical
+Navigable Small
+World (HNSW) -
+Search
+54
+
+=== Page 55 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Hierarchical
+Navigable Small
+World (HNSW) -
+Search
+55
+
+=== Page 56 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+HNSW -
+Constructio
+n
+56
+
+=== Page 57 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+HNSW
+Runtime
+57
+
+=== Page 58 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+VectorDB
+•
+A vector database is a specialized database designed to store,
+manage, and query high-dimensional vector data efficiently
+•
+Optimized for storing and retrieving vector embeddings,
+which are crucial for AI and machine learning applications
+•
+Why Vector Databases are Useful for Dense Retrieval and RAG
+•
+Efficient storage and retrieval of high-dimensional data
+•
+Optimized for similarity search operations
+•
+Scalability to handle large datasets
+•
+Low-latency queries for real-time applications
+•
+Seamless integration with AI and machine learning workflows
+58
+
+=== Page 59 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+59
+
+=== Page 60 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Indexing
+60
+
+=== Page 61 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+RAG
+61
+
+=== Page 62 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Sparse vs Dense Search
+62
+
+=== Page 63 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Dense
+Search
+Challenge
+63
+
+=== Page 64 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Sparse vs
+Dense
+Search
+64
+
+=== Page 65 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Hybrid
+Search
+65
+
+=== Page 66 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Hybrid
+Search
+66
+
+=== Page 67 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Dense
+Retrieval is
+not Perfect
+67
+
+=== Page 68 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Solution:
+ReRank
+68
+
+=== Page 69 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+ReRank is
+trained on
+69
+
+=== Page 70 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Search can
+help LLMs in
+multiple ways
+70
+
+=== Page 71 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+71
+
+=== Page 72 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+72
+
+=== Page 73 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Agent Basics
+Agents
+Are a combination of LLMs and code
+LLMs reason about what steps to take
+and call for actions.
+Agent loop
+Choose a tool to use
+Observe the output of the tool
+Repeat until a stopping condition is
+met
+Stopping conditions can be:
+LLM determined
+Hardcoded rules
+73
+
+=== Page 74 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Generating
+Answers
+74
+
+=== Page 75 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+75
+
+=== Page 76 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+76
+
+=== Page 77 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 78 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 79 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 80 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 81 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 82 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 83 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 84 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 85 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 86 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 87 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 88 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 89 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 90 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 91 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 92 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 93 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 94 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 95 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 96 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Function Call
+•
+OpenAI has fine tuned GPT-3.5-turbo and GPT-4 models to
+•
+Accept additional arguments through which users can pass in descriptions of
+functions.
+•
+If it is relevant, return the name of the function to use, along with a JSON object with
+the appropriate input parameters.
+•
+Notebook example:
+•
+https://drive.google.com/file/d/1U-
+Cb_ED3anGIfUvqm19ZKvVdBTBJb4kM/view?usp=sharing
+96
+
+=== Page 97 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+LangChain
+Expression
+Language
+(LCEL)
+97
+
+=== Page 98 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Interface
+98
+
+=== Page 99 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+LangChai
+n
+Expressio
+n
+Language
+(LCEL)
+•
+Runnables support:
+•
+Async, Batch and Streaming Support
+•
+Fallbacks
+•
+Parallelism
+•
+LLM calls can be time consuming
+•
+Any components that can be run in parallel are!
+•
+Logging is built in
+99
+
+=== Page 100 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Pydantic
+100
+
+=== Page 101 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Pydantic
+101
+
+=== Page 102 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Pydantic
+with
+LangChain
+for OpenAI
+function
+calls
+102
+
+=== Page 103 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+103
+
+=== Page 104 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+104
+
+=== Page 105 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+105
+
+=== Page 106 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+106
+
+=== Page 107 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Tools and Routing
+•
+Functions and services an LLM
+can utilize to extend its capabilities
+are named “tools” in LangChain
+•
+LangChain has many tools
+available
+•
+Search tools
+•
+Math tools
+•
+SQL tools
+•
+…
+107
+
+=== Page 108 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+108
+
+=== Page 109 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+109
+

@@ -1,0 +1,646 @@
+[
+  {
+    "source": "lecture_06.pdf",
+    "page": 1,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGenerative AI using Large\nLanguage Models (LLMs)\nLecture 6 | 02/27/25\nInstructor: Chen Wang\nFri 4:10 pm - 6:40 pm | 517 Hamilton Hall",
+    "method": "native",
+    "native_text_length": 167
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 2,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nImportant Updates & Notices\n●Proposal Relevance Requirement\n○\nIf your final project is not relevant to your proposal topic, or it is completely different, your entire team\nwill lose all proposal credits (10%).\n○\nMake sure your final deliverables align with what you proposed!\n●Team Size Policy\n○\nWe encourage 3 persons per team (strongly recommended).\n○\nIf you insist on 4 persons, 2 persons, or even 1 person:\n■\nYour collaboration score will be penalized.\n■\nFor 4-person teams: you must meet higher bars compared to your peers.\n■\nException: If only 1-2 teams have 2 persons (due to class size modulo not being 3), it is acceptable.",
+    "method": "native",
+    "native_text_length": 666
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 3,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTA Feedback & Updated Grading\n●TA Discussion Feedback\n○\nWhen you have team discussions with TA, the TA will give you suggestions and feedback.\n○\nIf those feedback items are taken into account in your final report or demo, they will count\ntoward your score.\n○\nTip: Document the TA's suggestions and show how you addressed them!\n●Updated Grading Breakdown\n○\nGithub Repo percentage lowered to 10%\n○\nDemo percentage increased to 20%\n○\nPresentation remains at 30%\n●\nFive Components: Proposal (10%) | Presentation (30%) | Final Report (30%) | Demo (20%) | Github\nRepo (10%)",
+    "method": "native",
+    "native_text_length": 601
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 4,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nOverview\n●This project will be evaluated across five main components:\n○\nProject Proposal (10%)\n○\nFinal Project Presentation (30%)\n○\nFinal Report (30%)\n○\nProject Demo (20%)\n○\nGithub Repo (10%)",
+    "method": "native",
+    "native_text_length": 225
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 5,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nProject Timeline\n•\nMarch 10, 2026\n•\nProject Proposal deadline\n•\nMarch 10 – March 30\n•\nTeam discussions with TA, Christopher Ng (cn2673@columbia.edu)\n•\nMay 3, 2026\n•\nFinal Project Presentation and Report",
+    "method": "native",
+    "native_text_length": 236
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 6,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nProject Proposal (10%)\n• Clear definition of research questions or development goals\n• Specific problems to be addressed\n• Expected outcomes and deliverables\n• Alignment with course objectives\nClarity of\nObjectives (4%)\n• Realistic timeline and milestones\n• Assessment of required resources and their availability\n• Identification of potential challenges and mitigation strategies\n• Clear scope definition\nFeasibility (3%)\n• Originality of the proposed approach\n• Connection to current GenAI research trends\n• Potential impact on the field\n• Novel application or methodology\nInnovation and\nRelevance (3%)",
+    "method": "native",
+    "native_text_length": 638
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 7,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFinal Project Presentation (30%)\nProblem\nStatement\n(10%)\nContext and\nBackground\nClear description of the problem domain\nCurrent state of the art and its limitations\nSignificance of the problem in GenAI context\nTarget audience and use cases\nResearch\nQuestions\nClearly articulated research questions\nHypotheses and assumptions\nScope and boundaries of the investigation",
+    "method": "native",
+    "native_text_length": 400
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 8,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFinal Project Presentation (cont.)\nMajor\nContributions\n(10%)\nTechnical\nInnovations\nNovel algorithms or methodologies\nArchitectural improvements\nPerformance enhancements\nIntegration strategies\nPractical\nImpact\nReal-world applications\nScalability considerations\nResource efficiency\nUser experience improvements",
+    "method": "native",
+    "native_text_length": 342
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 9,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFinal Project Presentation (cont.)\nEvaluation\n(10%)\nQuantitative\nMetrics\nPerformance measurements\nComparative analysis with baselines\nStatistical significance of results\nAblation studies\nQualitative\nAnalysis\nCase studies\nUser studies (if applicable)\nError analysis\nLimitations and future work",
+    "method": "native",
+    "native_text_length": 326
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 10,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFinal Report (30%)\nStructure\nand\nFormat\n(5%)\nProfessional layout and formatting\nLogical flow of sections\nProper citations and references\nClear figures and tables\nDepth of\nResearch\n(8%)\nComprehensive literature review\nCritical analysis of related work\nUnderstanding of fundamental concepts\nIntegration of multiple perspectives",
+    "method": "native",
+    "native_text_length": 359
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 11,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFinal Report (cont.)\nMethodology\n(8%)\nDetailed experimental setup\nData collection and preprocessing\nModel architecture and implementation\nTraining and optimization procedures\nResults and\nAnalysis\n(6%)\nClear presentation of findings\nAppropriate visualizations\nThorough analysis of results\nDiscussion of implications\nGrammar\nand Writing\nQuality (3%)\nProfessional academic tone\nClear and concise writing\nProper technical terminology\nConsistent formatting",
+    "method": "native",
+    "native_text_length": 485
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 12,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nProject Demo (20%)\nCode Quality\n(10%)\nClean and organized code structure\nComprehensive documentation\nUnit tests and error handling\nCode optimization\nFunctionality\n(10%)\nSuccessful implementation of proposed features\nRobust error handling\nPerformance optimization\nIntegration testing",
+    "method": "native",
+    "native_text_length": 316
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 13,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGithub Repo (10%)\nExperiment\nResults\n(8%)\nReproducible experiments\nWell-documented experimental setup\nClear presentation of results\nAnalysis scripts and notebooks\nStep-by-\nStep\nTutorial\n(2%)\nClear installation instructions\nEnvironment setup guide\nUsage examples and demonstrations\nTroubleshooting guide",
+    "method": "native",
+    "native_text_length": 336
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 14,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGrading\nSummary\nComponent\nPercentage\nProject Proposal\n10%\nFinal Project Presentation\n30%\nFinal Report\n30%\nDemo\n20%\nGithub Repo\n10%",
+    "method": "native",
+    "native_text_length": 164
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 15,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 16,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n16\nCompute Trends across Three Eras of Machine Learning, https://arxiv.org/pdf/2202.05924",
+    "method": "native",
+    "native_text_length": 123
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 17,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 18,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 19,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 20,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 21,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 22,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 23,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 24,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 25,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 26,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 27,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 28,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 29,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 30,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 31,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 32,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 33,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 34,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 35,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 36,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 37,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 38,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 39,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 40,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 41,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 42,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 43,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nIntroduction to Generative AI in the Cloud\nTransformative Impact\nGenerative AI is revolutionizing industries by enabling content\ncreation, data synthesis, and decision support at\nunprecedented scale and quality.\nCloud Provider Role\nMajor cloud providers are democratizing access to GenAI\nthrough managed services, reducing the technical barriers and\ninfrastructure costs.\nEnterprise Adoption\nBy 2025, over 80% of enterprises are integrating GenAI into\ntheir workflows, with cloud platforms serving as the primary\ndeployment vehicle.",
+    "method": "native",
+    "native_text_length": 566
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 44,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLandscape of Major Cloud GenAI Platforms\nPlatform\nKey Strengths\nFlagship GenAI Services\nAWS\nExtensive service portfolio, global reach\nSageMaker, Bedrock, Titan\nMicrosoft Azure\nOpenAI partnership, ecosystem integration\nAzure OpenAI Service, ML Studio\nGoogle Cloud\nAI research leadership, Gemini models\nVertex AI, Model Garden\nIBM\nEnterprise governance, hybrid cloud\nWatsonx.ai, Watsonx.governance",
+    "method": "native",
+    "native_text_length": 429
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 45,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAWS Generative AI Offerings\nAmazon Bedrock\nServerless, fully-managed service providing access to foundation\nmodels through a single API.\nAmazon SageMaker\nEnd-to-end ML platform for building, training, and deploying machine\nlearning models at scale.\nAmazon Titan\nAWS-built foundation models for text and multimodal applications with\ncustomization options.",
+    "method": "native",
+    "native_text_length": 388
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 46,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMicrosoft Azure AI Platform\nAzure Machine Learning\nEnd-to-end platform for building, training, and deploying\nmachine learning models with robust MLOps capabilities.\nAzure OpenAI Service\nEnterprise-ready access to OpenAI's models with added\nsecurity, compliance, and regional availability.\nMicrosoft Ecosystem Integration\nSeamless integration with Microsoft 365, Dynamics, Power\nPlatform, and other enterprise applications.",
+    "method": "native",
+    "native_text_length": 456
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 47,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nIBM Watsonx\nwatsonx.ai\nAn AI studio for building, training, and deploying machine learning\nmodels with a comprehensive developer toolkit and lifecycle\nmanagement.\nwatsonx.data\nData management platform that unifies and integrates data from any\nsource to improve AI application relevance and precision.\nwatsonx.governance\nAutomates governance processes to manage AI risks, simplify\nregulatory compliance, and create responsible AI workflows.\nEnterprise-grade security and compliance controls\nHybrid cloud architecture with flexible deployment options\nStrong focus on AI governance and explainability",
+    "method": "native",
+    "native_text_length": 631
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 48,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDeep Dive: Google Cloud Vertex AI - Introduction\nVertex AI is a comprehensive, unified machine learning platform\nthat combines data engineering, data science, and ML engineering\nworkflows, enabling teams to collaborate using a common toolset.\nUnified Platform\nSeamlessly integrates all ML workflows from data preparation\nto model deployment\nFoundation Models\nAccess to 200+ models including Google's Gemini, third-party,\nand open-source options\nEnterprise-Ready\nRobust governance, security controls, and MLOps capabilities\nfor production deployments",
+    "method": "native",
+    "native_text_length": 583
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 49,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nVertex AI - Model Garden and Gemini Integration\nModel Garden\nFirst-Party Models\nGemini (Pro, Ultra, Flash)\nImagen for image generation\nChirp for speech processing\nThird-Party Models\nAnthropic Claude Model Family\nOpen-Source Models\nGemma, Llama 3.2\nGemini Multimodal Capabilities\nProcess and understand text, images, video, and code inputs\nsimultaneously\nAdvanced reasoning for complex tasks like extracting text from\nimages and converting to structured formats\nCustomizable through tuning options for specific use cases and\ndomains",
+    "method": "native",
+    "native_text_length": 565
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 50,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nVertex AI - Training, Deployment, and MLOps\nFlexible Training Options\nChoose between AutoML for code-free model development or Custom\nTraining for complete control over frameworks, code, and\nhyperparameters.\nVertex AI Pipelines\nOrchestrate ML workflows with a serverless execution service based\non Kubeflow Pipelines, enabling repeatable and automated ML\nprocesses.\nModel Registry\nCentralized repository for managing model versions, metadata, and\nlineage, facilitating collaboration and governance.\nModel Monitoring\nDetect training-serving skew and inference drift with automated\nalerts, ensuring model performance and reliability in production.",
+    "method": "native",
+    "native_text_length": 679
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 51,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nVertex AI - Enterprise Features and Agent Builder\nEnterprise Security\nRobust security controls, encryption, and compliance certifications\nfor regulated industries.\nVertex Explainable AI\nUnderstand feature attribution and model decisions with\ntransparency tools for responsible AI deployment.\nModel Monitoring\nProactive monitoring for training-serving skew and inference drift\nwith automated alerts.\nVertex AI Agent Builder\nCreate enterprise-ready generative AI experiences with no-code and\ncustomization capabilities.\nBuild conversational AI agents grounded in organizational data\nIntegrate with existing business processes and systems\nDeploy multi-agent experiences with orchestration capabilities",
+    "method": "native",
+    "native_text_length": 732
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 52,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 53,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 54,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 55,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 56,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 57,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 58,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 59,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 60,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 61,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 62,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 63,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 64,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 65,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 66,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 67,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 68,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 69,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 70,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 71,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 72,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 73,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 74,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 75,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 76,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 77,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 78,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 79,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 80,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 81,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 82,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 83,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 84,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 85,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 86,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 87,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 88,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 89,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 90,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 91,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_06.pdf",
+    "page": 92,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  }
+]

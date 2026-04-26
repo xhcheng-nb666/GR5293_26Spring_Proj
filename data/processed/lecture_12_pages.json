@@ -1,0 +1,940 @@
+[
+  {
+    "source": "lecture_12.pdf",
+    "page": 1,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGenerative AI using Large\nLanguage Models (LLMs)\nLecture 12 | 04/17/25\nInstructor: Chen Wang\nFri 4:10 pm - 6:40 pm | 517 Hamilton Hall",
+    "method": "native",
+    "native_text_length": 168
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 2,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAgenda:\nEfficient\nServing of\nLLMs\n• Static Batching, Dynamic Batching and Continuous Batching\nBatching Techniques\n• KV Cache\n• Flash Attention\n• PagedAttention\nMemory Optimization Techniques\n• vLLM\nLLM Serving Frameworks\n• sLoRA, vLLM\nServing Systems for Fine-tuning Models\n• Space vs Time Partitioning\n• Software vs Hardware\n• LLM inference on MIGs\nGPU Sharing Techniques",
+    "method": "native",
+    "native_text_length": 406
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 3,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 4,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nServing LLMs is (surprisingly) slow and expensive\n●A single A100 GPU can only serve <1 request per second\n○\nModerate size of model (13 Billion parameters) and input\n●A ton of GPUs are required for production-scale LLM services",
+    "method": "native",
+    "native_text_length": 260
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 5,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nInference process of LLMs\n●Output\nInput\nArtificial\nIntelligence\nIs\nLLM\nthe\nLLM\nthe\nfuture\nfuture\nLLM\nof\nWhy is it slow and inefficient?\n•\nThe sequential dependency between output tokens makes it difficult to fully utilize the parallelism in GPUs.",
+    "method": "native",
+    "native_text_length": 280
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 6,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSolution: Batching multiple requests\ntogether\nHowever, we observed that the batch size is significantly limited by the\ninefficient memory management for “KV Cache”.",
+    "method": "native",
+    "native_text_length": 198
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 7,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nThe basics of LLM inference\n•\nBasic Process\n○\nLLM inference is an iterative process that\ngenerates one token at a time\n●Three Critical Aspects\n○\nPrefill Phase\n■\nInitial prompt processing takes significant time\n■\nPre-computes attention inputs that remain\nconstant during generation\n■\nUses GPU's parallel compute efficiently\n○\nMemory-IO Bound\n■\nLoading data to GPU cores takes longer than\ncomputation\n■\nThroughput depends on batch size fitting in GPU\nmemory\n■\nMemory efficiency is crucial for performance2\n○\nMemory Scaling\n■\nGPU memory usage scales with model size +\nsequence length\n■\nA 13B parameter model uses ~1MB per token\n■\nOn 40GB A100 GPU: 26GB for model parameters,\n14GB for processing\nhttps://github.com/ray-project/llm-numbers#1-mb-gpu-memory-required-for-1-token-of-output-with-a-13b-parameter-model",
+    "method": "native",
+    "native_text_length": 842
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 8,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNaïve batching / static batching\nCompleting four sequences using static batching. On the first iteration (left), each sequence generates one token (blue) from the prompt tokens (yellow).\nAfter several iterations (right), the completed sequences each have different sizes because each emits their end-of-sequence-token (red) at different\niterations. Even though sequence 3 finished after two iterations, static batching means that the GPU will be underutilized until the last sequence in the batch\nfinishes generation (in this example, sequence 2 after six iterations).",
+    "method": "native",
+    "native_text_length": 602
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 9,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nStatic Batching vs Dynamic Batching",
+    "method": "native",
+    "native_text_length": 69
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 10,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nContinuous Batching\nYu, Gyeong-In, et al. \"Orca: A distributed serving system for {Transformer-Based} generative models.\" 16th USENIX Symposium on Operating\nSystems Design and Implementation (OSDI 22). 2022.\nCompleting seven sequences using continuous batching. Left shows the batch after a single iteration, right shows the batch after several iterations. Once a\nsequence emits an end-of-sequence token, we insert a new sequence in its place (i.e. sequences S5, S6, and S7). This achieves higher GPU utilization since\nthe GPU does not wait for all sequences to complete before starting a new one.",
+    "method": "native",
+    "native_text_length": 631
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 11,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nContinuous Batching\nContinuous batching improves\nGPU utilization over dynamic\nbatching by eliminating the idle\ntime waiting for the longest\nresponse of each batch to finish.",
+    "method": "native",
+    "native_text_length": 207
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 12,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTypes of LLM Inference Batching\nStatic Batching\n• Waits for a fixed number\nof requests to accumulate\nbefore processing\n• Processes all requests\nsimultaneously as a\nsingle batch\n• Best suited for offline\nworkloads where latency\nisn't critical\n• Like a bus that only\ndeparts when completely\nfull\nDynamic Batching\n• Uses both maximum\nbatch size and time\nwindow parameters\n• Processes requests when\neither batch is full or time\nwindow expires\n• Balances between\nthroughput and latency\n• Ideal for consistent-length\noutputs like image\ngeneration\nContinuous Batching\n• Processes requests\ntoken-by-token at the\nsequence level\n• Dynamically allocates\nGPU resources as tokens\nare generated\n• Efficiently handles varying\noutput lengths\n• Optimizes model weight\nloading across multiple\nrequests",
+    "method": "native",
+    "native_text_length": 817
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 13,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPerformance Characteristics of Batching\nBatching Type\nThroughput\nLatency\nUse Case\nStatic\nHighest\nHigh\nOffline processing,\ndaily jobs\nDynamic\nMedium\nMedium\nReal-time image\ngeneration\nContinuous\nHigh\nLow\nInteractive LLM\napplications",
+    "method": "native",
+    "native_text_length": 264
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 14,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFlashAttention: Fast and\nMemory Efficient Exact\nAttention with IO-Awareness\nFlashAttention: Fast and Memory-Efficient Exact Attention with IO-Awareness\nTri Dao, Daniel Y. Fu, Stefano Ermon, Atri Rudra, Christopher Ré\nPaper: https://arxiv.org/abs/2205.14135",
+    "method": "native",
+    "native_text_length": 290
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 15,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 16,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMotivation: Modeling Longer Sequences\nBridging new capabilities\nNLP: Large context required to\nunderstand books, plays,\ninstruction manuals.\nClosing the reality gap\nComputer vision: higher\nresolution can lead to better,\nmore robust insight.\nOpening new areas\nTime series, audio, video,\nmedical imaging data naturally\nmodeled as sequences of\nmillions of steps.\nBlog post: Can Longer Sequences Help Take the Next Leap in AI? https://ai.stanford.edu/blog/longer-sequences-next-leap-ai/\nChallenge: How to scale Transformers to longer sequences?",
+    "method": "native",
+    "native_text_length": 574
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 17,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 18,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 19,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 20,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 21,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 22,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 23,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 24,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 25,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 26,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n2",
+    "method": "native",
+    "native_text_length": 35
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 27,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 28,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 29,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 30,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 31,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 32,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 33,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 34,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 35,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 36,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 37,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 38,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n(Attention) KV Cache",
+    "method": "native",
+    "native_text_length": 54
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 39,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n(Attention) KV Cache",
+    "method": "native",
+    "native_text_length": 54
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 40,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nKV Cache dynamically grows and shrinks\nKV Cache is huge:\n•\nEach token: ~1 MB.\n•\nOne full request: ~several GBs.",
+    "method": "native",
+    "native_text_length": 145
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 41,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nKV Cache management in previous\nsytems",
+    "method": "native",
+    "native_text_length": 72
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 42,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nKV Cache management in previous\nsystems\n●Pre-allocates contiguous space of memory to the request’s maximum\nlength\n○\nUseful convention in traditional deep learning workloads where the input/output shapes\nare static (e.g., faster pointer arithmetic, efficient memory access)\n●Results in memory fragmentation\n○\nInternal fragmentation due to the unknown output length.",
+    "method": "native",
+    "native_text_length": 398
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 43,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nKV Cache management in previous\nsystems\n●Pre-allocates contiguous space of memory to the request’s maximum\nlength\n○\nUseful convention in traditional deep learning workloads where the input/output shapes\nare static (e.g., faster pointer arithmetic, efficient memory access)\n●Results in memory fragmentation\n○\nInternal fragmentation due to the unknown output length.\n○\nExternal fragmentation due to non-uniform pre-request max lengths.",
+    "method": "native",
+    "native_text_length": 467
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 44,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSignificant memory waste in KV Cache space\n●Only 20-40% of KV Cache space is utilized to store actual token states\nYu, Gyeong-In, et al. \"Orca: A distributed serving system for {Transformer-Based} generative models.\" 16th USENIX\nSymposium on Operating Systems Design and Implementation (OSDI 22). 2022.",
+    "method": "native",
+    "native_text_length": 336
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 45,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPagedAttention\n●Application-level memory paging and virtualization for attention KV cache",
+    "method": "native",
+    "native_text_length": 123
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 46,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPaging KV Cache Space into KV Blocks\nKV Cache\nSpace",
+    "method": "native",
+    "native_text_length": 85
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 47,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPaging KV Cache Space into KV Blocks\nKV blocks\nBlock 0\nBlock 1\nBlock 2\nBlock 3\nBlock 4\nBlock 5\nBlock 6\nBlock 7\nBlock size = 4\n• KV Cache is a fixed size contiguous\nchunk of memory that can store KV\ntoken states from left to right\nArtificial\nIntelligence\nis\nthe",
+    "method": "native",
+    "native_text_length": 294
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 48,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nVirtualizing KV Cache",
+    "method": "native",
+    "native_text_length": 55
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 49,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nVirtualizing KV Cache",
+    "method": "native",
+    "native_text_length": 55
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 50,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAttention mechanism with virtualized KV Cache\n1.\nFetch non-continuous KV blocks using the block table\n2.\nApply attention operation on the fly\n10 – 15% slowdown in GPU kernel\nlatency due to memory indirection",
+    "method": "native",
+    "native_text_length": 241
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 51,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMemory management with PagedAttention",
+    "method": "native",
+    "native_text_length": 71
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 52,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMemory efficiency of PagedAttention\n●Minimal internal fragmentation\n○\nOnly happens at the last block of a sequence\n○\n# wasted tokens / seq < block size\n■\nSequence: O(100) – O(1000) tokens\n■\nBlock size: O(10) tokens\n●No external fragmentation",
+    "method": "native",
+    "native_text_length": 275
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 53,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nConfiguring the block size\n• Block size 16 works generally well in practice",
+    "method": "native",
+    "native_text_length": 109
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 54,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPaging enables sharing",
+    "method": "native",
+    "native_text_length": 56
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 55,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSharing KV blocks",
+    "method": "native",
+    "native_text_length": 51
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 56,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSharing KV blocks",
+    "method": "native",
+    "native_text_length": 51
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 57,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSharing KV blocks",
+    "method": "native",
+    "native_text_length": 51
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 58,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSharing KV blocks\nAll prompt blocks (except the last)\nare shared across samples",
+    "method": "native",
+    "native_text_length": 113
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 59,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMore complex sharing: beam search\n• Similar to process tree (fork & kill)\n• Efficiently supported by paged attention and copy-on-write mechanism",
+    "method": "native",
+    "native_text_length": 178
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 60,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMemory saving via sharing\nKwon, Woosuk, et al. \"Efficient memory management for large language model serving with\npagedattention.\" Proceedings of the 29th Symposium on Operating Systems Principles. 2023.",
+    "method": "native",
+    "native_text_length": 237
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 61,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nOut of KV Block Memory\nFull\nfor\nbe\nCannot allocate a new\nphysical block for Request B",
+    "method": "native",
+    "native_text_length": 119
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 62,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nRequest Preemption & Recovery\nGoal: Free some requests’ KV cache to let others run first.",
+    "method": "native",
+    "native_text_length": 123
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 63,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNotes on Preemption & Recovery\n●Swap/recompute the whole request,\nsince all previous tokens are required\nevery step.\n●Swapping: smaller block size →\nhigher overhead due to small data\ntransfers.\n●Recomputation: surprisingly fast\nsince all token’s KV cache can be\ncomputed in parallel.\nvLLM strategy: Use recomputation when possible with FCFS policy.",
+    "method": "native",
+    "native_text_length": 382
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 64,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nComparison with Operating System Virtual Memory\nAnalogies\nOS pages ⇔KV blocks\n●Reduce memory fragmentation\nShared pages across processes ⇔\nShared KV blocks across samples\n●Reduce memory waste via\nsharing\nDifferences\nSingle-level block table\n●Block table is tiny compared to\nthe actual data.\nPreemption & Recovery\n●Request-level preemption\n●Recomputation-based recovery",
+    "method": "native",
+    "native_text_length": 402
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 65,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDistributed System Architecture & Implementation",
+    "method": "native",
+    "native_text_length": 82
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 66,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nCache\nEngine\nCache\nEngine\nCache\nEngine\nModel\nShard 1\nModel\nShard 2\nModel\nShard 3",
+    "method": "native",
+    "native_text_length": 114
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 67,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nEvaluation — Settings\nMetric: Serving throughput\nInput/Output Length Distribution\n• Alpaca dataset (instruction-following)\n• ShareGPT dataset (conversation)\nBaselines\n• NVIDIA FasterTransformer (FT)\n• Orca\n• Oracle: No over-reserve and know exact output lengths.\n• Pow2: Over-reserve the space for outputs by at most 2x.\n• Max: Over-reserve to the maximum possible output length.",
+    "method": "native",
+    "native_text_length": 413
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 68,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nThroughput — Greedy Decoding\n2.4x speedup",
+    "method": "native",
+    "native_text_length": 75
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 69,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nThroughput — Beam Search",
+    "method": "native",
+    "native_text_length": 58
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 70,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 71,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 72,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 73,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 74,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNVIDIA\nTensorR\nT\n• High-performance C++ library for GPU-accelerated inference\n• Optimizes trained neural networks for faster execution on\nNVIDIA GPUs\n• Supports models from major frameworks like TensorFlow,\nPyTorch, and ONNX\nWhat is TensorRT?\n• Graph optimizations and layer fusion\n• Mixed precision capabilities (FP32, FP16, INT8, INT4)\n• Automatic performance tuning\n• Tensor and layer parallelism\n• Support for various NVIDIA GPU architectures\nKey Features\n• Up to 36X faster inference compared to CPU-only platforms\n• Significant latency reduction for real-time applications\n• Improved throughput for data center deployments\nPerformance Benefits",
+    "method": "native",
+    "native_text_length": 683
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 75,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSLoRA: Scalable Serving of\nThousands of LoRA Adapters",
+    "method": "native",
+    "native_text_length": 87
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 76,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 77,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 78,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 79,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 80,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 81,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 82,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 83,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 84,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 85,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 86,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 87,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 88,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 89,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 90,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 91,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 92,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 93,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 94,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 95,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 96,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 97,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 98,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 99,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 100,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 101,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 102,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 103,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 104,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 105,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 106,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 107,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 108,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 109,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 110,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 111,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 112,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 113,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 114,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 115,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 116,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nvLLM vs sLoRA\nin serving\nLoRA adapters\n• vLLM: Merges LoRA weights into base model\n• S-LoRA: Stores adapters in main memory, fetches as needed\nAdapter Management\n• vLLM: Limited to <5 adapters in GPU due to GPU memory constraints, but\ncan swap adapters between GPU and CPU memory\n• S-LoRA: Can serve thousands of adapters on a single GPU\nMemory Efficiency\n• vLLM: Lower throughput, limited adapter capacity\n• S-LoRA: Up to 4x higher throughput, stable with increasing adapters\nPerformance\n• vLLM: Separate processes for each adapter\n• S-LoRA: Novel tensor parallelism strategy (S-LoRA TP)\nParallelism\n• vLLM: No specific LoRA optimizations\n• S-LoRA: Custom CUDA kernels for batched LoRA computation\nOptimization",
+    "method": "native",
+    "native_text_length": 745
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 117,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nWhy Share GPUs?",
+    "method": "native",
+    "native_text_length": 49
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 118,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSpace vs.\nTime\nPartitioning",
+    "method": "native",
+    "native_text_length": 61
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 119,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSpace vs Time Partitioning",
+    "method": "native",
+    "native_text_length": 60
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 120,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSpace vs Time Partitioning",
+    "method": "native",
+    "native_text_length": 60
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 121,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSpace vs Time Partitioning",
+    "method": "native",
+    "native_text_length": 60
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 122,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSpace vs Time Partitioning",
+    "method": "native",
+    "native_text_length": 60
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 123,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nHardware vs.\nSoftware-\nBased Space\nPartitioning",
+    "method": "native",
+    "native_text_length": 81
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 124,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nHardware vs. Software-Based Space Partitioning",
+    "method": "native",
+    "native_text_length": 80
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 125,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nHardware vs. Software-Based Space Partitioning",
+    "method": "native",
+    "native_text_length": 80
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 126,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nHardware vs. Software-Based Space Partitioning",
+    "method": "native",
+    "native_text_length": 80
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 127,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMotivation\n●\nGPUs are idling for small models.\n●\nSmall Models (<= 13B)\n○\n29 models out of 54 in Research\nclusters\n●\nUsage & Performance\n○\nActive users per week < 60\n○\nPer request latency < 10 seconds\n○\nPer token latency < 50 ms\nSLA = 50 ms",
+    "method": "native",
+    "native_text_length": 273
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 128,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGPU Sharing Options\nPaged and flash attention techniques allocate variable memory for requests, making memory usage unpredictable for\nsharing.\nLimiting batch sizes to cap memory restricts the advantages of time-sharing compared to MIG.\nTime Sharing\nMPS\nMIG\nProcess Isolation\nGood\nCorrelated Failures\nGood\nHBM Space\nDynamic Sharing\nDynamic Sharing\nStatic Partitioning\nCompute Unites\nTime Multiplexing\nSpace Multiplexing\nSpace Multiplexing\nMechanism\nSoftware\nHybrid\nHardware\nUnpredictable memory allocation may lead to\nexceptions when models are dynamically sharing the\nHBM Space.",
+    "method": "native",
+    "native_text_length": 612
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 129,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nOverview of MIG\n●Multi-instance GPU (MIG)\n○\nAllow GPUs be securely partitioned up to 7\nseparate GPU instances\n○\nSeparate and isolated paths through the entire\nmemory system\n○\nSupported bare-metal, containers and Kubernetes\n●MIG profile placement\n○\nMultiple GPU instances can be created from a mix\nand match of these profiles\n○\nA100 80GB: 7g80gb, 4g40gb, 3g40gb, 2g20gb,\n1g20gb, 1g10gb, 1g10gb+me\nMIG Profiles on A100 [1]\n[1] https://docs.nvidia.com/datacenter/tesla/mig-user-\nguide/index.html",
+    "method": "native",
+    "native_text_length": 526
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 130,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPotential Savings\n●Candidate MIG sizes\n○1g10gb, 2g20gb, 3g40gb,\n4g40gb\n●Potential Savings by using\nMIG\n○Without MIG: 31 A100 GPUs\n○With MIG: 13 A100 GPUs",
+    "method": "native",
+    "native_text_length": 187
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 131,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPerformance Analysis --- flan-t5-xl (3B)\nWhat MIG size should we choose?\n1g20gb can be chosen if the concurrent number\nof users is below 8.\n2g20gb can be chosen if the concurrent number\nof users is below 16.\nAs the MIG size becomes smaller, the latencies\nincrease, and the throughput decreases.\nIt is worth switching to MIG when the load on the\nmodel is light.\n0\n25\n50\n75\n100\n125\n0\n200\n400\n600\n800\n1000\n1200\n1400\nP98 Latency (ms/token)\nThroughput (token/s)\nflan-t5-xl (3B) on A100 80GB w/ TGIS\nA100\n7g80gb\n4g40gb\n3g40gb\n2g20gb\n1g20gb\n64\n64\n64\n32\n16\n32\n32\n16\n16\n64\n32\n16\n32\n16\n16\n32\n8\nSLA: 50 ms/token",
+    "method": "native",
+    "native_text_length": 634
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 132,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPerformance Analysis --- Mistral (7B)\nWhat MIG size should we choose?\n4g40gb can be chosen if the concurrent number\nof users is below 8.\nAs the MIG size becomes smaller, the latencies\nincrease, and the throughput decreases.\nIt is worth switching to MIG when the load on the\nmodel is light.\n0\n10\n20\n30\n40\n50\n60\n70\n80\n90\n100\n0\n100\n200\n300\n400\n500\nP98 Latency (ms/token)\nThroughtput (tokens/s)\nMistral-7B on A100 80GB w/ TGIS\nA100\n7g80gb\n4g40gb\n3g40gb\n16\n32\n16\n16\n8\n8\n8\n32\n16\n8\nSLA: 50 ms/token",
+    "method": "native",
+    "native_text_length": 525
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 133,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nHow to enable MIG and configure slices on OpenShift cluster\nref\nWhen we apply any mig configuration, need all gpus on the target node to be free\nHow to enable MIG (ref)\n• Check if the MIG mode is enabled on the node: oc rsh –n nvidia-gpu-operator nvidia-driver-daemonset-xxxxxxxx nvidia-smi\n• If not, oc rsh –n nvidia-gpu-operator nvidia-driver-daemonset-xxxxxxxx nvidia-smi –mig 1\n• Then reboot the node\nHow to configure custom MIG profiles\n• oc create cm –n nvidia-gpu-operator configmap mig-custom-config –from-file custom-mig-config.yaml\n(if the configmap already exists, edit it)\n• oc edit clusterpolicy and change spec.migManager.config.name to your\n\"mig\":{\"strategy\":\"mixed\"},\n\"migManager\":{\"enabled\":true, \"config\":{\"name\": \"mig-custom-config\"}}\n• Note: If we want to mix mig-disabled gpus and mig-enabled gpus, need to start with disabled gpus in the mig config yaml file\n• MIG_CONFIGURATION=custom1 && oc label node/${NODE_NAME} nvidia.com/mig.config=$MIG_CONFIGURATION –overwrite\nThree ways to confirm if the configuration is successfully applied\n• oc get nodes/$NODE_NAME --show-labels | tr ',' ‘\\n' | grep nvidia.com\n• oc get nodes/$NODE_NAME -ojsonpath={.status.allocatable} | jq -c 'with_entries(select (.key | startswith(\"nvidia.com\")))' | jq\n• oc logs nvidia-mig-manager-xxxx -n nvidia-gpu-operator\nTo collect DCGM metrics, verify if the installed dcgm-exporter supports MIG, and upgrade it if not\n• The dcgm-exporter 2.4.0-rc.2 or later supports MIG\n• The installed dcgm-exporter version by gpu-operator is possible to be older than that",
+    "method": "native",
+    "native_text_length": 1589
+  },
+  {
+    "source": "lecture_12.pdf",
+    "page": 134,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  }
+]

@@ -1,0 +1,702 @@
+[
+  {
+    "source": "lecture_03.pdf",
+    "page": 1,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGenerative AI using Large\nLanguage Models (LLMs)\nLecture 3 | 02/06/25\nInstructor: Chen Wang\nFri 4:10 pm - 6:40 pm | 517 Hamilton Hall",
+    "method": "native",
+    "native_text_length": 167
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 2,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nWhat are the LLM Products you have used?",
+    "method": "native",
+    "native_text_length": 74
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 3,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPrompts and completions\nWhat is Large\nLanguage Model?\nLLM\nWhat is Large Language Model?\nA Large Language Model (LLM) is a\ntype of artificial intelligence (AI) model\ndesigned to understand, generate, and\nmanipulate human language on a large\nscale. These models are typically built\nusing deep learning techniques,\nparticularly neural networks, and are\ntrained on massive amounts of text\ndata to learn the statistical patterns\nand structures of language.\nPrompt\nCompletion\nContext window: 2k – 100K\nModel",
+    "method": "native",
+    "native_text_length": 535
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 4,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nWhat are the\nLLM use cases\nyou have seen?\n•\nOther Use Cases\n•\nTranslate\n•\nSummarize\n•\nProof-read and correct\n•\nExplain words\n•\nCreate article/email\n•\nMake restaurant suggestions\n•\nChat with users\n•\nDo Math Calculations\n•\nAnswer Questions on many subjects\n•\n…",
+    "method": "native",
+    "native_text_length": 292
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 5,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDrafting\nan Email",
+    "method": "native",
+    "native_text_length": 51
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 6,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTranslation",
+    "method": "native",
+    "native_text_length": 45
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 7,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nCode\nGeneration",
+    "method": "native",
+    "native_text_length": 49
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 8,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSummarization\nCould you summarize the key contribution of the attached paper?\nThe paper introduces **SWE-bench**, a new benchmark designed to evaluate the capabilities of language models (LMs) in real-world software\nengineering tasks. The benchmark comprises 2,294 software engineering problems derived from real GitHub issues and corresponding pull\nrequests across 12 popular Python repositories. The key contributions of the paper are:\n1. **Evaluation Framework**: SWE-bench provides a challenging testbed by requiring LMs to resolve real-world software engineering issues, which\noften involve understanding and coordinating changes across multiple functions, classes, and files. This setup goes beyond traditional code\ngeneration tasks by demanding complex reasoning, long-context processing, and interaction with execution environments.\n2. **Performance Evaluation**: The paper evaluates several state-of-the-art language models on SWE-bench, including proprietary models and their\nfine-tuned model, SWE-Llama. The results show that current models, including the best-performing one (Claude 2), can resolve only a small fraction\n(1.96%) of the issues, highlighting the challenges posed by the benchmark.\n3. **Dataset and Models**: Alongside SWE-bench, the authors release a training dataset called SWE-bench-train, which consists of 19,000 non-\ntesting task instances from 37 repositories. They also introduce SWE-Llama, fine-tuned models based on CodeLlama, which are specialized for\nrepository-wide code editing.\nThe benchmark aims to push the boundaries of LM capabilities in practical and autonomous software engineering, providing a realistic and\nsustainable evaluation framework that can be continuously updated with new task instances.",
+    "method": "native",
+    "native_text_length": 1780
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 9,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMeeting\nSummarization\nTool",
+    "method": "native",
+    "native_text_length": 60
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 10,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nProofread and Correct\nCan you proof-read and correct this sentence?\n'Their going to the market to buy some fruits and vegetables.'\nThe corrected sentence should be:\n\"They're going to the market to buy some fruits and vegetables.\"",
+    "method": "native",
+    "native_text_length": 263
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 11,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nEntity Extraction\nExtract the key entities mentioned in the following paragraph,\nincluding names of people, organizations, locations, dates,\nand any other relevant information. For each entity, provide its\ntype (e.g., person, organization, location, date) and the text\nassociated with it. Output the results in a list of JSON objects,\nwhere each object contains the entity and its type.\nIon Stoica (born 1964 or 1965) is a Romanian–American\ncomputer scientist specializing in distributed systems, cloud\ncomputing and computer networking.[9][2][10][11] He is a\nprofessor of computer science at the University of California,\nBerkeley and co-director of AMPLab. He co-founded Conviva\nand Databricks with other original developers of Apache\nSpark.[6][12] As of April 2022, Forbes ranked him and Matei\nZaharia as the 3rd-richest people in Romania with a net worth\nof $1.6 billion.[13]\nPrompt\n[\n{\n\"entity\": \"Ion Stoica\",\n\"type\": \"person\",\n\"text\": \"Ion Stoica\"\n},\n{\n\"entity\": \"1964 or 1965\",\n\"type\": \"date\",\n\"text\": \"born 1964 or 1965\"\n},\n{\n\"entity\": \"Romanian–American\",\n\"type\": \"nationality\",\n\"text\": \"Romanian–American\"\n},\n{\n\"entity\": \"computer scientist\",\n\"type\": \"occupation\",\n\"text\": \"computer scientist\"\n},\n{\n\"entity\": \"distributed systems\",\n\"type\": \"field\",\n\"text\": \"distributed systems\"\n},\n{\n\"entity\": \"University of California, Berkeley\",\n\"type\": \"organization\",\n\"text\": \"University of California, Berkeley\"\n},\n…\n]",
+    "method": "native",
+    "native_text_length": 1451
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 12,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nCall\nfunctions to\ninteract with\nexternal\nworld",
+    "method": "native",
+    "native_text_length": 80
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 13,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMath Calculation\nLet's solve this step-by-step:\n1) First, let's set up the multiplication:\n237\n× 56\n2) We'll multiply 237 by 6 (the ones digit of 56):\n237 × 6 = 1422\n3) Now we'll multiply 237 by 50 (the tens digit of 56):\n237 × 50 = 11850\n4) Now we add these two results:\n1422\n+ 11850\n-------\n13272\nTherefore, 237 × 56 = 13,272.\nWould you like me to explain any part of this calculation in more detail?\nTo multiply 237 by 56, you can follow these steps:\n### Step 1: Break down the numbers\n- Write the numbers in a column format:\n```\n237\n× 56\n```\n### Step 2: Multiply 237 by 6 (the ones digit of 56)\n- \\( 237 \\times 6 = 1422 \\)\n### Step 3: Multiply 237 by 5 (the tens digit of 56), but remember it's actually\n50\n- \\( 237 \\times 50 = 11850 \\)\n- You can calculate it as:\n- \\( 237 \\times 5 = 1185 \\)\n- Then, multiply by 10 to get \\( 11850 \\)\n### Step 4: Add the results of the two multiplications\n- Align the results according to their place value:\n```\n1422\n+11850\n-------\n13332\n```\n### Final Result\nThe product of 237 and 56 is **13,332**.",
+    "method": "native",
+    "native_text_length": 1070
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 14,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPrompting and Prompt Engineering\nWhat is Large\nLanguage Model?\nLLM\nWhat is Large Language Model?\nA Large Language Model (LLM) is a\ntype of artificial intelligence (AI) model\ndesigned to understand, generate, and\nmanipulate human language on a large\nscale. These models are typically built\nusing deep learning techniques,\nparticularly neural networks, and are\ntrained on massive amounts of text\ndata to learn the statistical patterns\nand structures of language.\nPrompt\nCompletion\nContext window: 2k – 100K\nModel\nYou may have to revise the language in your prompt or the way that it's written several times to get the\nmodel to behave in the way that you want.\nThis work to develop and improve the prompt is known as prompt engineering.",
+    "method": "native",
+    "native_text_length": 767
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 15,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 16,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 17,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 18,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 19,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 20,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 21,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 22,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 23,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 24,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 25,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 26,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 27,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 28,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 29,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 30,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 31,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 32,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 33,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 34,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 35,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nIn-context learning (ICL) – zero shot\ninference\nPrompt\nCompletion\nModel\nLLM\nClassify this review:\nI loved this restaurant!\nSentiment: Positive\nClassify this review: I don't like the environment\nthe restaurant has. The tables look old and oily.\nSentiment:\nThe sentiment of this review is negative.\nThe reviewer expresses dissatisfaction with\nthe restaurant's environment, specifically\nmentioning the old and oily tables.\nZero-shot Inference",
+    "method": "native",
+    "native_text_length": 473
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 36,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 37,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 38,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 39,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 40,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 41,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 42,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 43,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 44,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 45,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 46,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 47,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 48,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 49,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 50,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nWei, Jason, et al. \"Chain-of-thought prompting elicits reasoning in large language models.\" Advances in neural information processing systems 35\n(2022): 24824-24837.",
+    "method": "native",
+    "native_text_length": 199
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 51,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nKojima, Takeshi, et al. \"Large language models are zero-shot reasoners.\" Advances in neural information processing systems 35 (2022):\n22199-22213.",
+    "method": "native",
+    "native_text_length": 180
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 52,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nZhang, Zhuosheng, et al. \"Automatic chain of thought prompting in large language models.\" arXiv preprint\narXiv:2210.03493 (2022).",
+    "method": "native",
+    "native_text_length": 163
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 53,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 54,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 55,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 56,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 57,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 58,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 59,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nHow it\nWorks?",
+    "method": "native",
+    "native_text_length": 47
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 60,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nReAct\nExample\nQuestion What is the elevation range for the area that the eastern sector of the Colorado orogeny extends into?\n- Thought 1 I need to search Colorado orogeny, find the area that the eastern sector of the Colorado orogeny extends\ninto, then find the elevation range of the area.\n- Action 1 Search[Colorado orogeny]\n- Observation 1 The Colorado orogeny was an episode of mountain building (an orogeny) in Colorado and\nsurrounding areas.\n- Thought 2 It does not mention the eastern sector. So I need to look up eastern sector.\n- Action 2 Lookup[eastern sector]\n- Observation 2 (Result 1 / 1) The eastern sector extends into the High Plains and is called the Central Plains\norogeny.\n- Thought 3 The eastern sector of Colorado orogeny extends into the High Plains. So I need to search High Plains\nand find its elevation range.\nAction 3 Search[High Plains]\nObservation 3 High Plains refers to one of two distinct land regions\nThought 4 I need to instead search High Plains (United States).\nAction 4 Search[High Plains (United States)]\nObservation 4 The High Plains are a subregion of the Great Plains. From east to west, the\nHigh Plains rise in elevation from around 1,800 to 7,000 ft (550 to 2,130\nm).[3]\nThought 5 High Plains rise in elevation from around 1,800 to 7,000 ft, so the answer\nis 1,800 to 7,000 ft.\nAction 5 Finish[1,800 to 7,000 ft]\n...",
+    "method": "native",
+    "native_text_length": 1393
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 61,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n61",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 62,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n62",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 63,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n63",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 64,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n64",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 65,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n65",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 66,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n66",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 67,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n67",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 68,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n68",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 69,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n69",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 70,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n70",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 71,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n71",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 72,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n72",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 73,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n73",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 74,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nOverview\n• Open-source development framework\nfor LLM applications\n• Python and JavaScript (TypeScript)\npackages\n• Focused on composition and\nmodularity\nLangChain\n• Modular components\n• Use cases: Common ways to combine\ncomponents\nKey value adds:",
+    "method": "native",
+    "native_text_length": 279
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 75,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nWhy use\nprompt\ntemplates\n?",
+    "method": "native",
+    "native_text_length": 60
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 76,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLangChain\noutput\nparsing\nworks with\nprompt\ntemplates",
+    "method": "native",
+    "native_text_length": 86
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 77,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMemory\n•\nLarge Language Models are ‘stateless’\n•\nEach transaction is independent\n•\nChatbots appear to have memory by providing the full conversation as\n‘context’\n•\nLangChain provides several kinds of ‘memory’ to store and accumulate\nthe conversation.",
+    "method": "native",
+    "native_text_length": 284
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 78,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nChain\nLLMChain\n• Basic building block for\nLLM-powered\napplications\n• Combines a prompt\ntemplate with an LLM\nSimpleSequentialChain\n• Chains multiple\nLLMChains together\n• Output of one chain\nbecomes input for the\nnext\n• Single input, single\noutput\nSequentialChain\n• More flexible than\nSimpleSequentialChain\n• Allows multiple inputs\nand outputs\n• Can specify which\noutputs to use as inputs\nfor subsequent chains\nRouter Chain\n• Dynamically selects\nwhich chain to use based\non input\n• Useful for handling\ndiverse queries or tasks",
+    "method": "native",
+    "native_text_length": 558
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 79,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTransfer Learning in NLP\n• Used in standard NLP tasks\n• Question answering\n• Text generation\n• Text summarization\n• Named Entity Recognition\n• Key value pair identification\n• …\n• Transfer learning in NLP through\n• Finetuning language models for down stream tasks\n• Generating contextualized word embeddings",
+    "method": "native",
+    "native_text_length": 340
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 80,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPre-Training Model Architectures in\nNLP",
+    "method": "native",
+    "native_text_length": 73
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 81,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nUsing Transformer for Transfer\nLearning in NLP\n• Transformers handle long-term dependencies better than LSTMs\n• Encoder-Decoder structure of the transformer made it perfect for machine\ntranslation\n• How to pre-train a language model using transformer-based architecture\n(with attention mechanisms and faster training due to parallelization) that\ncan be finetuned for downstream supervised learning tasks?",
+    "method": "native",
+    "native_text_length": 438
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 82,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nBERT (Bidirectional Encoder\nRepresentations from Transformers)\n• OpenAI Transformer only trains a forward language model while ELMo’s\nmodel was bidirectional\n• BERT is a transformer-based model whose language model is\nconditioned on both left and right contexts\n• BERT is basically a trained Transformer Encoder stack",
+    "method": "native",
+    "native_text_length": 351
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 83,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nBERT Features\n• Training corpus was comprised of two entries\n• Toronto Book Corpus (800M words), and\n• English Wikipedia (2,500M words)\n• Two versions of BERT (L stands for the number of layers, H stands for the\nhidden size, A stands for the number of self-attention heads)\n• BERT-Base: L = 12, H = 768, A = 12, Total parameters = 110M\n• BERT-Large: L = 24, H = 1024, A = 16, Total parameters = 340M",
+    "method": "native",
+    "native_text_length": 433
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 84,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nInput Representation of BERT",
+    "method": "native",
+    "native_text_length": 62
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 85,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nBERT Training – Predicting word at a\nposition\n• Masked language model\n(Masked LM)\n• Randomly masks 15% of\ntokens in the input and model\nis trained to predict the\nmasked word",
+    "method": "native",
+    "native_text_length": 207
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 86,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nBERT Training – Two sentence tasks\n• Next sentence prediction (NSP)\n• Task: Given two sentences (A\nand B), is B likely to be the\nsentence that follows A, or not?\n(binary classification)",
+    "method": "native",
+    "native_text_length": 219
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 87,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nBERT for Feature Extraction\n• Using BERT to create contextualized word embeddings\n•\n12 embedding vectors for\neach word from the\noutput of 12 encoder\nlayers\n•\nWhich embedding(s) to\nuse for a given task?",
+    "method": "native",
+    "native_text_length": 235
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 88,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDifferent ways to create contextualized\nembeddings for a word using BERT",
+    "method": "native",
+    "native_text_length": 106
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 89,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nUsing BERT for different Downstream\nTasks",
+    "method": "native",
+    "native_text_length": 75
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 90,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFine-tuning",
+    "method": "native",
+    "native_text_length": 45
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 91,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nOpenAI Transformer\n• Pre-training a transformer decoder\nfor language modeling\n• Decoder masks future tokens so can\nbe trained on next word prediction\ntask\n• Model has 12 decoder layers\nstacked\n• Only masked self attention layers",
+    "method": "native",
+    "native_text_length": 262
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 92,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTransfer Learning to Downstream\nTasks",
+    "method": "native",
+    "native_text_length": 71
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 93,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nIn-context learning (ICL)\n• Learning from few-examples in the context (input to\nthe LLM)\n• Does not require weight updates as in fine-tuning\n• Learning from analogy",
+    "method": "native",
+    "native_text_length": 198
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 94,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFew Shot (FS) Learning\n• The model is given description of the task and a few demonstrations of the\ntask at inference time as conditioning but no weight updates are allowed\n• Gives K examples of context and completion, and then one final example\nof context, with the model expected to provide the completion",
+    "method": "native",
+    "native_text_length": 341
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 95,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nOne Shot (1S) Learning\n• Only one demonstration is allowed, in addition to a natural language\ndescription of the task.\n• Most closely matches the way in which some tasks are communicated to\nhumans.\n• With one example sometimes it is easier to communicate the content or\nformat of a task vs if no examples are given.",
+    "method": "native",
+    "native_text_length": 349
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 96,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nZero Shot (ZS) Learning\n• No demonstrations are allowed, and the model is only given a natural\nlanguage instruction describing the task\n• Some settings zero-shot is closest to how humans perform tasks\n• Can be “unfairly hard” in some cases",
+    "method": "native",
+    "native_text_length": 273
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 97,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGPT-3\n•\nFrom OpenAI\n•\nDecode only architecture\nGPT-3 family of\nmodels\nGPT-3 training\ndataset",
+    "method": "native",
+    "native_text_length": 126
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 98,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGPT-3 performance with ICL\nLarger models make increasingly efficient use of in-context information.\n•\nTask: remove random\nsymbols from a word, both\nwith and without a natural\nlanguage task description\n•\nSteeper “in-context learning\ncurves” for large models\ndemonstrate improved\nability to learn a task from\ncontextual information",
+    "method": "native",
+    "native_text_length": 363
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 99,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLLaMa\n• From MetaAI\n• Decode only architecture\nLLaMa family of models\nLLaMa training dataset",
+    "method": "native",
+    "native_text_length": 126
+  },
+  {
+    "source": "lecture_03.pdf",
+    "page": 100,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLLaMa Training\nLLaMA-33B and LLaMA- 65B\nwere trained on 1.4T tokens. The\nsmaller models were trained on\n1.0T tokens. All models are\ntrained with a batch size of 4M\ntokens.",
+    "method": "native",
+    "native_text_length": 205
+  }
+]

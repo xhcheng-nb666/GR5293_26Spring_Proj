@@ -1,0 +1,765 @@
+[
+  {
+    "source": "lecture_04.pdf",
+    "page": 1,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGenerative AI using Large\nLanguage Models (LLMs)\nLecture 4 | 02/13/25\nInstructor: Chen Wang\nFri 4:10 pm - 6:40 pm | 517 Hamilton Hall",
+    "method": "native",
+    "native_text_length": 167
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 2,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAgenda\nRAG & Tool Calling\n•\nRAG\n•\nSemantic Search\n•\nKeyword Search\n•\nEmbeddings\n•\nHybrid Search\n•\nReRank\n•\nGenerating Answers\n•\nVectorDB\n•\nKNN, ANN, HNSW\n•\nGraphRAG\n•\nAgenticRAG\n•\nFunctions, Tools and Agents\n•\nLangChain Notebooks\n2",
+    "method": "native",
+    "native_text_length": 265
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 3,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nRetrieval Augmented Generation\n•\nWhat is RAG?\n•\n“Retrieval Augmented Generation (RAG) is a sophisticated approach that enhances the\ncapabilities of large language models (LLMs) by integrating retrieval mechanisms with\ngenerative models. This synergy allows the model to access a wealth of external knowledge,\nsignificantly improving the relevance and accuracy of generated responses [1]”.\n•\nWhy we need RAG?\n•\nImproves accuracy and relevance of LLM outputs\n•\nAllows access to current information beyond LLM training data\n•\nCost-effective alternative to fine-tuning or retraining LLMs\n[1] https://www.restack.io/p/retrieval-augmented-generation-answer-rag-vs-semantic-cat-ai\n3",
+    "method": "native",
+    "native_text_length": 709
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 4,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSemantic Search\n• Semantic Search: Retrieves relevant documents based on meaning\nand intent\n• RAG: Retrieves relevant information AND uses it to generate new,\ncontextual responses\nTraditional Semantic Search vs. RAG\n• Semantic Search focuses on retrieval;\n• RAG combines retrieval with generation; RAG provides more dynamic\nand tailored responses\nKey Differences\n4",
+    "method": "native",
+    "native_text_length": 398
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 5,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSemantic\nSearch\nSearch is crucial to how we\nnavigate the world\n5",
+    "method": "native",
+    "native_text_length": 98
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 6,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nKeyword\nSearch\n6",
+    "method": "native",
+    "native_text_length": 50
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 7,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSearch at a\nhigh level\n7",
+    "method": "native",
+    "native_text_length": 58
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 8,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nKeyword Search (Internals)\nBM25 Algorithm, https://www.geeksforgeeks.org/keyword-searching-\nalgorithms-for-search-engines/\n8",
+    "method": "native",
+    "native_text_length": 158
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 9,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n9",
+    "method": "native",
+    "native_text_length": 35
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 10,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n10",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 11,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n11",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 12,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n12",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 13,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n13",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 14,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n14",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 15,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n15",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 16,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n16",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 17,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n17",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 18,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n18",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 19,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n19",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 20,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n20",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 21,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLimitation\nof keyword\nmatching\n21",
+    "method": "native",
+    "native_text_length": 67
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 22,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLanguage\nModels Can\nImprove Both\nSearch Stages\n22",
+    "method": "native",
+    "native_text_length": 83
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 23,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nEmbeddings\n•\nEmbeddings\n•\nare dense numerical representations of various types of data such as text,\nimages, or audio, transforming them into a low-dimensional space suitable\nfor machine learning.\n•\nKey Points:\n•\nDimensionality Reduction: They map high-dimensional data to a lower-\ndimensional space, capturing important features.\n•\nSemantic Similarity: Similar items have embeddings close together, allowing\ntasks like nearest neighbor search.\n•\nApplications: Used in NLP, computer vision, recommendation systems.\n•\nLearning from Data: Generated through algorithms like neural networks that\nlearn from input data.\n23",
+    "method": "native",
+    "native_text_length": 651
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 24,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nEmbeddin\ngs\n24",
+    "method": "native",
+    "native_text_length": 48
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 25,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nWord\nEmbedding\ns\n25",
+    "method": "native",
+    "native_text_length": 53
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 26,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nText Embeddings\n26",
+    "method": "native",
+    "native_text_length": 52
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 27,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDense Retrieval\n27",
+    "method": "native",
+    "native_text_length": 52
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 28,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nChunking\n28",
+    "method": "native",
+    "native_text_length": 45
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 29,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSearch for\nSimilar\nVectors\n29",
+    "method": "native",
+    "native_text_length": 63
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 30,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n‘brute force’\nsearch\nalgorithm\n30",
+    "method": "native",
+    "native_text_length": 67
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 31,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nRuntime\nComplexity\nof KNN\n31",
+    "method": "native",
+    "native_text_length": 62
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 32,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNot a big\nproblem at\nsmall scale\n32",
+    "method": "native",
+    "native_text_length": 69
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 33,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nBig\nproblem at\nscale\n33",
+    "method": "native",
+    "native_text_length": 57
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 34,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSmall\nWorld\n34",
+    "method": "native",
+    "native_text_length": 48
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 35,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNavigate Small\nWorld\n(Constructing)\n35",
+    "method": "native",
+    "native_text_length": 72
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 36,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNavigate Small\nWorld\n(Constructing)\n36",
+    "method": "native",
+    "native_text_length": 72
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 37,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNavigate Small\nWorld\n(Constructing)\n37",
+    "method": "native",
+    "native_text_length": 72
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 38,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNavigate Small\nWorld\n(Constructing)\n38",
+    "method": "native",
+    "native_text_length": 72
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 39,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNavigate Small\nWorld\n(Constructing)\n39",
+    "method": "native",
+    "native_text_length": 72
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 40,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNavigate Small\nWorld\n(Constructing)\n40",
+    "method": "native",
+    "native_text_length": 72
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 41,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNavigate Small\nWorld\n(Constructing)\n41",
+    "method": "native",
+    "native_text_length": 72
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 42,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNavigate Small\nWorld\n(Constructing)\n42",
+    "method": "native",
+    "native_text_length": 72
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 43,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNavigate Small\nWorld\n(Constructing)\n43",
+    "method": "native",
+    "native_text_length": 72
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 44,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNSW - Search\n1: Nearest\nNeighbor\n44",
+    "method": "native",
+    "native_text_length": 69
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 45,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNSW -\nSearch\n45",
+    "method": "native",
+    "native_text_length": 49
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 46,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNSW -\nSearch\n46",
+    "method": "native",
+    "native_text_length": 49
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 47,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNSW -\nSearch\n47",
+    "method": "native",
+    "native_text_length": 49
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 48,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNSW -\nSearch\n48",
+    "method": "native",
+    "native_text_length": 49
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 49,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNSW -\nSearch\n49",
+    "method": "native",
+    "native_text_length": 49
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 50,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNSW – Search 2\nApproximate\nNearest\nNeighbor\n50",
+    "method": "native",
+    "native_text_length": 80
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 51,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNSW – Search 2\nApproximate\nNearest\nNeighbor\n51",
+    "method": "native",
+    "native_text_length": 80
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 52,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNSW – Search 2\nApproximate\nNearest\nNeighbor\n52",
+    "method": "native",
+    "native_text_length": 80
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 53,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nHierarchical\nNavigable Small\nWorld (HNSW) -\nSearch\n53",
+    "method": "native",
+    "native_text_length": 87
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 54,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nHierarchical\nNavigable Small\nWorld (HNSW) -\nSearch\n54",
+    "method": "native",
+    "native_text_length": 87
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 55,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nHierarchical\nNavigable Small\nWorld (HNSW) -\nSearch\n55",
+    "method": "native",
+    "native_text_length": 87
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 56,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nHNSW -\nConstructio\nn\n56",
+    "method": "native",
+    "native_text_length": 57
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 57,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nHNSW\nRuntime\n57",
+    "method": "native",
+    "native_text_length": 49
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 58,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nVectorDB\n•\nA vector database is a specialized database designed to store,\nmanage, and query high-dimensional vector data efficiently\n•\nOptimized for storing and retrieving vector embeddings,\nwhich are crucial for AI and machine learning applications\n•\nWhy Vector Databases are Useful for Dense Retrieval and RAG\n•\nEfficient storage and retrieval of high-dimensional data\n•\nOptimized for similarity search operations\n•\nScalability to handle large datasets\n•\nLow-latency queries for real-time applications\n•\nSeamless integration with AI and machine learning workflows\n58",
+    "method": "native",
+    "native_text_length": 602
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 59,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n59",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 60,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nIndexing\n60",
+    "method": "native",
+    "native_text_length": 45
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 61,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nRAG\n61",
+    "method": "native",
+    "native_text_length": 40
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 62,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSparse vs Dense Search\n62",
+    "method": "native",
+    "native_text_length": 59
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 63,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDense\nSearch\nChallenge\n63",
+    "method": "native",
+    "native_text_length": 59
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 64,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSparse vs\nDense\nSearch\n64",
+    "method": "native",
+    "native_text_length": 59
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 65,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nHybrid\nSearch\n65",
+    "method": "native",
+    "native_text_length": 50
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 66,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nHybrid\nSearch\n66",
+    "method": "native",
+    "native_text_length": 50
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 67,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDense\nRetrieval is\nnot Perfect\n67",
+    "method": "native",
+    "native_text_length": 67
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 68,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSolution:\nReRank\n68",
+    "method": "native",
+    "native_text_length": 53
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 69,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nReRank is\ntrained on\n69",
+    "method": "native",
+    "native_text_length": 57
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 70,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSearch can\nhelp LLMs in\nmultiple ways\n70",
+    "method": "native",
+    "native_text_length": 74
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 71,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n71",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 72,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n72",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 73,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAgent Basics\nAgents\nAre a combination of LLMs and code\nLLMs reason about what steps to take\nand call for actions.\nAgent loop\nChoose a tool to use\nObserve the output of the tool\nRepeat until a stopping condition is\nmet\nStopping conditions can be:\nLLM determined\nHardcoded rules\n73",
+    "method": "native",
+    "native_text_length": 313
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 74,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGenerating\nAnswers\n74",
+    "method": "native",
+    "native_text_length": 55
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 75,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n75",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 76,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n76",
+    "method": "native",
+    "native_text_length": 36
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 77,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 78,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 79,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 80,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 81,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 82,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 83,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 84,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 85,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 86,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 87,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 88,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 89,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 90,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 91,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 92,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 93,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 94,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 95,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 96,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFunction Call\n•\nOpenAI has fine tuned GPT-3.5-turbo and GPT-4 models to\n•\nAccept additional arguments through which users can pass in descriptions of\nfunctions.\n•\nIf it is relevant, return the name of the function to use, along with a JSON object with\nthe appropriate input parameters.\n•\nNotebook example:\n•\nhttps://drive.google.com/file/d/1U-\nCb_ED3anGIfUvqm19ZKvVdBTBJb4kM/view?usp=sharing\n96",
+    "method": "native",
+    "native_text_length": 428
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 97,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLangChain\nExpression\nLanguage\n(LCEL)\n97",
+    "method": "native",
+    "native_text_length": 73
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 98,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nInterface\n98",
+    "method": "native",
+    "native_text_length": 46
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 99,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLangChai\nn\nExpressio\nn\nLanguage\n(LCEL)\n•\nRunnables support:\n•\nAsync, Batch and Streaming Support\n•\nFallbacks\n•\nParallelism\n•\nLLM calls can be time consuming\n•\nAny components that can be run in parallel are!\n•\nLogging is built in\n99",
+    "method": "native",
+    "native_text_length": 265
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 100,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPydantic\n100",
+    "method": "native",
+    "native_text_length": 46
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 101,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPydantic\n101",
+    "method": "native",
+    "native_text_length": 46
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 102,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPydantic\nwith\nLangChain\nfor OpenAI\nfunction\ncalls\n102",
+    "method": "native",
+    "native_text_length": 87
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 103,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n103",
+    "method": "native",
+    "native_text_length": 37
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 104,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n104",
+    "method": "native",
+    "native_text_length": 37
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 105,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n105",
+    "method": "native",
+    "native_text_length": 37
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 106,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n106",
+    "method": "native",
+    "native_text_length": 37
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 107,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTools and Routing\n•\nFunctions and services an LLM\ncan utilize to extend its capabilities\nare named “tools” in LangChain\n•\nLangChain has many tools\navailable\n•\nSearch tools\n•\nMath tools\n•\nSQL tools\n•\n…\n107",
+    "method": "native",
+    "native_text_length": 238
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 108,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n108",
+    "method": "native",
+    "native_text_length": 37
+  },
+  {
+    "source": "lecture_04.pdf",
+    "page": 109,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n109",
+    "method": "native",
+    "native_text_length": 37
+  }
+]

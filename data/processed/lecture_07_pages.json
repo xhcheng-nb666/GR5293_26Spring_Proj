@@ -1,0 +1,709 @@
+[
+  {
+    "source": "lecture_07.pdf",
+    "page": 1,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGenerative AI using Large\nLanguage Models (LLMs)\nLecture 7 | 03/05/25\nInstructor: Chen Wang\nFri 4:10 pm - 6:40 pm | 517 Hamilton Hall",
+    "method": "native",
+    "native_text_length": 167
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 2,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAgenda\n●Pretrained Model Selection and\nModel Pretraining\n●Quantization\n●Efficient Mult-GPU Compute\nStrategies\n●Scaling Law\n●BloombergGPT",
+    "method": "native",
+    "native_text_length": 170
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 3,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGenerative AI project lifecycle",
+    "method": "native",
+    "native_text_length": 65
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 4,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGenerative AI project lifecycle",
+    "method": "native",
+    "native_text_length": 65
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 5,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nConsiderations for choosing a model",
+    "method": "native",
+    "native_text_length": 69
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 6,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nModel Hubs",
+    "method": "native",
+    "native_text_length": 44
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 7,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nHow Large Language Models are trained?",
+    "method": "native",
+    "native_text_length": 72
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 8,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nModel architectures\nand pre-training\nobjectives",
+    "method": "native",
+    "native_text_length": 81
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 9,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLLM pre-training at a high level",
+    "method": "native",
+    "native_text_length": 66
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 10,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLLM pre-training at a high level\nThe model internalizes the patterns and structures\npresent in the language.",
+    "method": "native",
+    "native_text_length": 142
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 11,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLLM pre-training at high level",
+    "method": "native",
+    "native_text_length": 64
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 12,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLLM pre-training at high level",
+    "method": "native",
+    "native_text_length": 64
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 13,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTransformers",
+    "method": "native",
+    "native_text_length": 46
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 14,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAutoencoding models\nMasked Language Modeling (MLM)\n<MASK>\nteaches\nBidirectional context",
+    "method": "native",
+    "native_text_length": 121
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 15,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAutoencoding\nmodels\n●Good use cases\n○\nSentiment Analysis\n○\nNamed entity recognition\n○\nWord classification\n●Example models:\n○\nBERT\n○\nROBERTA",
+    "method": "native",
+    "native_text_length": 173
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 16,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAutoregressive Models\nCausal Language Modeling (CLM)\nObjective: Predict Next\nToken\nFull Language Modeling\nteaches\nUnidirectional context",
+    "method": "native",
+    "native_text_length": 170
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 17,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAutoregressive\nmodels\n●Good use cases:\n○\nText generation\n○\nOther emergent behavior\n■\nDepends on model size\n●Example models:\n○\nGPT\n○\nBLOOM",
+    "method": "native",
+    "native_text_length": 171
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 18,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSequence-to-sequence models\nSpan Corruption\n<MASK>\n<MASK>\n<X>\nSentinel Token\nObjective: Reconstruct span",
+    "method": "native",
+    "native_text_length": 138
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 19,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSequence-to-sequence models\n●Good use cases:\n○\nTranslation\n○\nText Summarization\n○\nQuestion answering\n●Example models\n○\nT5\n○\nBART",
+    "method": "native",
+    "native_text_length": 162
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 20,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nModel architectures and pre-training\nobjectives\nTarget",
+    "method": "native",
+    "native_text_length": 88
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 21,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nModel architectures and pre-training\nobjectives",
+    "method": "native",
+    "native_text_length": 81
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 22,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nModel architectures and pre-training\nobjectives",
+    "method": "native",
+    "native_text_length": 81
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 23,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nModel architectures and pre-training\nobjectives",
+    "method": "native",
+    "native_text_length": 81
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 24,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nQuestion?\nLarge Language Models (LLMs) are capable of performing multiple tasks supporting a\nvariety of use cases. Which of the following tasks supports the use case of converting\ncode comments into executable code?\no\nTranslation\no\nInvoke actions from text\no\nInformation Retrieval\no\nText summarization",
+    "method": "native",
+    "native_text_length": 335
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 25,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nQuestion?\nWhich transformer-based model architecture is well-suited to the task of text\ntranslation?\n●\nAutoencoder\n●\nSequence-to-sequence\n●\nAutoregressive",
+    "method": "native",
+    "native_text_length": 188
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 26,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nThe significance of scale: task ability\n*Bert-base\nBLOOM\n176B",
+    "method": "native",
+    "native_text_length": 95
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 27,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nModel size vs. time\n2018\n2022\n2023\nBERT-L\n340M\nGPT-2\n1.5B\nGPT-3\n175B\nPaLM\n540B\nGrowth powered by:\n• Introduction of transformer\n• Access to massive\ndatasets\n• More powerful compute\nresources",
+    "method": "native",
+    "native_text_length": 224
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 28,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nModel size vs. time\n2018\n2022\n2023\nBERT-L\n340M\nGPT-2\n1.5B\nGPT-3\n175B\nPaLM\n540B\nincrease?\nTrillion(s)",
+    "method": "native",
+    "native_text_length": 134
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 29,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nComputational Challenges",
+    "method": "native",
+    "native_text_length": 58
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 30,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nApproximate GPU RAM needed to store 1B\nparameters\n1 parameter = 4 bytes (32-bit float)\n1B parameters = 4 x 109 bytes =4 GB\n4GB @ 32-bit\nFull precision\nReferences: https://github.com/bitsandbytes-foundation/bitsandbytes\nhttps://huggingface.co/docs/transformers/v4.20.1/en/perf_train_gpu_one#anatomy-of-models-memory",
+    "method": "native",
+    "native_text_length": 348
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 31,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAdditional GPU RAM needed to train 1B parameters\nBytes per parameter\nModel Parameters (Weights)\n4 byte per parameter\nAdam Optimizer (2 states)\n+8 bytes per parameter\nGradients\n+4 bytes per parameter\nActivations and temp memory (variable size)\n+8 bytes per parameter (high-end estimate)\nTOTAL\n= 4 bytes per parameter + 20 extra bytes per\nparameter\nReferences: https://github.com/bitsandbytes-foundation/bitsandbytes\nhttps://huggingface.co/docs/transformers/v4.20.1/en/perf_train_gpu_one#anatomy-of-models-memory\n~ 20 extra bytes\nper parameter",
+    "method": "native",
+    "native_text_length": 575
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 32,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nApproximate GPU RAM needed to train 1B-\nparams\nMemory needed to store model\nMemory needed to train model\n4GB@32-bit\nfull precision\n24 GB @ 32-bit\nfull precision",
+    "method": "native",
+    "native_text_length": 194
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 33,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nQuantization\n0.0\n0\n32-bit floating point\n16-bit floating point | 8-bit integer\nFP32\nFP16 | BFLOAT16 | INT8\nMIN\n-3e38\nMAX\n+3e38\nRange:\nFrom -3e38 to +3e38\n?\n?",
+    "method": "native",
+    "native_text_length": 191
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 34,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nQuantization: FP32\n0.0\n0\nMIN\n-3e38\nMAX\n+3e38\nX\nLet’s store Pi: 3.141592\nFP32\n0 10000000 100100100001111110110\nSign\n1 bit\nExponent\n8 bits\nFraction\n23 bits\nMantissa/Significand\n= Precision\n3.1415920257568359375\nReal value of Pi:\n3.14159265358979323384\n4 bytes memory",
+    "method": "native",
+    "native_text_length": 298
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 35,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nQuantization: FP16\n0.0\n0\nMIN\n-3e38\nMAX\n+3e38\nX\nLet’s store Pi: 3.141592\nFP32\n0 10000000 100100100001111110110\nSign\n1 bit\nExponent\n8 bits\nFraction\n23 bits\n3.1415920257568359375\nFP16\n0 10000 1001001000\nSign\n1 bit\nExponent\n5 bits\nFraction\n10 bits\nMIN\n-65504\nMAX\n65504\nX\n3.140625\n4 bytes memory\n2 bytes memory",
+    "method": "native",
+    "native_text_length": 339
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 36,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nQuantization: BFLOAT16",
+    "method": "native",
+    "native_text_length": 56
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 37,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nQuantization: BFLOAT16",
+    "method": "native",
+    "native_text_length": 56
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 38,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nQuantization: BFLOAT16",
+    "method": "native",
+    "native_text_length": 56
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 39,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nQuantization: INT8\nMIN\n-128\nMAX\n127\nX\n3\n4 bytes memory\n1 byte memory",
+    "method": "native",
+    "native_text_length": 102
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 40,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nQuantization: Summary\n• Reduce required memory to store and train models.\n• Statistically projects 32-bit floating point numbers into lower precision spaces .\n• Quantization-aware training (QAT) learns the quantization scaling factors\nduring training.\n• BFLOAT16 is a popular choice.",
+    "method": "native",
+    "native_text_length": 317
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 41,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nApproximate GPU RAM needed to store\n1B parameters",
+    "method": "native",
+    "native_text_length": 83
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 42,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGPU RAM needed to train larger models",
+    "method": "native",
+    "native_text_length": 71
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 43,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGPU RAM needed to train larger models",
+    "method": "native",
+    "native_text_length": 71
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 44,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nEfficient Multi-GPU\nCompute Strategies",
+    "method": "native",
+    "native_text_length": 72
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 45,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nWhen to use distributed compute\nModel too big for single GPU",
+    "method": "native",
+    "native_text_length": 94
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 46,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDistributed Data Parallel (DDP)",
+    "method": "native",
+    "native_text_length": 65
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 47,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDistributed Data Parallel (DDP)",
+    "method": "native",
+    "native_text_length": 65
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 48,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDistributed Data Parallel (DDP)",
+    "method": "native",
+    "native_text_length": 65
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 49,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDistributed Data Parallel (DDP)",
+    "method": "native",
+    "native_text_length": 65
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 50,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDistributed Data Parallel (DDP)",
+    "method": "native",
+    "native_text_length": 65
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 51,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDistributed Data Parallel (DDP)",
+    "method": "native",
+    "native_text_length": 65
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 52,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDistributed Data Parallel (DDP)",
+    "method": "native",
+    "native_text_length": 65
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 53,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFully Sharded Data Parallel (FSDP)\n●Motivated by the “ZeRO” paper – zero data overlap between GPUs\nS. Rajbhandari, J. Rasley, O. Ruwase and Y. He, \"ZeRO: Memory optimizations Toward Training Trillion Parameter Models,\" SC20:\nInternational Conference for High Performance Computing, Networking, Storage and Analysis, Atlanta, GA, USA, 2020, pp. 1-16, doi:\n10.1109/SC41405.2020.00024.",
+    "method": "native",
+    "native_text_length": 416
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 54,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nRecap: Additional GPU RAM needed for training",
+    "method": "native",
+    "native_text_length": 79
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 55,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMemory usage in DDP\n• One full copy of model and training parameters on each GPU",
+    "method": "native",
+    "native_text_length": 114
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 56,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nZero Redundancy Optimizer (ZeRO)\n• Reduces memory by distributing (sharding) the model\nparameters, gradients",
+    "method": "native",
+    "native_text_length": 142
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 57,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nZero Redundancy Optimizer (ZeRO)\n• Reduces memory by distributing (sharding) the model\nparameters, gradients\nZeRO Stage 1\nZeRO Stage 2\nZeRO Stage 3",
+    "method": "native",
+    "native_text_length": 181
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 58,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDistributed Data Parallel (DDP)",
+    "method": "native",
+    "native_text_length": 65
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 59,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDistributed Data Parallel (DDP)",
+    "method": "native",
+    "native_text_length": 65
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 60,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFully Sharded Data Parallel (FSDP)",
+    "method": "native",
+    "native_text_length": 68
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 61,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFully Sharded Data Parallel (FSDP)",
+    "method": "native",
+    "native_text_length": 68
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 62,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFully Sharded Data Parallel (FSDP)",
+    "method": "native",
+    "native_text_length": 68
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 63,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFully Sharded Data Parallel (FSDP)",
+    "method": "native",
+    "native_text_length": 68
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 64,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFully Sharded Data Parallel (FSDP)\n• Helps to reduce overall GPU memory utilization\n• Supports offloading to CPU if needed\n• Configure level of sharding via sharding factor",
+    "method": "native",
+    "native_text_length": 206
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 65,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nImpact of using FSDP\nZhao et al. 2023: “PyTorch FSDP: Experiences on Scaling Fully Sharded Data Parallel”\nNote: 1 teraflop/s = 1,000,000,000,000\n(One trillion) floating point operations per second",
+    "method": "native",
+    "native_text_length": 230
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 66,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nScaling laws and compute-optimal models",
+    "method": "native",
+    "native_text_length": 73
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 67,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nScaling choices for pre-training\nGoal: maximize model\nperformance\nSCALING CHOICE:\nDataset size\n(number of tokens)\nSCALING CHOICE:\nModel size\n(number of parameters)\nCONSTRAINT:\nCompute budget\n(GPUs, training time, cost)",
+    "method": "native",
+    "native_text_length": 252
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 68,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nCompute budget for training LLMs\n1 petaflops/s-day is these chips running at full\nefficiency for 24 hours",
+    "method": "native",
+    "native_text_length": 139
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 69,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nNumber of petaflop/s-days to pretrain various LLMs\nBrown et al. 2020, “Language Models are Few-Shot Learners”, https://arxiv.org/pdf/2005.14165\nBERT /\nROBERTA\nT5\nGPT-3",
+    "method": "native",
+    "native_text_length": 201
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 70,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nCompute budget vs. model performance\nCOMPUTE\nBUDGET",
+    "method": "native",
+    "native_text_length": 85
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 71,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nDataset size and model size vs.\nperformance\nCompute resource constraints\n• Hardware\n• Project timeline\n• Financial budget",
+    "method": "native",
+    "native_text_length": 155
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 72,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nData size and model size vs. performance",
+    "method": "native",
+    "native_text_length": 74
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 73,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nChinchilla paper\nJordan et al. 2022",
+    "method": "native",
+    "native_text_length": 69
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 74,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nCompute optimal models\n●Very large models may be over-parameterized and under-trained",
+    "method": "native",
+    "native_text_length": 119
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 75,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nCompute optimal models\n●Very large models may be over-parameterized and under-trained",
+    "method": "native",
+    "native_text_length": 119
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 76,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nCompute optimal models\n●Very large models may be over-parameterized and under-trained\n• Smaller models trained on more data could perform as well as large models",
+    "method": "native",
+    "native_text_length": 195
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 77,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nChinchilla scaling laws for model and dataset\nsize",
+    "method": "native",
+    "native_text_length": 84
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 78,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nQuestion\nScaling laws for pre-training large language models consider several aspects to maximize\nperformance of a model within a set of constraints and available scaling choices. Select all\nalternatives that should be considered for scaling when performing model pre-training?\nA. Batch size: Number of samples per iteration\nB.\nModel size: Number of parameters\nC.\nCompute budget: Compute constraints\nD.\nDataset size: Number of tokens",
+    "method": "native",
+    "native_text_length": 467
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 79,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 80,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 81,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPre-training for domain adaptation",
+    "method": "native",
+    "native_text_length": 68
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 82,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPre-training for domain adaptation\nLegal language\nThe prosecutor had difficulty proving\nmens rea, as the defendant seemed\nunaware that his actions were illegal.\nThe judge dismissed the case, citing the\nprinciple of res judicata as the issue had\nalready been decided in a previous trial.\nDespite\nthe\nsigned\nagreement,\nthe\ncontract was invalid as there was no\nconsideration exchanged between the\nparties.\nMedical language\nAfter a strenuous workout, the patient\nexperienced severe myalgia that\nlasted for several days.\nAfter the biopsy, the doctor confirmed\nthat the tumor was malignant and\nrecommended immediate treatment.\nSig: 1 tab po qid pc & hs\nTake one tablet by mouth four times a day, after meals,\nand at bedtime.",
+    "method": "native",
+    "native_text_length": 752
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 83,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nBloombergGPT: domain adaptation for finance\nFinancial\n(Public & Private)\nOther\n(Public)\n~51%\n~49%",
+    "method": "native",
+    "native_text_length": 131
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 84,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nBloombergGPT relative to other LLMs\nSource: Wu et al. 2023, “BloombergGPT: A Large Language Model for Finance.”",
+    "method": "native",
+    "native_text_length": 145
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 85,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nBloombergGPT relative to other LLMs",
+    "method": "native",
+    "native_text_length": 69
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 86,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 87,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 88,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 89,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 90,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 91,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 92,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 93,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 94,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 95,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 96,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 97,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 98,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 99,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 100,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_07.pdf",
+    "page": 101,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  }
+]

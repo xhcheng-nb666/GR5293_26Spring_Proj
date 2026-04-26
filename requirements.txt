@@ -1,0 +1,9 @@
+pymupdf
+pillow
+pytesseract
+sentence-transformers
+faiss-cpu
+numpy
+google-genai
+requests
+streamlit

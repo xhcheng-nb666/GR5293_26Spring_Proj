@@ -1,0 +1,561 @@
+=== Page 1 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Generative AI using Large
+Language Models (LLMs)
+Lecture 9 | 03/26/25
+Instructor: Chen Wang
+Fri 4:10 pm - 6:40 pm | 517 Hamilton Hall
+
+=== Page 2 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Agenda
+Background
+RLHF
+Human Feedback
+Reward Model
+Finetuning with RL
+PPO
+Reward Hacking
+Scaling Human Feedback & Constitutional AI
+
+=== Page 3 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 4 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 5 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 6 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 7 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 8 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Models behaving badly
+●Toxic language
+●Aggressive responses
+●Providing dangerous information
+
+=== Page 9 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Models behaving badly
+Knock, knock
+Prompt
+Model
+LLM
+Prompt
+Knock, knock
+Clap, Clap
+Helpful?
+Can coughing effectively stop a
+heart attack?
+LLM
+Can coughing effectively stop a
+heart attack?
+Coughing can help stop a heart
+attack.
+Honest?
+How can I hack my neighbor’s
+wifi?
+LLM
+How can I hack my neighbor’s
+wifi?
+Here are the best ways to hack
+your neighbor’s wifi …
+Harmless?
+HHH
+
+=== Page 10 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 11 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Fine-tuning with human feedback
+Fraction of model
+generated results
+preferred over human
+responses.
+Stiennon, Nisan, et al. "Learning to summarize with human feedback." Advances in neural information processing systems 33 (2020): 3008-3021.
+
+=== Page 12 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Reinforcement learning from human feedback (RLHF)
+Reinforcement
+Learning from Human
+feedback
+Instruct fine-
+tuned LLM
+Human-
+aligned LLM
+•
+Maximize helpfulness,
+relevance
+•
+Minimize harm
+•
+Avoid dangerous topics
+
+=== Page 13 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Objective: maximize reward received for actions
+Reinforcement Learning
+Agent
+Environment
+action at
+state st
+reward rt
+
+=== Page 14 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 15 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 16 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 17 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 18 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 19 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 20 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 21 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 22 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 23 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 24 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 25 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 26 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 27 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 28 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 29 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 30 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 31 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Prepare dataset for human feedback
+Instruct
+LLM
+
+=== Page 32 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Prepare dataset for human feedback
+Instruct LLM
+Prompt Dataset
+Prompt Samples
+Model Completions
+
+=== Page 33 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Collect human feedback
+●Define your model alignment criterion
+●For the prompt-response sets that you just generated, obtain human feedback
+through labeler workforce
+Prompt
+My house is too hot.
+LLM
+My house is too hot.
+There is nothing you can do about
+hot houses.
+My house is too hot. You can cool
+your house with air conditioning.
+My house is too hot. It is not too
+hot.
+Alignment criterion: helpfulness
+Model
+Completion
+1
+2
+3
+1
+2
+3
+1
+2
+3
+
+=== Page 34 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 35 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Prepare labeled data for training
+●Convert rankings into pairwise training data for the reward model
+Stiennon, Nisan, et al. "Learning to summarize with human feedback." Advances in
+Neural Information Processing Systems 33 (2020): 3008-3021.
+Reward
+[0,1]
+[1,0]
+[1,0]
+
+=== Page 36 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Question
+?
+"When using Reinforcement Learning with Human Feedback (RLHF) to align large language models with
+human preferences, what is the role of human labelers?”
+A.
+To write prompts and completions from scratch that are used during fine-tuning with RLHF
+B.
+To compare the original LLM completions to the RLHF updated model completions and ensure
+they don't diverge too much
+C.
+To identify model weights that should be updated
+D.
+To score prompt completions, so that this score is used to train the reward model component of
+the RLHF process
+
+=== Page 37 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 38 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 39 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 40 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 41 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 42 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 43 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 44 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Use the reward model to fine-tune LLM with RL
+Instruct LLM
+Prompt
+Dataset
+“A dog is …”
+“… a furry animal.”
+Rewar
+d
+Model
+0.24
+RL Algorithm
+prompt=“A dog is”
+completion=“a furry animal”
+Reward=0.24
+RL-updated LLM
+RLHF
+Iteration 1
+
+=== Page 45 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 46 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 47 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 48 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 49 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 50 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 51 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 52 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 53 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 54 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 55 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 56 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 57 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 58 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 59 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 60 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 61 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 62 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 63 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 64 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 65 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 66 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 67 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 68 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 69 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 70 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 71 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 72 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 73 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 74 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Question
+"How can RLHF align the performance of large language models
+with human preferences? Select all that apply.”
+A.
+RLHF can help reduce model toxicity and misinformation
+B.
+Inference is faster after RLHF, improving the user experience
+C.
+RLHF increases the model's size by adding new parameters that represent
+human preferences
+D.
+RLHF can enhance the interpretability of generated text
+
+=== Page 75 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 76 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 77 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 78 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 79 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Potential problem: reward hacking
+Instruct
+LLM
+Toxicity
+Reward
+Model
+Prompt
+Dataset
+“This product is ….”
+“… complete gabage.”
+-1.8
+PPO
+
+=== Page 80 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 81 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 82 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 83 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 84 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 85 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 86 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 87 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 88 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 89 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 90 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 91 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 92 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 93 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 94 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 95 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Fine-tuning 20B LLMs with RLHF on a 24GB consumer
+GPU, https://huggingface.co/blog/trl-peft
+
+=== Page 96 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 97 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 98 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 99 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 100 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 101 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 102 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 103 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 104 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 105 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 106 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 107 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 108 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 109 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 110 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 111 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 112 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 113 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 114 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 115 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 116 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 117 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 118 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 119 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 120 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 121 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 122 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 123 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 124 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 125 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 126 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 127 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 128 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 129 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 130 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+

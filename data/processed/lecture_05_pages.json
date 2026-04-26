@@ -1,0 +1,1031 @@
+[
+  {
+    "source": "lecture_05.pdf",
+    "page": 1,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGenerative AI using Large\nLanguage Models (LLMs)\nLecture 5 | 02/20/25\nInstructor: Chen Wang\nFri 4:10 pm - 6:40 pm | 517 Hamilton Hall",
+    "method": "native",
+    "native_text_length": 167
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 2,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAgenda\nLLM Evaluation Benchmarks\n• GLUE, SuperGLUE, MMLU, Big-\nBench, HELM, LLMPerf\nLLM Evaluation Metrics\n2",
+    "method": "native",
+    "native_text_length": 142
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 3,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 4,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 5,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 6,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 7,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 8,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 9,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 10,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 11,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 12,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 13,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 14,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 15,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 16,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 17,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 18,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 19,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 20,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 21,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 22,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 23,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 24,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 25,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 26,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 27,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 28,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 29,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 30,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nBenchmarks for LLMs",
+    "method": "native",
+    "native_text_length": 53
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 31,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 32,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 33,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 34,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 35,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 36,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 37,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 38,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 39,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 40,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 41,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 42,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 43,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 44,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 45,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 46,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 47,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 48,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 49,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 50,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 51,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 52,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 53,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 54,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 55,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 56,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 57,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 58,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 59,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 60,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 61,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 62,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 63,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 64,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 65,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 66,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 67,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nHELM,",
+    "method": "native",
+    "native_text_length": 39
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 68,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 69,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 70,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 71,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 72,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 73,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 74,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 75,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 76,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 77,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 78,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 79,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 80,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 81,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 82,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 83,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 84,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 85,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 86,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 87,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 88,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 89,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 90,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 91,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 92,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 93,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 94,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 95,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 96,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 97,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 98,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 99,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 100,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 101,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 102,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 103,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 104,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 105,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 106,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 107,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 108,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 109,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 110,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 111,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 112,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 113,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 114,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 115,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLLM Evaluation Metrics",
+    "method": "native",
+    "native_text_length": 56
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 116,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 117,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 118,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 119,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\n•\nROUGE is a collection of ROUGE-1, ROUGE-2, ROUGE-L metrics\n•\nROUGE scores are only comparable for the same task",
+    "method": "native",
+    "native_text_length": 147
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 120,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nProblems with ROUGE",
+    "method": "native",
+    "native_text_length": 53
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 121,
+    "text": "STAT GR 5293 Sec002 | Spring 2026",
+    "method": "native",
+    "native_text_length": 33
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 122,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nQuantitative performance metrics for\nLLM Inference\n•\nPerformance metrics for LLM inference\n•\nCompleted requests per minute\n•\nTime to first token (TTFT): how long before the LLM returns the first token\n•\nInter-token latency (ITL): average time between consecutive tokens\n•\nEnd-to-end Latency: approximately the same as the average output length of tokens multiplied\nby the inter-token latency\n•\nCost per typical request: API providers can usually trade off one of the other metrics for cost.\nFor example, you can reduce latency by running the same model on more GPUs or using higher-\nend GPUs.\nhttps://www.anyscale.com/blog/reproducible-performance-metrics-for-llm-inference",
+    "method": "native",
+    "native_text_length": 707
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 123,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMetrics for LLM Reasoning\n•\nLarge language models show improved downstream task performance\nwhen prompted to generate step-by-step reasoning to justify their final\nanswers (Chain of Thought, Tree of Thought, ReAct)\n•\nReasoning steps greatly improve model interpretability and verification,\n•\nObjectively studying the correctness of reasoning is difficult\n•\nHow often the stated reasoning steps actually support the final end task\npredictions?",
+    "method": "native",
+    "native_text_length": 476
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 124,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nExample of 2-shot reasoning\n2-shot examples\nStep-by-step reasoning for logical inference\ntask generated from 2-shot GPT-3",
+    "method": "native",
+    "native_text_length": 155
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 125,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTaxonomy of\nStep-by-Step\nReasoning Errors\nROSCOE: A SUITE OF METRICS FOR SCORING STEP-BYSTEP REASONING",
+    "method": "native",
+    "native_text_length": 136
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 126,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTaxonomy of Step-by-Step Reasoning\nErrors\nROSCOE: A SUITE OF METRICS FOR SCORING STEP-BYSTEP REASONING",
+    "method": "native",
+    "native_text_length": 136
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 127,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nReasoning Scorer: ROSCOE\n•\nSuite of metrics for scoring Step-by-Step reasoning\n•\nSource context of T sentences indicating a problem statement followed by a\nquestion and is prompted to generate step-by-step reasoning\n•\nHypothesis of N-steps, including a final answer as the last step\n•\nGold step-by-step reasoning of K steps (may or may not be available)\nROSCOE: A SUITE OF METRICS FOR SCORING STEP-BYSTEP REASONING",
+    "method": "native",
+    "native_text_length": 448
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 128,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nReasoning Scorer: ROSCOE\n•\nFine-grained metrics under 4 categories\n1.\nSemantic-Alignment Metrics\n2.\nSemantic-Similarity Metrics\n3.\nLocal Inference Metrics\n4.\nLanguage Coherence Metrics\nROSCOE: A SUITE OF METRICS FOR SCORING STEP-BYSTEP REASONING",
+    "method": "native",
+    "native_text_length": 279
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 129,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nReasoning Alignment Vector\n•\nReasoning alignment vector from the N-step hypothesis h to the source\ns of length T\nnormalized cosine similarity between hypothesis step and most similar sentence in a context\n•\nMeasures the grounding of the step-wise reasoning with respect to the\nsource text",
+    "method": "native",
+    "native_text_length": 322
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 130,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSemantic Alignment Metrics",
+    "method": "native",
+    "native_text_length": 60
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 131,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nSemantic Similarity Metrics\n•\nQuantify the degree of semantic equivalence between pieces of text\n•\nConsiders text as a whole, rather than relying on text units comparisons",
+    "method": "native",
+    "native_text_length": 205
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 132,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLogical Inference Metrics\n•\nMeasure logical errors between pieces of text\n•\nUse a Natural Language Inference (NLI) model trained to classify\nhypothesis-context pairs into entailment, neutral, and contradiction\nclasses to infer the contradiction probability",
+    "method": "native",
+    "native_text_length": 290
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 133,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLanguage Coherence Metrics\n•\nUse perplexity PPL as scored by the GPT2-Large model and English\ngrammatical acceptability p_gram scores",
+    "method": "native",
+    "native_text_length": 167
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 134,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTravelPlanner\nAre language agents capable of planning in more complex yet realistic settings,\ncloser to those in which humans operate?\n•\nTravel planning is a challenging, time-consuming task\n•\n1,225 user queries along with their reference plans\nFindings\n•\nState-of-the-art LLMs cannot handle complex planning tasks like those in\nTravelPlanner. GPT-4 successfully produces a plan that meets all the constraints\nfor a few tasks (0.6%)\n•\nPlanning strategies such as ReAct and Reflexion are insufficient for the multi-\nconstraint tasks\n•\nCommon failure modes of existing language agents, such as argument errors in\ntool use, being trapped in dead loops, and hallucinations\nTravelPlanner: A Benchmark for Real-World Planning with Language Agents",
+    "method": "native",
+    "native_text_length": 774
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 135,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nOverview of TravelPlanner",
+    "method": "native",
+    "native_text_length": 59
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 136,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTools used in TravelPlanner",
+    "method": "native",
+    "native_text_length": 61
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 137,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nConstraints in TravelPlanner",
+    "method": "native",
+    "native_text_length": 62
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 138,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nQuery difficulty levels in TravelPlanner",
+    "method": "native",
+    "native_text_length": 74
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 139,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nEvaluation metrics",
+    "method": "native",
+    "native_text_length": 52
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 140,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nMicro and Macro evaluation for\nconstraints pass rate\n•\nMicro Pass Rate\nratio of passed constraints to the total number\nof constraints\n• Macro Pass Rate\nratio of plans that pass all (commonsense or\nhard) constraints among all tested plans.",
+    "method": "native",
+    "native_text_length": 272
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 141,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPerformance of different LLMs on\nTravelPlanner",
+    "method": "native",
+    "native_text_length": 80
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 142,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nFailure modes in TravelPlanner",
+    "method": "native",
+    "native_text_length": 64
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 143,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLLMPerf\n•\nTool for evaluating performance of LLM APIs\n•\nTwo tests for evaluating LLMs:\n1.\nLoad test – check for performance\n2.\nCorrectness test – check for correctness\nhttps://github.com/ray-project/LLMPerf",
+    "method": "native",
+    "native_text_length": 240
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 144,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLLMPerf Load Test\n•\nSpawns a number of concurrent requests to the LLM API and measures the\ninter-token latency and generation throughput per request and across\nconcurrent requests\n•\nPrompt send with each request\n•\nThe lines are randomly sampled from a collection of lines from Shakespeare sonnets.\n•\nTokens are counted using the LlamaTokenizer regardless of which LLM API is being tested.\nThis is to ensure that the prompts are consistent across different LLM APIs.",
+    "method": "native",
+    "native_text_length": 499
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 145,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLLMPerf Correctness Test\n•\nSpawns a number of concurrent requests to the LLM API with the following\nformat:\n•\nrandom_number_in_word_format could be for example \"one hundred and twenty\nthree\". The test then checks that the response contains that number in digit format\nwhich in this case would be 123.\n•\nThe test does this for a number of randomly generated numbers and reports the\nnumber of responses that contain a mismatch.",
+    "method": "native",
+    "native_text_length": 459
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 146,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLLMPerf Leaderboard\nOutput tokens throughput (tokens/s)\nhttps://github.com/ray-project/llmperf-leaderboard",
+    "method": "native",
+    "native_text_length": 140
+  },
+  {
+    "source": "lecture_05.pdf",
+    "page": 147,
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLLMPerf Leaderboard\nTime to first token (seconds)\nhttps://github.com/ray-project/llmperf-leaderboard",
+    "method": "native",
+    "native_text_length": 134
+  }
+]

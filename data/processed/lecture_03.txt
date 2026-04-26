@@ -1,0 +1,755 @@
+=== Page 1 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Generative AI using Large
+Language Models (LLMs)
+Lecture 3 | 02/06/25
+Instructor: Chen Wang
+Fri 4:10 pm - 6:40 pm | 517 Hamilton Hall
+
+=== Page 2 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+What are the LLM Products you have used?
+
+=== Page 3 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Prompts and completions
+What is Large
+Language Model?
+LLM
+What is Large Language Model?
+A Large Language Model (LLM) is a
+type of artificial intelligence (AI) model
+designed to understand, generate, and
+manipulate human language on a large
+scale. These models are typically built
+using deep learning techniques,
+particularly neural networks, and are
+trained on massive amounts of text
+data to learn the statistical patterns
+and structures of language.
+Prompt
+Completion
+Context window: 2k – 100K
+Model
+
+=== Page 4 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+What are the
+LLM use cases
+you have seen?
+•
+Other Use Cases
+•
+Translate
+•
+Summarize
+•
+Proof-read and correct
+•
+Explain words
+•
+Create article/email
+•
+Make restaurant suggestions
+•
+Chat with users
+•
+Do Math Calculations
+•
+Answer Questions on many subjects
+•
+…
+
+=== Page 5 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Drafting
+an Email
+
+=== Page 6 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Translation
+
+=== Page 7 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Code
+Generation
+
+=== Page 8 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Summarization
+Could you summarize the key contribution of the attached paper?
+The paper introduces **SWE-bench**, a new benchmark designed to evaluate the capabilities of language models (LMs) in real-world software
+engineering tasks. The benchmark comprises 2,294 software engineering problems derived from real GitHub issues and corresponding pull
+requests across 12 popular Python repositories. The key contributions of the paper are:
+1. **Evaluation Framework**: SWE-bench provides a challenging testbed by requiring LMs to resolve real-world software engineering issues, which
+often involve understanding and coordinating changes across multiple functions, classes, and files. This setup goes beyond traditional code
+generation tasks by demanding complex reasoning, long-context processing, and interaction with execution environments.
+2. **Performance Evaluation**: The paper evaluates several state-of-the-art language models on SWE-bench, including proprietary models and their
+fine-tuned model, SWE-Llama. The results show that current models, including the best-performing one (Claude 2), can resolve only a small fraction
+(1.96%) of the issues, highlighting the challenges posed by the benchmark.
+3. **Dataset and Models**: Alongside SWE-bench, the authors release a training dataset called SWE-bench-train, which consists of 19,000 non-
+testing task instances from 37 repositories. They also introduce SWE-Llama, fine-tuned models based on CodeLlama, which are specialized for
+repository-wide code editing.
+The benchmark aims to push the boundaries of LM capabilities in practical and autonomous software engineering, providing a realistic and
+sustainable evaluation framework that can be continuously updated with new task instances.
+
+=== Page 9 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Meeting
+Summarization
+Tool
+
+=== Page 10 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Proofread and Correct
+Can you proof-read and correct this sentence?
+'Their going to the market to buy some fruits and vegetables.'
+The corrected sentence should be:
+"They're going to the market to buy some fruits and vegetables."
+
+=== Page 11 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Entity Extraction
+Extract the key entities mentioned in the following paragraph,
+including names of people, organizations, locations, dates,
+and any other relevant information. For each entity, provide its
+type (e.g., person, organization, location, date) and the text
+associated with it. Output the results in a list of JSON objects,
+where each object contains the entity and its type.
+Ion Stoica (born 1964 or 1965) is a Romanian–American
+computer scientist specializing in distributed systems, cloud
+computing and computer networking.[9][2][10][11] He is a
+professor of computer science at the University of California,
+Berkeley and co-director of AMPLab. He co-founded Conviva
+and Databricks with other original developers of Apache
+Spark.[6][12] As of April 2022, Forbes ranked him and Matei
+Zaharia as the 3rd-richest people in Romania with a net worth
+of $1.6 billion.[13]
+Prompt
+[
+{
+"entity": "Ion Stoica",
+"type": "person",
+"text": "Ion Stoica"
+},
+{
+"entity": "1964 or 1965",
+"type": "date",
+"text": "born 1964 or 1965"
+},
+{
+"entity": "Romanian–American",
+"type": "nationality",
+"text": "Romanian–American"
+},
+{
+"entity": "computer scientist",
+"type": "occupation",
+"text": "computer scientist"
+},
+{
+"entity": "distributed systems",
+"type": "field",
+"text": "distributed systems"
+},
+{
+"entity": "University of California, Berkeley",
+"type": "organization",
+"text": "University of California, Berkeley"
+},
+…
+]
+
+=== Page 12 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Call
+functions to
+interact with
+external
+world
+
+=== Page 13 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Math Calculation
+Let's solve this step-by-step:
+1) First, let's set up the multiplication:
+237
+× 56
+2) We'll multiply 237 by 6 (the ones digit of 56):
+237 × 6 = 1422
+3) Now we'll multiply 237 by 50 (the tens digit of 56):
+237 × 50 = 11850
+4) Now we add these two results:
+1422
++ 11850
+-------
+13272
+Therefore, 237 × 56 = 13,272.
+Would you like me to explain any part of this calculation in more detail?
+To multiply 237 by 56, you can follow these steps:
+### Step 1: Break down the numbers
+- Write the numbers in a column format:
+```
+237
+× 56
+```
+### Step 2: Multiply 237 by 6 (the ones digit of 56)
+- \( 237 \times 6 = 1422 \)
+### Step 3: Multiply 237 by 5 (the tens digit of 56), but remember it's actually
+50
+- \( 237 \times 50 = 11850 \)
+- You can calculate it as:
+- \( 237 \times 5 = 1185 \)
+- Then, multiply by 10 to get \( 11850 \)
+### Step 4: Add the results of the two multiplications
+- Align the results according to their place value:
+```
+1422
++11850
+-------
+13332
+```
+### Final Result
+The product of 237 and 56 is **13,332**.
+
+=== Page 14 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Prompting and Prompt Engineering
+What is Large
+Language Model?
+LLM
+What is Large Language Model?
+A Large Language Model (LLM) is a
+type of artificial intelligence (AI) model
+designed to understand, generate, and
+manipulate human language on a large
+scale. These models are typically built
+using deep learning techniques,
+particularly neural networks, and are
+trained on massive amounts of text
+data to learn the statistical patterns
+and structures of language.
+Prompt
+Completion
+Context window: 2k – 100K
+Model
+You may have to revise the language in your prompt or the way that it's written several times to get the
+model to behave in the way that you want.
+This work to develop and improve the prompt is known as prompt engineering.
+
+=== Page 15 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 16 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 17 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 18 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 19 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 20 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 21 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 22 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 23 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 24 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 25 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 26 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 27 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 28 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 29 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 30 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 31 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 32 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 33 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 34 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 35 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+In-context learning (ICL) – zero shot
+inference
+Prompt
+Completion
+Model
+LLM
+Classify this review:
+I loved this restaurant!
+Sentiment: Positive
+Classify this review: I don't like the environment
+the restaurant has. The tables look old and oily.
+Sentiment:
+The sentiment of this review is negative.
+The reviewer expresses dissatisfaction with
+the restaurant's environment, specifically
+mentioning the old and oily tables.
+Zero-shot Inference
+
+=== Page 36 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 37 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 38 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 39 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 40 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 41 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 42 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 43 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 44 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 45 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 46 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 47 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 48 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 49 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 50 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Wei, Jason, et al. "Chain-of-thought prompting elicits reasoning in large language models." Advances in neural information processing systems 35
+(2022): 24824-24837.
+
+=== Page 51 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Kojima, Takeshi, et al. "Large language models are zero-shot reasoners." Advances in neural information processing systems 35 (2022):
+22199-22213.
+
+=== Page 52 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Zhang, Zhuosheng, et al. "Automatic chain of thought prompting in large language models." arXiv preprint
+arXiv:2210.03493 (2022).
+
+=== Page 53 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 54 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 55 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 56 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 57 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 58 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+
+=== Page 59 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+How it
+Works?
+
+=== Page 60 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+ReAct
+Example
+Question What is the elevation range for the area that the eastern sector of the Colorado orogeny extends into?
+- Thought 1 I need to search Colorado orogeny, find the area that the eastern sector of the Colorado orogeny extends
+into, then find the elevation range of the area.
+- Action 1 Search[Colorado orogeny]
+- Observation 1 The Colorado orogeny was an episode of mountain building (an orogeny) in Colorado and
+surrounding areas.
+- Thought 2 It does not mention the eastern sector. So I need to look up eastern sector.
+- Action 2 Lookup[eastern sector]
+- Observation 2 (Result 1 / 1) The eastern sector extends into the High Plains and is called the Central Plains
+orogeny.
+- Thought 3 The eastern sector of Colorado orogeny extends into the High Plains. So I need to search High Plains
+and find its elevation range.
+Action 3 Search[High Plains]
+Observation 3 High Plains refers to one of two distinct land regions
+Thought 4 I need to instead search High Plains (United States).
+Action 4 Search[High Plains (United States)]
+Observation 4 The High Plains are a subregion of the Great Plains. From east to west, the
+High Plains rise in elevation from around 1,800 to 7,000 ft (550 to 2,130
+m).[3]
+Thought 5 High Plains rise in elevation from around 1,800 to 7,000 ft, so the answer
+is 1,800 to 7,000 ft.
+Action 5 Finish[1,800 to 7,000 ft]
+...
+
+=== Page 61 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+61
+
+=== Page 62 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+62
+
+=== Page 63 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+63
+
+=== Page 64 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+64
+
+=== Page 65 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+65
+
+=== Page 66 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+66
+
+=== Page 67 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+67
+
+=== Page 68 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+68
+
+=== Page 69 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+69
+
+=== Page 70 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+70
+
+=== Page 71 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+71
+
+=== Page 72 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+72
+
+=== Page 73 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+73
+
+=== Page 74 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Overview
+• Open-source development framework
+for LLM applications
+• Python and JavaScript (TypeScript)
+packages
+• Focused on composition and
+modularity
+LangChain
+• Modular components
+• Use cases: Common ways to combine
+components
+Key value adds:
+
+=== Page 75 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Why use
+prompt
+templates
+?
+
+=== Page 76 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+LangChain
+output
+parsing
+works with
+prompt
+templates
+
+=== Page 77 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Memory
+•
+Large Language Models are ‘stateless’
+•
+Each transaction is independent
+•
+Chatbots appear to have memory by providing the full conversation as
+‘context’
+•
+LangChain provides several kinds of ‘memory’ to store and accumulate
+the conversation.
+
+=== Page 78 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Chain
+LLMChain
+• Basic building block for
+LLM-powered
+applications
+• Combines a prompt
+template with an LLM
+SimpleSequentialChain
+• Chains multiple
+LLMChains together
+• Output of one chain
+becomes input for the
+next
+• Single input, single
+output
+SequentialChain
+• More flexible than
+SimpleSequentialChain
+• Allows multiple inputs
+and outputs
+• Can specify which
+outputs to use as inputs
+for subsequent chains
+Router Chain
+• Dynamically selects
+which chain to use based
+on input
+• Useful for handling
+diverse queries or tasks
+
+=== Page 79 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Transfer Learning in NLP
+• Used in standard NLP tasks
+• Question answering
+• Text generation
+• Text summarization
+• Named Entity Recognition
+• Key value pair identification
+• …
+• Transfer learning in NLP through
+• Finetuning language models for down stream tasks
+• Generating contextualized word embeddings
+
+=== Page 80 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Pre-Training Model Architectures in
+NLP
+
+=== Page 81 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Using Transformer for Transfer
+Learning in NLP
+• Transformers handle long-term dependencies better than LSTMs
+• Encoder-Decoder structure of the transformer made it perfect for machine
+translation
+• How to pre-train a language model using transformer-based architecture
+(with attention mechanisms and faster training due to parallelization) that
+can be finetuned for downstream supervised learning tasks?
+
+=== Page 82 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+BERT (Bidirectional Encoder
+Representations from Transformers)
+• OpenAI Transformer only trains a forward language model while ELMo’s
+model was bidirectional
+• BERT is a transformer-based model whose language model is
+conditioned on both left and right contexts
+• BERT is basically a trained Transformer Encoder stack
+
+=== Page 83 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+BERT Features
+• Training corpus was comprised of two entries
+• Toronto Book Corpus (800M words), and
+• English Wikipedia (2,500M words)
+• Two versions of BERT (L stands for the number of layers, H stands for the
+hidden size, A stands for the number of self-attention heads)
+• BERT-Base: L = 12, H = 768, A = 12, Total parameters = 110M
+• BERT-Large: L = 24, H = 1024, A = 16, Total parameters = 340M
+
+=== Page 84 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Input Representation of BERT
+
+=== Page 85 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+BERT Training – Predicting word at a
+position
+• Masked language model
+(Masked LM)
+• Randomly masks 15% of
+tokens in the input and model
+is trained to predict the
+masked word
+
+=== Page 86 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+BERT Training – Two sentence tasks
+• Next sentence prediction (NSP)
+• Task: Given two sentences (A
+and B), is B likely to be the
+sentence that follows A, or not?
+(binary classification)
+
+=== Page 87 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+BERT for Feature Extraction
+• Using BERT to create contextualized word embeddings
+•
+12 embedding vectors for
+each word from the
+output of 12 encoder
+layers
+•
+Which embedding(s) to
+use for a given task?
+
+=== Page 88 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Different ways to create contextualized
+embeddings for a word using BERT
+
+=== Page 89 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Using BERT for different Downstream
+Tasks
+
+=== Page 90 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Fine-tuning
+
+=== Page 91 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+OpenAI Transformer
+• Pre-training a transformer decoder
+for language modeling
+• Decoder masks future tokens so can
+be trained on next word prediction
+task
+• Model has 12 decoder layers
+stacked
+• Only masked self attention layers
+
+=== Page 92 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Transfer Learning to Downstream
+Tasks
+
+=== Page 93 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+In-context learning (ICL)
+• Learning from few-examples in the context (input to
+the LLM)
+• Does not require weight updates as in fine-tuning
+• Learning from analogy
+
+=== Page 94 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Few Shot (FS) Learning
+• The model is given description of the task and a few demonstrations of the
+task at inference time as conditioning but no weight updates are allowed
+• Gives K examples of context and completion, and then one final example
+of context, with the model expected to provide the completion
+
+=== Page 95 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+One Shot (1S) Learning
+• Only one demonstration is allowed, in addition to a natural language
+description of the task.
+• Most closely matches the way in which some tasks are communicated to
+humans.
+• With one example sometimes it is easier to communicate the content or
+format of a task vs if no examples are given.
+
+=== Page 96 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+Zero Shot (ZS) Learning
+• No demonstrations are allowed, and the model is only given a natural
+language instruction describing the task
+• Some settings zero-shot is closest to how humans perform tasks
+• Can be “unfairly hard” in some cases
+
+=== Page 97 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+GPT-3
+•
+From OpenAI
+•
+Decode only architecture
+GPT-3 family of
+models
+GPT-3 training
+dataset
+
+=== Page 98 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+GPT-3 performance with ICL
+Larger models make increasingly efficient use of in-context information.
+•
+Task: remove random
+symbols from a word, both
+with and without a natural
+language task description
+•
+Steeper “in-context learning
+curves” for large models
+demonstrate improved
+ability to learn a task from
+contextual information
+
+=== Page 99 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+LLaMa
+• From MetaAI
+• Decode only architecture
+LLaMa family of models
+LLaMa training dataset
+
+=== Page 100 | method=native ===
+STAT GR 5293 Sec002 | Spring 2026
+LLaMa Training
+LLaMA-33B and LLaMA- 65B
+were trained on 1.4T tokens. The
+smaller models were trained on
+1.0T tokens. All models are
+trained with a batch size of 4M
+tokens.
+

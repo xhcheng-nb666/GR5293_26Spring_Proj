@@ -1,0 +1,62 @@
+[
+  {
+    "id": "q1",
+    "question": "What is RAG?",
+    "expected_topics": ["RAG", "retrieval", "generation"],
+    "expected_sources": ["lecture_04.pdf"]
+  },
+  {
+    "id": "q2",
+    "question": "What is RLHF?",
+    "expected_topics": ["RLHF", "human feedback", "reward model", "PPO"],
+    "expected_sources": ["lecture_01.pdf", "lecture_09.pdf"]
+  },
+  {
+    "id": "q3",
+    "question": "What is the bias-variance tradeoff?",
+    "expected_topics": ["bias", "variance", "model complexity", "generalization"],
+    "expected_sources": ["lecture_01.pdf"]
+  },
+  {
+    "id": "q4",
+    "question": "What is LoRA?",
+    "expected_topics": ["LoRA", "PEFT", "low-rank adaptation"],
+    "expected_sources": ["lecture_08.pdf"]
+  },
+  {
+    "id": "q5",
+    "question": "What is the difference between semantic search and RAG?",
+    "expected_topics": ["semantic search", "RAG", "retrieval", "generation"],
+    "expected_sources": ["lecture_04.pdf"]
+  },
+  {
+    "id": "q6",
+    "question": "What are some LLM benchmarking metrics?",
+    "expected_topics": ["ROUGE", "BLEU", "F1", "benchmarking"],
+    "expected_sources": ["lecture_01.pdf", "lecture_06.pdf"]
+  },
+  {
+    "id": "q7",
+    "question": "Why does RAG help reduce hallucinations?",
+    "expected_topics": ["hallucinations", "retrieval", "grounding"],
+    "expected_sources": ["lecture_04.pdf"]
+  },
+  {
+    "id": "q8",
+    "question": "What are some challenges of training LLMs on consumer hardware?",
+    "expected_topics": ["memory", "quantization", "consumer-grade hardware"],
+    "expected_sources": ["lecture_01.pdf", "lecture_07.pdf"]
+  },
+  {
+    "id": "q9",
+    "question": "What are the main types of batching in LLM serving?",
+    "expected_topics": ["static batching", "dynamic batching", "continuous batching"],
+    "expected_sources": ["lecture_11.pdf"]
+  },
+  {
+    "id": "q10",
+    "question": "What is prompt tuning and how is it different from LoRA?",
+    "expected_topics": ["prompt tuning", "LoRA", "PEFT", "difference"],
+    "expected_sources": ["lecture_08.pdf"]
+  }
+]
