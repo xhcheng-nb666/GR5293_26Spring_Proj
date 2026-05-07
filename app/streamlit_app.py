@@ -364,8 +364,8 @@ def main():
         unsafe_allow_html=True,
     )
 
-    if "GEMINI_API_KEY" not in os.environ:
-        st.error("GEMINI_API_KEY is not set in this terminal session.")
+    if "AGICTO_API_KEY" not in os.environ:
+        st.error("AGICTO_API_KEY is not set in this terminal session.")
         st.stop()
 
     if not INDEX_PATH.exists() or not METADATA_PATH.exists():
