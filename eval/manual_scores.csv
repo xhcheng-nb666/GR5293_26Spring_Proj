@@ -7,3 +7,5 @@ q5,2,2,2,2,Strong semantic search vs. RAG comparison case.
 q6,2,2,2,2,Good coverage of both model-level and system-level benchmarking metrics.
 q7,2,1,2,1,Grounded but weaker than baseline; explanation of hallucination reduction was limited.
 q8,2,0,2,0,Failure case: retrieval pulled serving-related chunks instead of training-on-consumer-hardware content.
+q9,2,2,2,2,"Strong batching case; retrieval found the exact lecture slides defining static, dynamic, and continuous batching."
+q10,2,1,2,1,Baseline gives a full and accurate comparison. RAG is grounded but incomplete because retrieval finds prompt-tuning mentions and LoRA labels without a strong explanatory chunk.

@@ -4350,5 +4350,429 @@
     "page_end": 133,
     "method": "native",
     "text": "–overwrite\nThree ways to confirm if the configuration is successfully applied\n• oc get nodes/$NODE_NAME --show-labels | tr ',' ‘\\n' | grep nvidia.com\n• oc get nodes/$NODE_NAME -ojsonpath={.status.allocatable} | jq -c 'with_entries(select (.key | startswith(\"nvidia.com\")))' | jq\n• oc logs nvidia-mig-manager-xxxx -n nvidia-gpu-operator\nTo collect DCGM metrics, verify if the installed dcgm-exporter supports MIG, and upgrade it if not\n• The dcgm-exporter 2.4.0-rc.2 or later supports MIG\n• The installed dcgm-exporter version by gpu-operator is possible to be older than that"
+  },
+  {
+    "chunk_id": "lecture_13_p1_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 1,
+    "page_end": 1,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nGenerative AI using Large\nLanguage Models (LLMs)\nLecture 13 | 04/17/25\nInstructor: Chen Wang\nFri 4:10 pm - 6:40 pm | 517 Hamilton Hall"
+  },
+  {
+    "chunk_id": "lecture_13_p2_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 2,
+    "page_end": 2,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nBuilding AI Voice Agents\nChen Wang"
+  },
+  {
+    "chunk_id": "lecture_13_p3_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 3,
+    "page_end": 3,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAI Voice Agent ---- Step 1"
+  },
+  {
+    "chunk_id": "lecture_13_p4_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 4,
+    "page_end": 4,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAI Voice Agent ---- Step 2"
+  },
+  {
+    "chunk_id": "lecture_13_p5_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 5,
+    "page_end": 5,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAI Voice Agent ---- Step 3"
+  },
+  {
+    "chunk_id": "lecture_13_p6_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 6,
+    "page_end": 6,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAI Voice Agent ---- Step 4"
+  },
+  {
+    "chunk_id": "lecture_13_p7_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 7,
+    "page_end": 7,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nWhat is an AI Voice Agent?"
+  },
+  {
+    "chunk_id": "lecture_13_p8_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 8,
+    "page_end": 8,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nWhat is an AI Voice Agent?"
+  },
+  {
+    "chunk_id": "lecture_13_p9_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 9,
+    "page_end": 9,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nWhat is an AI Voice Agent?"
+  },
+  {
+    "chunk_id": "lecture_13_p10_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 10,
+    "page_end": 10,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nVoice Agent Stack Components"
+  },
+  {
+    "chunk_id": "lecture_13_p11_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 11,
+    "page_end": 11,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nVoice Agent Stack Components"
+  },
+  {
+    "chunk_id": "lecture_13_p12_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 12,
+    "page_end": 12,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nVoice Agent Stack Components"
+  },
+  {
+    "chunk_id": "lecture_13_p13_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 13,
+    "page_end": 13,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nVoice Agent Stack Components"
+  },
+  {
+    "chunk_id": "lecture_13_p14_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 14,
+    "page_end": 14,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nExample Providers: TTS/LLM/STT Pipeline"
+  },
+  {
+    "chunk_id": "lecture_13_p15_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 15,
+    "page_end": 15,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nExample Providers: Speech-to-Speech Approach"
+  },
+  {
+    "chunk_id": "lecture_13_p16_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 16,
+    "page_end": 16,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nThe Challenge? Latency …"
+  },
+  {
+    "chunk_id": "lecture_13_p17_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 17,
+    "page_end": 17,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLatency: Lower Bounds"
+  },
+  {
+    "chunk_id": "lecture_13_p18_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 18,
+    "page_end": 18,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nApproach: Real Time Peer-to-Peer Communication"
+  },
+  {
+    "chunk_id": "lecture_13_p19_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 19,
+    "page_end": 19,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLiveKit Voice Agent: Minimal Backend Code Example"
+  },
+  {
+    "chunk_id": "lecture_13_p20_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 20,
+    "page_end": 20,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nEvaluating and Optimizing Voice Agents"
+  },
+  {
+    "chunk_id": "lecture_13_p21_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 21,
+    "page_end": 21,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nEnd-to-end voice agent architecture"
+  },
+  {
+    "chunk_id": "lecture_13_p22_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 22,
+    "page_end": 22,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nVoice AI Client-Server"
+  },
+  {
+    "chunk_id": "lecture_13_p23_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 23,
+    "page_end": 23,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nConnecting computers\nTCP vs. UDP"
+  },
+  {
+    "chunk_id": "lecture_13_p26_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 26,
+    "page_end": 26,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nWeb Protocols\nWebSocket vs. WebRTC"
+  },
+  {
+    "chunk_id": "lecture_13_p28_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 28,
+    "page_end": 28,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nVoice AI Client-Server HTTP"
+  },
+  {
+    "chunk_id": "lecture_13_p29_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 29,
+    "page_end": 29,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nStateful Architecture\nVoice AI Client-Server Persistent"
+  },
+  {
+    "chunk_id": "lecture_13_p30_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 30,
+    "page_end": 30,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nWebSocket"
+  },
+  {
+    "chunk_id": "lecture_13_p31_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 31,
+    "page_end": 31,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nWebRTC\nPros\n●Supports full-duplex, persistent connections\n●Built on UDP\n●Designed for streaming audio and video\nCongestion control\nData compression\nAutomatic packet timestamps"
+  },
+  {
+    "chunk_id": "lecture_13_p32_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 32,
+    "page_end": 32,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPopular WebRTC use cases"
+  },
+  {
+    "chunk_id": "lecture_13_p33_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 33,
+    "page_end": 33,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nWebRTC challenge #1: complexity"
+  },
+  {
+    "chunk_id": "lecture_13_p34_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 34,
+    "page_end": 34,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nWebRTC challenge #2: scale\nStandard WebRTC"
+  },
+  {
+    "chunk_id": "lecture_13_p35_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 35,
+    "page_end": 35,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLiveKit"
+  },
+  {
+    "chunk_id": "lecture_13_p36_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 36,
+    "page_end": 36,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLiveKit Cloud: Livekit Cloud WebRTC"
+  },
+  {
+    "chunk_id": "lecture_13_p37_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 37,
+    "page_end": 37,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nLiveKit Cloud in ChatGPT"
+  },
+  {
+    "chunk_id": "lecture_13_p38_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 38,
+    "page_end": 38,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nEnd-to-end: Voice AI Agent Architecture"
+  },
+  {
+    "chunk_id": "lecture_13_p39_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 39,
+    "page_end": 39,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nVoice Agent"
+  },
+  {
+    "chunk_id": "lecture_13_p40_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 40,
+    "page_end": 40,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAgent Voice Pipeline: Agent Architecture"
+  },
+  {
+    "chunk_id": "lecture_13_p41_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 41,
+    "page_end": 41,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAgent Turn Detection (TD)"
+  },
+  {
+    "chunk_id": "lecture_13_p42_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 42,
+    "page_end": 42,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTurn Detection: Under the Hood"
+  },
+  {
+    "chunk_id": "lecture_13_p43_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 43,
+    "page_end": 43,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTurn Detection: Under the Hood"
+  },
+  {
+    "chunk_id": "lecture_13_p44_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 44,
+    "page_end": 44,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTurn Detection: Under the Hood"
+  },
+  {
+    "chunk_id": "lecture_13_p45_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 45,
+    "page_end": 45,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nAgent Architecture with Turn Detection"
+  },
+  {
+    "chunk_id": "lecture_13_p46_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 46,
+    "page_end": 46,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nHandling Interruptions: Agent Archtecture TD and Interruption Handler"
+  },
+  {
+    "chunk_id": "lecture_13_p47_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 47,
+    "page_end": 47,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nContext Management: Final Agent Architecture"
+  },
+  {
+    "chunk_id": "lecture_13_p48_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 48,
+    "page_end": 48,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPutting it AIl Together: Final E2E\nArchitecture"
+  },
+  {
+    "chunk_id": "lecture_13_p49_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 49,
+    "page_end": 49,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nWhich type of voice agent should you\nbuild?"
+  },
+  {
+    "chunk_id": "lecture_13_p50_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 50,
+    "page_end": 50,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nTrade offs ---- Pick two!"
+  },
+  {
+    "chunk_id": "lecture_13_p51_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 51,
+    "page_end": 51,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nPutting an Agent together"
+  },
+  {
+    "chunk_id": "lecture_13_p52_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 52,
+    "page_end": 52,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nJupyter Notebook Demo (1)"
+  },
+  {
+    "chunk_id": "lecture_13_p53_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 53,
+    "page_end": 53,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nWebRTC"
+  },
+  {
+    "chunk_id": "lecture_13_p54_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 54,
+    "page_end": 54,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nOptimizing the Speech Pipeline"
+  },
+  {
+    "chunk_id": "lecture_13_p55_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 55,
+    "page_end": 55,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nStreaming Calls to LLMs"
+  },
+  {
+    "chunk_id": "lecture_13_p56_c0",
+    "source": "lecture_13.pdf",
+    "page_start": 56,
+    "page_end": 56,
+    "method": "native",
+    "text": "STAT GR 5293 Sec002 | Spring 2026\nJupyter Notebook Demo (2)"
   }
 ]

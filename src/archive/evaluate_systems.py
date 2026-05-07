@@ -7,7 +7,8 @@ from pathlib import Path
 
 import faiss
 from sentence_transformers import SentenceTransformer
-from openai import OpenAI
+from google import genai
+from google.genai.errors import ClientError
 
 
 QUESTIONS_PATH = Path("eval/questions.json")
@@ -17,9 +18,13 @@ INDEX_PATH = Path("data/index/faiss.index")
 METADATA_PATH = Path("data/index/chunk_metadata.json")
 
 EMBED_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
-AGICTO_MODEL = "gemini-2.5-flash"
+GEMINI_MODEL = "gemini-2.5-flash"
 TOP_K = 4
-MAX_RETRIES = 5
+
+# Gemini free tier can be tight, so stay conservative.
+REQUEST_DELAY_SECONDS = 15
+RATE_LIMIT_SLEEP_SECONDS = 65
+MAX_RETRIES = 6
 
 
 def load_json(path: Path):
@@ -33,23 +38,49 @@ def save_json(path: Path, data) -> None:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
 
-def ask_agicto(prompt: str, client: OpenAI) -> str:
+def ask_gemini(prompt: str, client: genai.Client) -> str:
+    """
+    Safe Gemini caller with retry + delay for free-tier limits and temporary server overload.
+    """
     for attempt in range(1, MAX_RETRIES + 1):
         try:
-            response = client.chat.completions.create(
-                model=AGICTO_MODEL,
-                messages=[{"role": "user", "content": prompt}],
+            print(f"Calling Gemini... (attempt {attempt}/{MAX_RETRIES})")
+            response = client.models.generate_content(
+                model=GEMINI_MODEL,
+                contents=prompt,
             )
-            return response.choices[0].message.content
-        except Exception as e:
-            if attempt == MAX_RETRIES:
-                raise
-            wait_time = min(10 * attempt, 60)
-            print(f"Request failed: {e}. Retrying in {wait_time} seconds...")
-            time.sleep(wait_time)
+
+            # Slow down a bit between successful calls.
+            time.sleep(REQUEST_DELAY_SECONDS)
+            return response.text
+
+        except ClientError as e:
+            error_text = str(e)
+
+            # 429 = quota/rate limit
+            if "429" in error_text or "RESOURCE_EXHAUSTED" in error_text:
+                wait_time = min(90 * attempt, 300)
+                print(
+                    f"Rate limit hit. Sleeping for {wait_time} seconds before retrying..."
+                )
+                time.sleep(wait_time)
+                continue
+
+            # 503 = model temporarily overloaded / unavailable
+            if "503" in error_text or "UNAVAILABLE" in error_text:
+                wait_time = min(20 * attempt, 90)
+                print(
+                    f"Gemini temporarily unavailable. Sleeping for {wait_time} seconds before retrying..."
+                )
+                time.sleep(wait_time)
+                continue
+
+            raise
+
+    raise RuntimeError("Gemini request failed after maximum retries.")
 
 
-def baseline_answer(question: str, client: OpenAI) -> str:
+def baseline_answer(question: str, client: genai.Client) -> str:
     prompt = f"""
 You are a course assistant for a Generative AI course.
 
@@ -60,7 +91,7 @@ Student question:
 {question}
 """.strip()
 
-    return ask_agicto(prompt, client)
+    return ask_gemini(prompt, client)
 
 
 def retrieve(question: str, embed_model, index, metadata, top_k: int = TOP_K):
@@ -80,7 +111,7 @@ def retrieve(question: str, embed_model, index, metadata, top_k: int = TOP_K):
     return results
 
 
-def rag_answer(question: str, retrieved_chunks: list[dict], client: OpenAI) -> str:
+def rag_answer(question: str, retrieved_chunks: list[dict], client: genai.Client) -> str:
     context_parts = []
     for i, chunk in enumerate(retrieved_chunks, start=1):
         context_parts.append(
@@ -99,7 +130,8 @@ If the answer is not supported by the retrieved material, say so.
 Instructions:
 - Answer clearly and concisely.
 - Be faithful to the retrieved text.
-- End with a Sources section.
+- End with a Sources section in this format:
+  - lecture_xx.pdf, page y
 
 Student question:
 {question}
@@ -108,7 +140,7 @@ Retrieved course material:
 {context}
 """.strip()
 
-    return ask_agicto(prompt, client)
+    return ask_gemini(prompt, client)
 
 
 def load_existing_results() -> list[dict]:
@@ -118,8 +150,8 @@ def load_existing_results() -> list[dict]:
 
 
 def main() -> None:
-    if "AGICTO_API_KEY" not in os.environ:
-        print("Missing AGICTO_API_KEY in environment.")
+    if "GEMINI_API_KEY" not in os.environ:
+        print("Missing GEMINI_API_KEY in environment.")
         return
 
     if not QUESTIONS_PATH.exists():
@@ -132,10 +164,7 @@ def main() -> None:
         print(f"Missing metadata: {METADATA_PATH.resolve()}")
         return
 
-    client = OpenAI(
-        api_key=os.environ["AGICTO_API_KEY"],
-        base_url="https://api.agicto.cn/v1",
-    )
+    client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
 
     print("Loading questions...")
     questions = load_json(QUESTIONS_PATH)
@@ -165,23 +194,35 @@ def main() -> None:
 
         print(f"\nRunning {qid}: {question}")
 
-        baseline = baseline_answer(question, client)
-        retrieved = retrieve(question, embed_model, index, metadata, TOP_K)
-        rag = rag_answer(question, retrieved, client)
+        try:
+            baseline = baseline_answer(question, client)
+            retrieved = retrieve(question, embed_model, index, metadata, TOP_K)
+            rag = rag_answer(question, retrieved, client)
 
-        result_item = {
-            "id": qid,
-            "question": question,
-            "expected_topics": item.get("expected_topics", []),
-            "expected_sources": item.get("expected_sources", []),
-            "baseline_answer": baseline,
-            "retrieved_chunks": retrieved,
-            "rag_answer": rag,
-        }
+            result_item = {
+                "id": qid,
+                "question": question,
+                "expected_topics": item.get("expected_topics", []),
+                "expected_sources": item.get("expected_sources", []),
+                "baseline_answer": baseline,
+                "retrieved_chunks": retrieved,
+                "rag_answer": rag,
+            }
 
-        results.append(result_item)
-        save_json(RESULTS_PATH, results)
-        print(f"Saved progress after {qid} -> {RESULTS_PATH}")
+            results.append(result_item)
+
+            # Save after every successful question.
+            save_json(RESULTS_PATH, results)
+            print(f"Saved progress after {qid} -> {RESULTS_PATH}")
+
+            print("Cooling down before next question...")
+            time.sleep(30)
+
+        except Exception as e:
+            print(f"Error while processing {qid}: {e}")
+            print("Saving partial results and stopping.")
+            save_json(RESULTS_PATH, results)
+            raise
 
     print(f"\nDone. Final results saved to {RESULTS_PATH}")
 

@@ -3,11 +3,12 @@ from __future__ import annotations
 import json
 import os
 import html
+import time
 from pathlib import Path
 
 import faiss
 import streamlit as st
-from google import genai
+from openai import OpenAI
 from sentence_transformers import SentenceTransformer
 
 
@@ -15,7 +16,7 @@ INDEX_PATH = Path("data/index/faiss.index")
 METADATA_PATH = Path("data/index/chunk_metadata.json")
 
 EMBED_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
-GEMINI_MODEL = "gemini-2.5-flash"
+AGICTO_MODEL = "gemini-2.5-flash"
 DEFAULT_TOP_K = 4
 
 SAMPLE_QUESTIONS = [
@@ -93,33 +94,40 @@ Retrieved course material:
 """.strip()
 
 
-def ask_gemini(prompt: str) -> str:
-    client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
-    response = client.models.generate_content(
-        model=GEMINI_MODEL,
-        contents=prompt,
+def ask_agicto(prompt: str) -> str:
+    client = OpenAI(
+        api_key=os.environ["AGICTO_API_KEY"],
+        base_url="https://api.agicto.cn/v1",
     )
-    return response.text
+
+    response = client.chat.completions.create(
+        model=AGICTO_MODEL,
+        messages=[{"role": "user", "content": prompt}],
+    )
+    return response.choices[0].message.content
 
 
-def ask_gemini_baseline(query: str) -> str:
-    client = genai.Client(api_key=os.environ["GEMINI_API_KEY"])
+def ask_agicto_baseline(query: str) -> str:
+    client = OpenAI(
+        api_key=os.environ["AGICTO_API_KEY"],
+        base_url="https://api.agicto.cn/v1",
+    )
 
     prompt = f"""
-You are a course assistant for a Generative AI course.
+    You are a course assistant for a Generative AI course.
 
-Answer the student's question as clearly and concisely as possible.
-If you are unsure, say so.
+    Answer the student's question as clearly and concisely as possible.
+    If you are unsure, say so.
 
-Student question:
-{query}
-""".strip()
+    Student question:
+    {query}
+    """.strip()
 
-    response = client.models.generate_content(
-        model=GEMINI_MODEL,
-        contents=prompt,
+    response = client.chat.completions.create(
+        model=AGICTO_MODEL,
+        messages=[{"role": "user", "content": prompt}],
     )
-    return response.text
+    return response.choices[0].message.content
 
 
 def score_badge(score: float) -> str:
@@ -391,15 +399,18 @@ def main():
 
         with st.spinner("Retrieving relevant lecture chunks..."):
             retrieved = retrieve(query, embed_model, index, metadata, top_k=top_k)
+        best_score = retrieved[0]["score"] if retrieved else 0.0
+        if best_score < 0.40:
+            st.warning("Retrieved evidence looks weak, so the answer may be incomplete or less reliable.")
 
         with st.spinner("Generating grounded answer..."):
             rag_prompt = build_rag_prompt(query, retrieved)
-            rag_answer = ask_gemini(rag_prompt)
+            rag_answer = ask_agicto(rag_prompt)
 
         baseline_answer = None
         if show_baseline:
             with st.spinner("Generating baseline answer..."):
-                baseline_answer = ask_gemini_baseline(query)
+                baseline_answer = ask_agicto_baseline(query)
 
         st.markdown('<div class="section-title">Answers</div>', unsafe_allow_html=True)
 

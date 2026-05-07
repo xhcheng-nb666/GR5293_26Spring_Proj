@@ -51,20 +51,49 @@ GR5293_Proj/
     questions.json
     results_first_pass.json
     manual_scores.csv
+    results_summary.md
+    topk_ablation.md
+  report/
+  slides/
   src/
+    archive/
+      baseline_gemini.py
+      rag_qa_gemini.py
+      test_gemini.py
+    baseline_agicto.py
+    rag_qa_agicto.py
+    evaluate_systems.py
+    ablation_topk.py
     extract_pdf.py
     chunk_text.py
     build_index.py
     test_retrieval.py
-    baseline_gemini.py
-    rag_qa_gemini.py
-    evaluate_systems.py
-  report/
-  slides/
-  requirements.txt
   README.md
+  requirements.txt
   .gitignore
 ```
+
+## Tested Environment
+
+- OS: macOS
+- Python: 3.13
+- OCR: Tesseract installed locally
+- Generation model: Gemini free tier
+- Embedding model: sentence-transformers/all-MiniLM-L6-v2
+
+## Generation Backend Migration
+
+The project initially used the Google Gemini free tier for answer generation.
+During repeated evaluation runs and demo development, the free-tier API frequently
+encountered rate limits and temporary availability issues.
+
+To improve stability while keeping the retrieval pipeline unchanged, the generation
+backend was later migrated to AGICTO's OpenAI-compatible API.
+
+This means:
+- the document extraction pipeline is unchanged
+- chunking and FAISS retrieval are unchanged
+- only the final answer-generation backend was replaced
 
 ## Setup
 
@@ -98,18 +127,18 @@ sudo apt install tesseract-ocr
 
 ## API Key Setup
 
-This project uses Gemini for generation.
+The current default generation backend uses AGICTO's OpenAI-compatible API.
 
-Set your Gemini API key in the same terminal session before running the scripts:
+Set your AGICTO API key in the same terminal session before running the scripts:
 
 ```bash
-export GEMINI_API_KEY="your_api_key_here"
+export AGICTO_API_KEY="your_api_key_here"
 ```
 
 You can verify it with:
 
 ```bash
-echo $GEMINI_API_KEY
+echo $AGICTO_API_KEY
 ```
 
 ## How to Run the Pipeline
@@ -155,7 +184,7 @@ Use this to inspect whether the retriever returns relevant chunks for sample cou
 ### Step 5: Run the baseline
 
 ```bash
-python src/baseline_gemini.py
+python src/baseline_agicto.py
 ```
 
 This asks Gemini the question directly, without retrieval.
@@ -163,7 +192,7 @@ This asks Gemini the question directly, without retrieval.
 ### Step 6: Run the RAG assistant
 
 ```bash
-python src/rag_qa_gemini.py
+python src/rag_qa_agicto.py
 ```
 
 This:

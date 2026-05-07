@@ -421,5 +421,110 @@
       }
     ],
     "rag_answer": "The retrieved course material does not contain information about the specific challenges of training LLMs on consumer hardware. The material primarily discusses the challenges and techniques related to *serving* LLMs, noting that serving can be slow and expensive, often requiring many A100 GPUs for production-scale services.\n\n**Sources:**\n- lecture_12.pdf, page 4\n- lecture_01.pdf, page 4\n- lecture_01.pdf, page 16\n- lecture_12.pdf, page 2"
+  },
+  {
+    "id": "q9",
+    "question": "What are the main types of batching in LLM serving?",
+    "expected_topics": [
+      "static batching",
+      "dynamic batching",
+      "continuous batching"
+    ],
+    "expected_sources": [
+      "lecture_11.pdf"
+    ],
+    "baseline_answer": "The main types of batching in LLM serving are:\n\n1.  **Static Batching:** Requests are grouped into batches of a fixed, predetermined size. While simple, it's inefficient for LLMs due to highly variable request lengths and generation times.\n2.  **Dynamic Batching:** Requests are batched together over a short time window or until a certain batch capacity is reached. This is more flexible than static batching but still processes requests in discrete groups.\n3.  **Continuous Batching (or Iterated/Pipelined Batching):** This is the most common and efficient method for LLM serving. Instead of waiting for a full batch to complete, it processes requests as they arrive and keeps the GPU constantly busy by generating tokens for multiple ongoing requests concurrently. It effectively \"pipeline\" token generation for different requests, even if they have different input lengths or finish at different times. This often involves techniques like PagedAttention for efficient Key-Value cache management.",
+    "retrieved_chunks": [
+      {
+        "chunk_id": "lecture_12_p12_c0",
+        "source": "lecture_12.pdf",
+        "page_start": 12,
+        "page_end": 12,
+        "method": "native",
+        "text": "STAT GR 5293 Sec002 | Spring 2026\nTypes of LLM Inference Batching\nStatic Batching\n• Waits for a fixed number\nof requests to accumulate\nbefore processing\n• Processes all requests\nsimultaneously as a\nsingle batch\n• Best suited for offline\nworkloads where latency\nisn't critical\n• Like a bus that only\ndeparts when completely\nfull\nDynamic Batching\n• Uses both maximum\nbatch size and time\nwindow parameters\n• Processes requests when\neither batch is full or time\nwindow expires\n• Balances between\nthroughput and latency\n• Ideal for consistent-length\noutputs like image\ngeneration\nContinuous Batching\n• Processes requests\ntoken-by-token at the\nsequence level\n• Dynamically allocates\nGPU resources as tokens\nare generated\n• Efficiently handles varying\noutput lengths\n• Optimizes model weight\nloading across multiple\nrequests",
+        "score": 0.6291147470474243
+      },
+      {
+        "chunk_id": "lecture_12_p2_c0",
+        "source": "lecture_12.pdf",
+        "page_start": 2,
+        "page_end": 2,
+        "method": "native",
+        "text": "STAT GR 5293 Sec002 | Spring 2026\nAgenda:\nEfficient\nServing of\nLLMs\n• Static Batching, Dynamic Batching and Continuous Batching\nBatching Techniques\n• KV Cache\n• Flash Attention\n• PagedAttention\nMemory Optimization Techniques\n• vLLM\nLLM Serving Frameworks\n• sLoRA, vLLM\nServing Systems for Fine-tuning Models\n• Space vs Time Partitioning\n• Software vs Hardware\n• LLM inference on MIGs\nGPU Sharing Techniques",
+        "score": 0.5825243592262268
+      },
+      {
+        "chunk_id": "lecture_01_p16_c0",
+        "source": "lecture_01.pdf",
+        "page_start": 16,
+        "page_end": 16,
+        "method": "native",
+        "text": "Class 11: Efficient Serving of LLMs\nLLM Serving\nResource\nOptimization\nBatching:\nStatic Batching\nDynamic Batching\nContinuous\nBatching\nMemory\nOptimization\nFlash Attention\nPaged Attention\nKernel\nUnified Paging\nLLM Serving\nFrameworks\nvLLM\nDeepspeed-MII\nTensorRT\nHuggingFace TGI\nServer\nFine-Tuned Model\nServing\nvLLM\nS-LoRA\nLoRAX\nPerformance &\nTrade-offs\nPerformance vs.\nThroughput\nFairness in\nScheduling/Routing\nGPU Techniques\nGPU Sharing\nGPU Optimization\nMultiplexing",
+        "score": 0.5545592308044434
+      },
+      {
+        "chunk_id": "lecture_12_p9_c0",
+        "source": "lecture_12.pdf",
+        "page_start": 9,
+        "page_end": 9,
+        "method": "native",
+        "text": "STAT GR 5293 Sec002 | Spring 2026\nStatic Batching vs Dynamic Batching",
+        "score": 0.5252227783203125
+      }
+    ],
+    "rag_answer": "The main types of batching in LLM serving are Static Batching, Dynamic Batching, and Continuous Batching.\n\nHere's a breakdown of each type:\n*   **Static Batching**\n    *   Waits for a fixed number of requests to accumulate before processing.\n    *   Processes all requests simultaneously as a single batch.\n    *   Best suited for offline workloads where latency is not critical.\n*   **Dynamic Batching**\n    *   Uses both maximum batch size and time window parameters.\n    *   Processes requests when either the batch is full or the time window expires.\n    *   Balances between throughput and latency.\n    *   Ideal for consistent-length outputs, such as image generation.\n*   **Continuous Batching**\n    *   Processes requests token-by-token at the sequence level.\n    *   Dynamically allocates GPU resources as tokens are generated.\n    *   Efficiently handles varying output lengths.\n    *   Optimizes model weight loading across multiple requests.\n\nSources:\n- lecture_12.pdf pages 2, 12"
+  },
+  {
+    "id": "q10",
+    "question": "What is prompt tuning and how is it different from LoRA?",
+    "expected_topics": [
+      "prompt tuning",
+      "LoRA",
+      "PEFT",
+      "difference"
+    ],
+    "expected_sources": [
+      "lecture_08.pdf"
+    ],
+    "baseline_answer": "Here's a breakdown of prompt tuning and LoRA, and how they differ:\n\nBoth Prompt Tuning and LoRA are **Parameter-Efficient Fine-Tuning (PEFT)** methods, meaning they aim to adapt large pre-trained models to new tasks or data with significantly fewer trainable parameters than full fine-tuning.\n\n---\n\n### **Prompt Tuning**\n\n*   **What it is:** Prompt tuning learns a small set of \"soft prompts\" (continuous vectors) that are prepended or added to the input embeddings of a pre-trained model.\n*   **How it works:** The pre-trained model's original weights remain frozen. Only the soft prompt vectors are trained to guide the frozen model to perform a specific task. These soft prompts act like a specialized prefix or context that the model learns to interpret for the desired output.\n*   **Analogy:** Imagine giving a very intelligent person a specific, carefully crafted instruction at the beginning of every query to ensure they answer exactly how you want, without changing their fundamental knowledge or reasoning abilities.\n\n### **LoRA (Low-Rank Adaptation)**\n\n*   **What it is:** LoRA injects small, trainable \"adapter\" matrices into the existing weight matrices of a pre-trained model, typically in the attention and feed-forward layers.\n*   **How it works:** Instead of directly training the large weight matrices ($W$), LoRA decomposes the update $\\Delta W$ into two much smaller matrices ($A$ and $B$, such that $\\Delta W = BA$). The original pre-trained weights ($W$) are frozen, and only the low-rank matrices ($A$ and $B$) are trained. When performing inference, the original weights are effectively augmented by $BA$.\n*   **Analogy:** Instead of rewriting entire chapters of a massive textbook (the model's weights), LoRA adds small, specialized \"sticky notes\" or \"insert pages\" to key sections. These notes subtly modify the meaning or emphasis of those sections, without altering the original text itself.\n\n---\n\n### **Key Differences**\n\n1.  **What is Tuned/Modified:**\n    *   **Prompt Tuning:** Tunes *external* continuous prompt vectors that modify the model's *input*. The base model's weights are completely frozen.\n    *   **LoRA:** Tunes *internal* low-rank matrices that are *added to* the base model's weight matrices. The base model's weights themselves are frozen, but their *effective* weights are modified by the LoRA adapters.\n\n2.  **Location of Modification:**\n    *   **Prompt Tuning:** Modifies the *input* to the model (at the embedding layer).\n    *   **LoRA:** Modifies the *internal layers* of the model (typically attention and feed-forward layers).\n\n3.  **Nature of Adaptation:**\n    *   **Prompt Tuning:** Focuses on conditioning the model via its input, teaching it *how to interpret* the task.\n    *   **LoRA:** Modifies the model's *internal behavior and representations*, changing *how the model processes* information.\n\n4.  **Parameter Count (General):** While both are highly parameter-efficient, prompt tuning generally involves fewer trainable parameters than LoRA, as it only learns a sequence of vectors, whereas LoRA learns matrices for potentially many layers.\n\nIn summary, Prompt Tuning influences the model from the \"outside\" by conditioning its input, while LoRA modifies the model's behavior from the \"inside\" by subtly adjusting its internal computations.",
+    "retrieved_chunks": [
+      {
+        "chunk_id": "lecture_08_p105_c0",
+        "source": "lecture_08.pdf",
+        "page_start": 105,
+        "page_end": 105,
+        "method": "native",
+        "text": "STAT GR 5293 Sec002 | Spring 2026\nLoRA\nPrompt Tuning",
+        "score": 0.6818997263908386
+      },
+      {
+        "chunk_id": "lecture_08_p93_c0",
+        "source": "lecture_08.pdf",
+        "page_start": 93,
+        "page_end": 93,
+        "method": "native",
+        "text": "STAT GR 5293 Sec002 | Spring 2026\nPrompt tuning with soft\nprompts",
+        "score": 0.5711299180984497
+      },
+      {
+        "chunk_id": "lecture_08_p102_c0",
+        "source": "lecture_08.pdf",
+        "page_start": 102,
+        "page_end": 102,
+        "method": "native",
+        "text": "STAT GR 5293 Sec002 | Spring 2026\nPrompt tuning\ncan be as\neffective as full\nFine-tuning for\nlarger models!",
+        "score": 0.5447062253952026
+      },
+      {
+        "chunk_id": "lecture_08_p106_c0",
+        "source": "lecture_08.pdf",
+        "page_start": 106,
+        "page_end": 106,
+        "method": "native",
+        "text": "STAT GR 5293 Sec002 | Spring 2026\nKey takeaways\n●Instruction fine-tuning\nPrompt templates and data sets for\nFLAN-T5\n●PEFT\nLoRA\nPrompt Tuning\n●Quantization + LoRA = QLoRA",
+        "score": 0.5350618362426758
+      }
+    ],
+    "rag_answer": "Prompt tuning involves using \"soft prompts\" and can achieve effectiveness comparable to full fine-tuning, especially for larger models. It is a Parameter-Efficient Fine-Tuning (PEFT) method.\n\nLoRA (Low-Rank Adaptation) is also a PEFT method. While both prompt tuning and LoRA are listed as distinct PEFT methods in the course material, the provided text does not elaborate on the specific differences in their mechanisms or how they achieve parameter efficiency.\n\n**Sources:**\n*   lecture_08.pdf pages 93-93\n*   lecture_08.pdf pages 102-102\n*   lecture_08.pdf pages 105-105\n*   lecture_08.pdf pages 106-106"
   }
 ]

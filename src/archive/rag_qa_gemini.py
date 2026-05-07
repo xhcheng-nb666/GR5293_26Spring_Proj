@@ -1,3 +1,12 @@
+"""
+Legacy Gemini-based version.
+
+This script was used in the earlier stage of the project when the generation
+backend relied on the Gemini free tier. It is kept for reference only.
+The active pipeline now uses AGICTO due to rate-limit issues encountered
+during evaluation and demo development.
+"""
+
 from __future__ import annotations
 
 import json
