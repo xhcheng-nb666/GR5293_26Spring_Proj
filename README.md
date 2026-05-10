@@ -189,6 +189,7 @@ tests/
   test_text_processing.py
   test_prompt_and_retrieval.py
   test_integration_smoke.py
+  test_retrieval_integration.py
 
 ## How to Run the Pipeline
 
