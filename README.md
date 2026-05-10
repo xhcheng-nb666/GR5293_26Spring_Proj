@@ -231,6 +231,11 @@ python src/test_retrieval.py
 
 Use this to inspect whether the retriever returns relevant chunks for sample course questions.
 
+```bash
+pytest tests/test_retrieval_integration.py
+```
+Use this to verify that the FAISS index, metadata file, embedding model, and retrieval pipeline can be loaded and executed successfully.
+
 ### Step 5: Run the baseline
 
 ```bash
