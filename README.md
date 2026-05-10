@@ -371,3 +371,103 @@ AI tools were used throughout the development of this project as coding and writ
 - Suggesting code structure, debugging steps, and refactoring ideas
 - Helping generate starter code for preprocessing, retrieval, evaluation, and demo components
 - Helping interpret intermediate outputs and summarize findings
+
+### Tool attribution
+
+The primary Generative AI tool used in this project was:
+
+- **Tool:** ChatGPT
+- **Provider:** OpenAI
+- **Model family used:** GPT-5 series
+- **Usage mode:** interactive chat assistance for code drafting, refactoring, debugging, evaluation planning, README/report wording, and presentation support
+
+### Tool details and settings
+
+The project did not rely on a fixed generation temperature or decoding configuration exposed to the team through the ChatGPT interface. The tool was used through the standard chat interface for iterative assistance. No AI-generated code was accepted blindly; all outputs were reviewed, edited, tested, and integrated manually by the project team.
+
+### Scope of AI-assisted work
+
+AI assistance was used for:
+- Drafting starter code for preprocessing, retrieval, evaluation, testing, and demo components
+- Suggesting refactoring ideas and repository organization
+- Debugging import issues, environment issues, and API migration issues
+- Drafting README, report wording, and presentation notes
+- Suggesting evaluation structure, ablation design, and test cases
+
+### Exact prompts used for code generation and related development
+
+The following prompts were used to generate or revise code and project materials. These prompts are documented here for transparency.
+
+#### Prompt 1 — OCR fallback PDF extraction
+> We have lecture PDFs where native extraction misses image-heavy pages. Please write a Python script that first uses PyMuPDF native extraction and, if a page has too little text, falls back to Tesseract OCR. Save page-level JSON with source, page number, extraction method, and text.
+
+**Used for:** initial version of `src/extract_pdf.py`
+
+#### Prompt 2 — Chunking pipeline
+> Please write a chunking script that reads all_pages.json, performs light text cleanup, filters useless chunks, splits long text with overlap, and saves all_chunks.json with chunk IDs and page metadata.
+
+**Used for:** initial version of `src/chunk_text.py`
+
+#### Prompt 3 — Embedding and FAISS index
+> Please write a script that loads all_chunks.json, embeds the chunk text with sentence-transformers/all-MiniLM-L6-v2, normalizes the embeddings, builds a FAISS index, and saves both the index and chunk metadata.
+
+**Used for:** initial version of `src/build_index.py`
+
+#### Prompt 4 — Retrieval testing
+> Please write a small retrieval test script that loads the FAISS index and metadata, embeds a user query, retrieves the top-k chunks, and prints the source, page, chunk ID, score, and a short text preview.
+
+**Used for:** initial version of `src/test_retrieval.py`
+
+#### Prompt 5 — Grounded RAG QA
+> Please write a RAG question-answering script that retrieves top-k lecture chunks, builds a grounded prompt that tells the model to answer only from the retrieved material, and prints both the answer and the supporting sources.
+
+**Used for:** initial version of `src/rag_qa_gemini.py`, later adapted into `src/rag_qa_agicto.py`
+
+#### Prompt 6 — Direct-answer baseline
+> Please write a baseline QA script that asks the model to answer the student's course question directly without retrieval, so it can be compared against the RAG system.
+
+**Used for:** initial version of `src/baseline_gemini.py`, later adapted into `src/baseline_agicto.py`
+
+#### Prompt 7 — Evaluation harness
+> Please write an evaluation script that runs a set of course questions through both the baseline and RAG systems, saves the outputs to JSON, and supports resuming from partial progress.
+
+**Used for:** initial version of `src/evaluate_systems.py`
+
+#### Prompt 8 — Rate-limit handling
+> Our Gemini free-tier evaluation is failing due to rate limits and temporary unavailability. Please modify the evaluation script to add retry handling, delays between requests, and saving partial results after each completed question.
+
+**Used for:** retry/resume logic in evaluation
+
+#### Prompt 9 — Backend migration
+> We started with Gemini free tier but are hitting rate limits. Please help migrate the generation layer to AGICTO's OpenAI-compatible API while keeping retrieval unchanged. Update the baseline, RAG QA script, and evaluation script accordingly.
+
+**Used for:** migration from Gemini-based scripts to AGICTO-based scripts
+
+#### Prompt 10 — Streamlit demo
+> Please create a Streamlit app for our RAG course assistant with a question input box, optional baseline comparison, retrieved-source display, and a cleaner presentation-friendly UI.
+
+**Used for:** `app/streamlit_app.py`
+
+#### Prompt 11 — Ablation study
+> Please write a small top-k ablation script that compares retrieval depths k=2, k=4, and k=6 on a small set of representative course questions and prints retrieved sources and answers.
+
+**Used for:** `src/ablation_topk.py`
+
+#### Prompt 12 — Tests
+> Please suggest a lightweight pytest test suite for this project, including unit tests for text cleaning and chunking, retrieval top-k behavior, prompt construction, and an integration smoke test with a mocked API call.
+
+**Used for:** `tests/` directory and lightweight automated testing
+
+#### Prompt 13 — README and documentation
+> Please draft a final README for this project that explains the pipeline, setup, AGICTO migration, reproducibility boundaries, evaluation design, and demo usage.
+
+**Used for:** `README.md`
+
+#### Prompt 14 — Report and presentation support
+> Please help summarize our evaluation results, error analysis, and top-k ablation in concise language suitable for a final project report and presentation.
+
+**Used for:** report/presentation wording support
+
+### Verification and responsibility
+
+All AI-generated suggestions were treated as drafts or helper material. The team reviewed, modified, tested, and validated the final code and writing before including them in the repository. Final implementation choices, evaluation decisions, scoring, and conclusions were made by the project team.
