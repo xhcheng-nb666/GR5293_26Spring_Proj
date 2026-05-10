@@ -165,6 +165,31 @@ If an AGICTO key is not available, the user can still:
 - inspect saved evaluation outputs in `eval/`
 - review the archived Gemini scripts in `src/archive/`
 
+## Tests
+
+A small `pytest` test suite is included to improve repository quality and reproducibility.
+
+### What is covered
+The tests currently cover:
+- `clean_text`
+- `is_useful_text`
+- chunk overlap sanity
+- prompt construction with retrieved context
+- retrieval returning the correct top-k count
+- an integration smoke test for `query -> retrieve -> build prompt`
+
+### Mocked API behavior
+The integration smoke test does **not** call the live AGICTO API.  
+Instead, the API layer is mocked so the retrieval and prompt-building workflow can be tested without requiring an external key or network call.
+
+### Test structure
+```text
+tests/
+  conftest.py
+  test_text_processing.py
+  test_prompt_and_retrieval.py
+  test_integration_smoke.py
+
 ## How to Run the Pipeline
 
 ### Step 1: Extract PDFs
