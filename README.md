@@ -332,6 +332,12 @@ Recommended reliable demo questions:
 - What is the bias-variance tradeoff?
 - What is the difference between semantic search and RAG?
 
+## Troubleshooting
+
+A separate troubleshooting guide is provided for common setup, retrieval, API, evaluation, and demo issues:
+
+[Troubleshooting Guide](TROUBLESHOOTING.md)
+
 ## Limitations
 
 Current limitations include:
